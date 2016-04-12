@@ -1,0 +1,18 @@
+# Node Modules
+node_modules/*
+node_modules
+npm-debug.log
+
+# OS X Junk
+.DS_Store
+.DS_Store/*
+.DS\_Store
+
+# Not-Needed System Files
+*.sw?
+*.swp
+*.bak
+
+# Build Folder
+dist
+dist/*

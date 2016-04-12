@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "max-len": 0,
+    "react/jsx-no-bind": 0,
+  }
+}
