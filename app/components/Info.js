@@ -23,7 +23,7 @@ class Info extends React.Component {
         <li>
           <span className="faq__question">Why can't the website do this, that or the other thing?</span>
           <p>
-            This website was made as a proof of concept by <Link to="http://chrisheninger.com/" target="_blank">Chris Heninger</Link> and <Link to="http://ryanwiemer.com/" target="_blank">Ryan Wiemer</Link>. If you have a great idea for a new feature or something to make it better we would love to hear your feedback. Feel free to file an issue on our GitHub repository.
+            This website was made as a proof of concept by <Link to="http://chrisheninger.com/" target="_blank">Chris Heninger</Link> and <Link to="http://ryanwiemer.com/" target="_blank">Ryan Wiemer</Link>. If you have a great idea for a new feature or something to make it better we would love to hear your feedback. Feel free to file an issue on our <Link to="https://github.com/chrisheninger/rental-resume.com/issues" target="blank"> GitHub repository</Link>.
           </p>
         </li>
       </ul>
