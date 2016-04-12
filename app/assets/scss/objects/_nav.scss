@@ -1,0 +1,87 @@
+/* ------- *
+ *   Nav   *
+ * ------- */
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+	background: white;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	@extend %clearfix;
+	z-index: 3;
+	width: 100%;
+	text-align: center;
+	@extend %clearfix;
+	.nav {
+		max-width: 1200px;
+		padding: 0 1em;
+		margin: 0 auto;
+		@include bp(medium) {
+			padding: 0 2em;
+		}
+	}
+	ul {
+		position: relative;
+		margin: 0 auto;
+		float: right;
+	}
+	li {
+		display: inline-block;
+		float: left;
+	}
+	a {
+		line-height: 60px;
+		text-decoration: none;
+		display: block;
+	}
+	h1 {
+		display: block;
+	}
+  @include bp(medium) {
+		display: block;
+	}
+}
+
+
+//Logo
+.logo {
+	float: left;
+	color: $base;
+	font-weight: bold;
+}
+
+.no-touchevents .logo a:hover, .no-touchevents .btn--list:hover {
+	color: gray!important;
+}
+
+//Nav Buttons
+.btn--action {
+	padding: 0 1.17em!important;
+	line-height: 59px!important;
+	border-right: 1px solid darken($secondary, 5%);
+  color: darken($secondary,10%);
+	position: relative;
+	z-index: 99;
+}
+
+.btn--action--active {
+	background: $highlight;
+	color: white;
+}
+
+.no-touchevents .btn--action:hover {
+	color: $highlight;
+}
+
+
+.no-touchevents .btn--action--active:hover {
+  background: darken($highlight, 5%);
+	color: white;
+}
+
+.icon-info {
+	border-left: 1px solid darken($secondary, 5%);
+}

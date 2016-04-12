@@ -1,0 +1,23 @@
+/* ------- *
+ *  Buttons  *
+ * ------- */
+
+button {
+ border:none;
+ -webkit-appearance: none;
+ background: none;
+ &:hover {
+   cursor: pointer;
+ }
+}
+
+.btn {
+ text-align: center;
+ border-radius: 0;
+ text-decoration: none;
+ padding: .75em;
+ display: inline-block;
+ &:active, &:focus {
+   outline: 0;
+ }
+}

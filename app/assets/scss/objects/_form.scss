@@ -1,0 +1,271 @@
+/* ------- *
+ *   Form  *
+ * ------- */
+
+.resume-form {
+  padding: 0 1em;
+  margin: 1em auto 3em;
+  max-width: 1200px;
+  @extend %clearfix;
+  ol {
+    @include span-columns(12);
+    @include bp(medium) {
+      @include span-columns(6);
+    }
+    li {
+      margin-bottom: 1.5em;
+      @extend %clearfix;
+      position: relative;
+      &:hover .btn--remove {
+        opacity: 1;
+      }
+    }
+  }
+  img {
+    margin-bottom: 1em;
+    @include span-columns(12);
+    @include bp(medium) {
+      @include span-columns(6);
+    }
+  }
+  @include bp(medium) {
+    padding: 0 2em;
+  }
+}
+
+.legend {
+  display: inline-block;
+  font-weight: bold;
+  margin: 1em 0 .5em;
+  float: left;
+  font-size: 2.5em;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.label {
+  display: inline-block;
+  line-height: 1.4;
+  margin-bottom: 0 auto;
+  padding-bottom: 2em;
+  max-width: 600px;
+}
+
+.fieldset {
+  margin: 0 auto;
+  padding: 2.5em 0 0;
+  text-align: center;
+}
+
+.input, .select, .textarea {
+  padding: .5em;
+  font-size: 1em;
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  resize: none;
+  outline: none;
+  border-radius: 0;
+  border: none;
+  background: $secondary!important;
+}
+
+.input {
+  margin-bottom: 2.35765%;;
+  @include span-columns(12);
+  @include bp(medium) {
+    @include span-columns(6);
+  }
+}
+
+.textarea {
+  line-height: 1.4;
+  font-size: 1em;
+}
+
+//Contact
+.input--full-name {
+  @include span-columns(12);
+  padding-right: 3em;
+  @include bp(medium) {
+    padding-right: .5em;
+  }
+}
+.touch .input--full-name {
+  padding-right: 3em;
+}
+
+
+.input--email {
+  @include bp(medium) {
+    margin-bottom: 0!important;
+  }
+}
+
+.input--phone {
+  margin-right: 0;
+  @include bp(medium) {
+    margin-bottom: 0!important;
+  }
+}
+
+
+
+//Summary
+.textarea--summary {
+  height: 400px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: .5em 1em;
+}
+
+//Rental History
+.ol--rent {
+  @include bp(medium) {
+    @include shift(-12);
+  }
+}
+
+.img--rent {
+  @include bp(medium) {
+    @include shift(6);
+  }
+}
+
+.input--street {
+  padding-right: 3em;
+  @include bp(medium) {
+    padding-right: .5em;
+  }
+}
+
+.touch .input--street {
+  padding-right: 3em;
+}
+
+.textarea--reason {
+  min-height: 100px;
+}
+
+.input--street, .textarea--reason {
+  width: 100%!important;
+}
+
+.input--city, .input--zip, .input--end-date {
+  margin-right: 0;
+}
+
+
+
+
+//Employment History
+.input--title {
+  @include span-columns(12);
+  padding-right: 3em;
+  @include bp(medium) {
+    padding-right: .5em;
+  }
+}
+
+.input--employer {
+  @include span-columns(12);
+}
+
+.touch .input--title {
+  padding-right: 3em;
+}
+
+.input--employer  {
+  margin-right: 0;
+}
+
+
+//Income
+
+.fieldset--income {
+  text-align: center;
+}
+
+.input--income {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 2em;
+  height: 75px;
+  display: inline-block;
+  float: none;
+}
+
+//Buttons on Form
+.btn--add {
+  @include span-columns(12);
+  color: white;
+  background: lighten($base, 15%);
+}
+
+.no-touchevents .btn--add:hover {
+  background: $base;
+  color: white;
+}
+
+.btn--remove {
+  background: darken($secondary, 25%);
+  color: $secondary;
+  font-size: 1.5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 0;
+  height: 35px;
+  padding: .5em;
+  &:hover {
+    background: $warning;
+  }
+  @include bp(medium) {
+    right: -.75em;
+    width: 1.25em;
+    background: none;
+    color: darken($secondary, 25%);
+    opacity: 0;
+    &:hover {
+      color: $warning;
+      background: none;
+    }
+  }
+}
+
+.touchevents .btn--remove {
+  background: darken($secondary, 25%);
+  color: $secondary;
+  font-size: 1.5em;
+  position: absolute;
+  right: 0px;
+  top: 2px;
+  line-height: .1;
+  height: 36px;
+  padding-left: .25em;
+  padding-right: .25em;
+  opacity: 1;
+  &:hover, &:focus, &:visited {
+    background: darken($secondary, 25%)!important;
+  }
+  @include bp(medium) {
+    padding-right: 1.25em;
+    right: 0;
+  }
+}
+
+.btn--submit {
+  @include span-columns(12);
+  background: $highlight;
+  color: white;
+  @include bp(medium) {
+    @include span-columns(6);
+    @include shift(3);
+  }
+}
+
+.no-touchevents .btn--submit:hover {
+  background: darken($highlight, 5%)!important;
+}

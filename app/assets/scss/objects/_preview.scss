@@ -1,0 +1,151 @@
+/* ----------------- *
+ *   Resume Preview  *
+ * ----------------- */
+
+.container {
+	margin: 5em auto 1em;
+	max-width: 960px;
+	padding: 0 1em;
+	@include bp(medium) {
+		margin: 6em auto 1em;
+		padding: 0 2em;
+	}
+}
+
+.resume {
+	margin: 0 auto;
+	padding: 1em;
+	background: white;
+	max-width: 960px;
+	&:before {
+		content: "";
+		background: $secondary;
+		@extend %clearfix;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+	}
+	@include bp(medium) {
+		padding: 4em;
+		margin: 2em auto;
+	}
+}
+
+.resume a {
+	color: $base;
+}
+
+.no-touchevents .resume a:hover {
+	color: $highlight;
+}
+
+.resume--title {
+	font-size: 2em;
+	margin-bottom: 1.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+.resume--section {
+	@extend %clearfix;
+	margin-bottom: 2em;
+}
+
+
+.resume--subtitle {
+	font-weight: bold;
+	margin-bottom: 1em;
+	@include bp(medium) {
+		@include span-columns(3);
+		margin-bottom: 0;
+	}
+}
+
+.applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list {
+	@include bp(medium) {
+		@include span-columns(9);
+	}
+}
+
+
+//Applicants
+.applicant {
+	line-height: 1.4;
+	@include bp(medium) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+}
+
+.applicant-list li {
+	margin-bottom: 1em;
+	@include bp(medium) {
+		margin-bottom: 0;
+	}
+}
+
+.applicant-list li:nth-child(n+3)  {
+	@include bp(medium) {
+		margin-top: 1em;
+	}
+}
+
+.applicant--name {
+	font-weight: bold;
+}
+
+
+
+//summary
+.applicant-summary {
+	line-height: 1.4;
+}
+
+
+//Employment History
+.employment-list {
+	line-height: 1.4;
+	list-style-position: inside;
+	list-style-type: disc;
+}
+
+.job {
+	margin-bottom: 1em;
+}
+
+.employment-list li:last-child {
+	margin-bottom: 0;
+}
+
+
+
+//Rental History
+.rental-list {
+	line-height: 1.4;
+	list-style-position: inside;
+	list-style-type: disc;
+}
+
+.rental-list li:last-child {
+	margin-bottom: 0;
+}
+
+.apartment {
+	margin-bottom: 1em;
+}
+
+.rental-list em {
+	text-decoration: underline;
+}
+
+//Income
+.applicant-income {
+	line-height: 1.4;
+	margin-bottom: 0;
+}

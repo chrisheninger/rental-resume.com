@@ -1,0 +1,65 @@
+/* --------- *
+ *   Print   *
+ * --------- */
+
+@media print {
+	*,
+	*:before,
+	*:after,
+	*:first-letter,
+	*:first-line {
+			background: transparent !important;
+			color: #000 !important;
+			box-shadow: none !important;
+			text-shadow: none !important;
+	}
+	html {
+		margin: 0 !important;
+	}
+	body {
+		margin: 0 !important;
+		padding: 0 !important;
+		font-size: 12pt;
+	}
+	.nav {
+		display: none;
+	}
+	.resume {
+		margin: 0;
+	}
+	.container {
+		margin: 0;
+	}
+	.resume--header {
+		margin-top: 10mm;
+	}
+	.resume--title {
+		margin-bottom: 7.5mm;
+	}
+	.resume--subtitle {
+		width: 25%;
+		float: left;
+	}
+	.applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list {
+		width: 70%;
+		float: right;
+	}
+	.applicant {
+		width: 35%;
+		float: left;
+		margin-right: 2.5%;
+	}
+	.resume--section {
+		margin-bottom: 7.5mm;
+	}
+	.resume--section--income, .resume--section--applicant  {
+		margin-bottom: 2.5mm;
+	}
+	.header {
+		display: none;
+	}
+}
+@page {
+	size: auto;
+	margin: 3mm;
+}

@@ -1,0 +1,104 @@
+/* ------- *
+ *  Home   *
+ * ------- */
+
+.home {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 1em;
+	height: 600px;
+	height: 100vh;
+	@include bp(medium) {
+		height: 600px;
+		height: 100vh;
+	}
+	&:before {
+		content: "";
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url('../images/homepage.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+	&:after {
+		content: "";
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0,0,0,.3);
+	}
+}
+
+.home div {
+	@extend %clearfix;
+	z-index: 3;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	@include bp(medium) {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.home__text__title {
+	@extend %clearfix;
+	font-size: 1.75em;
+	margin: 0 0 1em 0;
+	line-height: 1.15;
+	color: white;
+	z-index: 3;
+	@include bp(medium) {
+		font-size: 2.25em;
+	}
+}
+
+.home__text {
+	@include bp(medium) {
+		@include span-columns(6);
+	}
+}
+
+.home__image {
+	margin-top: 1em;
+	@include bp(medium) {
+		@include span-columns(6);
+		margin: 0;
+		display: none;
+	}
+}
+
+
+//Buttons on Homepage
+.btn--learn-more {
+	background: rgba(255,255,255,.1);
+  color: white;
+	border: 1px solid white;
+}
+
+.no-touchevents .btn--learn-more:hover {
+  background: white;
+	color: $base;
+}
+
+.btn--get-started {
+	background: rgba(255,255,255,.1);
+	color: white;
+	border: 1px solid white !important;
+	margin: 0 1em;
+}
+
+.no-touchevents .btn--get-started:hover {
+	background: white;
+	color: $base;
+}

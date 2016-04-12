@@ -1,0 +1,11 @@
+/* ------- *
+ *  LINKS  *
+ * ------- */
+
+p a {
+  color: $base;
+}
+
+.no-touchevents p a:hover {
+  color: $highlight;
+}
