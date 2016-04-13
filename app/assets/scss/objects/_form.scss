@@ -96,7 +96,6 @@
   padding-right: 3em;
 }
 
-
 .input--email {
   @include bp(medium) {
     margin-bottom: 0!important;
@@ -109,8 +108,6 @@
     margin-bottom: 0!important;
   }
 }
-
-
 
 //Summary
 .textarea--summary {
@@ -158,8 +155,6 @@
 }
 
 
-
-
 //Employment History
 .input--title {
   @include span-columns(12);
@@ -181,9 +176,7 @@
   margin-right: 0;
 }
 
-
 //Income
-
 .fieldset--income {
   text-align: center;
 }
