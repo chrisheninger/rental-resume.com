@@ -51,12 +51,10 @@
 	font-weight: bold;
 }
 
-
 .resume--section {
 	@extend %clearfix;
 	margin-bottom: 2em;
 }
-
 
 .resume--subtitle {
 	font-weight: bold;
@@ -100,13 +98,10 @@
 	font-weight: bold;
 }
 
-
-
 //summary
 .applicant-summary {
 	line-height: 1.4;
 }
-
 
 //Employment History
 .employment-list {
@@ -122,8 +117,6 @@
 .employment-list li:last-child {
 	margin-bottom: 0;
 }
-
-
 
 //Rental History
 .rental-list {
