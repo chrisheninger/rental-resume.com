@@ -9,8 +9,6 @@ import Info from './Info';
 import Create from './Create';
 import Preview from './Preview';
 
-import resume from '../resume';
-
 class ResumeApp extends React.Component {
 
   constructor() {
@@ -47,8 +45,6 @@ class ResumeApp extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.onAddSection = this.onAddSection.bind(this);
     this.onRemoveSection = this.onRemoveSection.bind(this);
-    this.loadSample = this.loadSample.bind(this);
-    this.resetResume = this.resetResume.bind(this);
     this.printResume = this.printResume.bind(this);
     this.generateResumeLink = this.generateResumeLink.bind(this);
 
@@ -86,16 +82,6 @@ class ResumeApp extends React.Component {
     newState[section].splice(index, 1);
     this.setState(newState);
     store.set('data', newState);
-  }
-
-  loadSample() {
-    this.setState(resume);
-    store.set('data', resume);
-  }
-
-  resetResume() {
-    this.setState(this.defaultState);
-    store.set('data', this.defaultState);
   }
 
   printResume() {
