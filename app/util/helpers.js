@@ -13,6 +13,10 @@ module.exports = {
     return false;
   },
 
+  numberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  },
+
   stateOptions: [
     {
       text: 'Select state...',
