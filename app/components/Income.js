@@ -13,7 +13,7 @@ class Income extends React.Component {
           <input
             className="input input--income"
             type="number"
-            step="500"
+            step="1000"
             placeholder="Approximate Annual Income*"
             value={income}
             onChange={(event) => onInputChange(event.target.value, ['income'])}
