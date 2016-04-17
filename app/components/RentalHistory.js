@@ -1,6 +1,8 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
+import Select from './Select';
 
+import { stateOptions } from '../util/helpers';
 const rentalImage = require('../assets/images/rental-history.jpg');
 
 class RentalHistory extends React.Component {
@@ -36,12 +38,12 @@ class RentalHistory extends React.Component {
           value={history.city}
           onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'city'])}
         />
-        <input
+        <Select
+          id = "state-select"
           className="input input--state"
-          placeholder="State*"
-          type="text"
-          value={history.state}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}
+          options = {stateOptions}
+          value = {history.state || stateOptions[0].value}
+          onChange = {(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}
         />
         <InputMask
           className="input input--zip"
