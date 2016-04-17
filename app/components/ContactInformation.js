@@ -25,7 +25,7 @@ class ContactInformation extends React.Component {
         <input
           className="input input--email"
           placeholder="Email*"
-          type="text"
+          type="email"
           value={person.email}
           onChange={(event) => onInputChange(event.target.value, ['people', index, 'email'])}
         />
