@@ -35,6 +35,7 @@ class ContactInformation extends React.Component {
           type="text"
           value={person.phone}
           mask="(999) 999-9999"
+          maskChar=" "
           onChange={(event) => onInputChange(event.target.value, ['people', index, 'phone'])}
         />
         { index > 0 ? (
