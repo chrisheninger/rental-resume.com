@@ -41,7 +41,7 @@ class Preview extends React.Component {
       <section className="resume--section resume--section--income">
         <h2 className="resume--subtitle">Income</h2>
         <p className="applicant-income">
-          {income}
+          ${income}
         </p>
       </section>
     );

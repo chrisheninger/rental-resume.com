@@ -52,6 +52,7 @@
     "path": "^0.12.7",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
+    "react-input-mask": "^0.6.6",
     "react-router": "^2.0.0",
     "sass-loader": "^3.2.0",
     "store2": "^2.3.0",

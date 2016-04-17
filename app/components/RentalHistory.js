@@ -1,4 +1,5 @@
 import React from 'react';
+import InputMask from 'react-input-mask';
 
 const rentalImage = require('../assets/images/rental-history.jpg');
 
@@ -43,11 +44,12 @@ class RentalHistory extends React.Component {
             value={history.state}
             onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}
           />
-          <input
+          <InputMask
             className="input input--zip"
             placeholder="Zipcode*"
             type="text"
             value={history.zip}
+            mask="99999"
             onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
           />
           <input
@@ -104,11 +106,12 @@ class RentalHistory extends React.Component {
           value={history.state}
           onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}
         />
-        <input
+        <InputMask
           className="input input--zip"
           placeholder="Zipcode*"
           type="text"
           value={history.zip}
+          mask="99999"
           onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
         />
         <input
@@ -147,7 +150,7 @@ class RentalHistory extends React.Component {
       <fieldset id="rent" className="fieldset fieldset--rent">
         <legend className="legend legend--rent">Rental History</legend>
         <label className="label label--rent">Now let's outline a history of your recent places of residence. This doesn't have to be extensive but be sure to include at least two or three.</label>
-      <img className="img img--rent" src={rentalImage} />
+        <img className="img img--rent" src={rentalImage} />
         <ol className="ol ol--rent">
           {rentalHistory.map(this.renderHistory)}
           <button

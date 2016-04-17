@@ -1,4 +1,5 @@
 import React from 'react';
+import InputMask from 'react-input-mask';
 
 const contactImage = require('../assets/images/contact.jpg');
 
@@ -14,9 +15,28 @@ class ContactInformation extends React.Component {
     const { onInputChange, onRemoveSection } = this.props;
     return (
       <li key={index}>
-        <input className="input input--full-name" placeholder="Full Name*" type="text" value={person.name} onChange={(event) => onInputChange(event.target.value, ['people', index, 'name'])} />
-        <input className="input input--email" placeholder="Email*" type="text" value={person.email} onChange={(event) => onInputChange(event.target.value, ['people', index, 'email'])} />
-        <input className="input input--phone" placeholder="Phone Number*" type="text" value={person.phone} onChange={(event) => onInputChange(event.target.value, ['people', index, 'phone'])} />
+        <input
+          className="input input--full-name"
+          placeholder="Full Name*"
+          type="text"
+          value={person.name}
+          onChange={(event) => onInputChange(event.target.value, ['people', index, 'name'])}
+        />
+        <input
+          className="input input--email"
+          placeholder="Email*"
+          type="text"
+          value={person.email}
+          onChange={(event) => onInputChange(event.target.value, ['people', index, 'email'])}
+        />
+        <InputMask
+          className="input input--phone"
+          placeholder="Phone Number*"
+          type="text"
+          value={person.phone}
+          mask="(999) 999-9999"
+          onChange={(event) => onInputChange(event.target.value, ['people', index, 'phone'])}
+        />
         { index > 0 ? (
           <button
             className="btn btn--remove icon-cross"
