@@ -39,8 +39,7 @@ class RentalHistory extends React.Component {
           onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'city'])}
         />
         <Select
-          id = "state-select"
-          className="input input--state"
+          className="select select--state"
           options = {stateOptions}
           value = {history.state || stateOptions[0].value}
           onChange = {(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}

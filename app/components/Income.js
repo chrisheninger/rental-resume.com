@@ -7,14 +7,14 @@ class Income extends React.Component {
     return (
       <fieldset className="fieldset fieldset--income">
         <legend className="legend legend--income">Household Income</legend>
-        <label className="label label--income">Last but not least your landlord will want to know your annual household income. Feel free to be as exact or vauge as your are comfortable sharing with your landlord at this time.</label>
+        <label className="label label--income">Last but not least your landlord will want to know your annual household income. Feel free to be as exact or vauge as your are comfortable sharing with your landlord.</label>
         <div className="input-group">
           <span className="input-prefix">$</span>
           <input
             className="input input--income"
             type="number"
             step="1000"
-            placeholder="Approximate Annual Income*"
+            placeholder="Annual Income*"
             value={income}
             onChange={(event) => onInputChange(event.target.value, ['income'])}
           />

@@ -20,7 +20,7 @@ module.exports = {
   stateOptions: [
     {
       text: 'Select state...',
-      value: 'Select...',
+      value: '',
       disabled: true,
     },
     {
