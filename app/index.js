@@ -10,7 +10,7 @@ import ResumeApp from './components/ResumeApp';
 import NotFound from './components/NotFound';
 
 const routes = (
-  <Router history={browserHistory}>
+  <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
     <Route path="/" component={Home} />
     <Route path="/info" component={ResumeApp} />
     <Route path="/create" component={ResumeApp} />

@@ -5,3 +5,46 @@
 .btn--remove, .resume-form li, .nav a, .btn, .faq a, .btn--back, .resume a {
 	transition: all .15s;
 }
+
+/* Force scrollbar on all pages */
+html {
+  overflow-y: scroll;
+}
+
+//Generic Animation
+.transition--enter,
+.transition--leave.is-active {
+  opacity: 0; }
+.transition--leave,
+.transition--enter.is-active {
+  opacity: 1; }
+
+
+//Info Animation
+.transition--enter .faq {
+  //transform: translate3d(0, -50px, 0);
+  opacity: 0; }
+.transition--enter.is-active .faq {
+  transition: transform .5s ease-in-out, opacity .35s ease-in-out;
+  //transform: translate3d(0, 0, 0);
+  opacity: 1; }
+
+
+//Create Animation
+.transition--enter .resume-form {
+  //transform: translate3d(0, 50px, 0);
+  opacity: 0; }
+.transition--enter.is-active .resume-form {
+  transition: transform .5s ease-in-out, opacity .35s ease-in-out;
+  //transform: translate3d(0, 0, 0);
+  opacity: 1; }
+
+
+	//Preivew Animation
+.transition--enter .resume {
+  //transform: translate3d(0, 50px, 0);
+  opacity: 0; }
+.transition--enter.is-active .resume {
+  transition: transform .5s ease-in-out, opacity .35s ease-in-out;
+  //transform: translate3d(0, 0, 0);
+  opacity: 1; }
