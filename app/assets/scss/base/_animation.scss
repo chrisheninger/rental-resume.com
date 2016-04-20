@@ -14,13 +14,6 @@
   opacity: 1;
 	transition: all .4s ease-in-out;
 }
-.transition--enter .home__text {
-  opacity: 0.01;
-}
-.transition--enter.is-active .home__text {
-  opacity: 1;
-	transition: all .4s ease-in-out;
-}
 
 //Info Animation
 .transition--enter .faq {
