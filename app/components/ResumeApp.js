@@ -146,13 +146,11 @@ class ResumeApp extends React.Component {
     const transitionNames = {
        enter:         'transition--enter',
        enterActive:   'is-active',
-       leave :        'transition--leave',
-       leaveActive:   'is-active',
        appear:        'transition--enter',
        appearActive:  'is-active'
     };
     return (
-        <ReactCSSTransitionGroup transitionEnterTimeout={750} transitionLeaveTimeout={50} transitionAppearTimeout={750} transitionAppear={true} component="div" transitionName={transitionNames}>
+        <ReactCSSTransitionGroup transitionAppear={true} transitionAppearTimeout={400} transitionLeave={false} transitionEnterTimeout={400} component="div" transitionName={transitionNames}>
             <Header
               {...this.props}
               printResume = {this.printResume}
