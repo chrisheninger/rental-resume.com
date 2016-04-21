@@ -143,13 +143,15 @@ class ResumeApp extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header
-          {...this.props}
-          printResume = {this.printResume}
-        />
-        {this.renderPage()}
-      </div>
+        <div>
+          <Header
+            {...this.props}
+            printResume = {this.printResume}
+          />
+          <main className="transition">
+            {this.renderPage()}
+          </main>
+        </div>
     );
   }
 

@@ -5,3 +5,39 @@
 .btn--remove, .resume-form li, .nav a, .btn, .faq a, .btn--back, .resume a {
 	transition: all .15s;
 }
+
+//Home Animation
+.transition--enter .home {
+  opacity: 0.01;
+}
+.transition--enter.is-active .home {
+  opacity: 1;
+	transition: all .4s ease-in-out;
+}
+
+//Info Animation
+.transition--enter .faq {
+  opacity: 0.01;
+}
+.transition--enter.is-active .faq {
+  opacity: 1;
+	transition: all .4s ease-in-out;
+}
+
+//Create Animation
+.transition--enter .resume-form {
+  opacity: 0.01;
+}
+.transition--enter.is-active .resume-form {
+  opacity: 1;
+	transition: all .4s ease-in-out;
+}
+
+//Preivew Animation
+.transition--enter .resume {
+  opacity: 0.01;
+}
+.transition--enter.is-active .resume {
+  opacity: 1;
+	transition: all .4s ease-in-out;
+}
