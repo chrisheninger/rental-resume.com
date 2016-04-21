@@ -49,7 +49,6 @@ Select.propTypes = {
       text: React.PropTypes.string,
       value: React.PropTypes.any,
       disabled: React.PropTypes.any,
-      selected: React.PropTypes.bool,
     })
   ).isRequired,
   value: React.PropTypes.any,

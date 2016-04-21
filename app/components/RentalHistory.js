@@ -1,5 +1,6 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
+import classNames from 'classnames';
 import Select from './Select';
 
 import { stateOptions } from '../util/helpers';
@@ -15,6 +16,11 @@ class RentalHistory extends React.Component {
 
   renderHistory(history, index) {
     const { onInputChange, onRemoveSection } = this.props;
+    const selectClassNames = classNames({
+      select: true,
+      'select--state': true,
+      'select-disabled': !history.state,
+    });
     return (
       <li key={index}>
         <input
@@ -39,7 +45,7 @@ class RentalHistory extends React.Component {
           onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'city'])}
         />
         <Select
-          className="select select--state"
+          className={selectClassNames}
           options = {stateOptions}
           value = {history.state || stateOptions[0].value}
           onChange = {(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}

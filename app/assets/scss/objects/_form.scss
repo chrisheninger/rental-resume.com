@@ -85,10 +85,11 @@
 }
 
 .select {
+  color: $base;
   background: $secondary url(../images/arrows.svg) no-repeat 97% 0!important;
 }
 
-select option:disabled {
+.select-disabled {
   color: #a9a9a9;
 }
 
