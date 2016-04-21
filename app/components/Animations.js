@@ -9,9 +9,19 @@ class Animations extends React.Component {
       appear: 'transition--enter',
       appearActive: 'is-active',
     };
+
     return (
-      <ReactCSSTransitionGroup transitionAppear={true} transitionAppearTimeout={400} transitionLeave={false} transitionEnterTimeout={400} component="div" transitionName={transitionNames}>
-        {this.props.children}
+      <ReactCSSTransitionGroup
+        transitionAppear
+        transitionAppearTimeout = {400}
+        transitionLeave = {false}
+        transitionEnterTimeout = {400}
+        component = "div"
+        transitionName = {transitionNames}
+      >
+        {React.cloneElement(this.props.children, {
+          key: this.props.location.pathname,
+        })}
       </ReactCSSTransitionGroup>
     );
   }
@@ -19,6 +29,7 @@ class Animations extends React.Component {
 
 Animations.propTypes = {
   children: React.PropTypes.object,
+  location: React.PropTypes.object,
 };
 
 export default Animations;
