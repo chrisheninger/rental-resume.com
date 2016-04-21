@@ -3,7 +3,6 @@ import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
 import store from 'store2';
 import { tryParseJSON } from '../util/helpers';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Header from './Header';
 import Info from './Info';
@@ -143,22 +142,16 @@ class ResumeApp extends React.Component {
   }
 
   render() {
-    const transitionNames = {
-       enter:         'transition--enter',
-       enterActive:   'is-active',
-       appear:        'transition--enter',
-       appearActive:  'is-active'
-    };
     return (
-        <ReactCSSTransitionGroup transitionAppear={true} transitionAppearTimeout={400} transitionLeave={false} transitionEnterTimeout={400} component="div" transitionName={transitionNames}>
-            <Header
-              {...this.props}
-              printResume = {this.printResume}
-            />
-             <main key={this.props.location.pathname} className="transition">
-              {this.renderPage()}
-            </main>
-        </ReactCSSTransitionGroup>
+        <div>
+          <Header
+            {...this.props}
+            printResume = {this.printResume}
+          />
+          <main className="transition">
+            {this.renderPage()}
+          </main>
+        </div>
     );
   }
 
