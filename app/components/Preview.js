@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import { numberWithCommas } from '../util/helpers';
+
 class Preview extends React.Component {
 
   constructor() {
@@ -41,7 +43,7 @@ class Preview extends React.Component {
       <section className="resume--section resume--section--income">
         <h2 className="resume--subtitle">Income</h2>
         <p className="applicant-income">
-          {income}
+          ${numberWithCommas(income)}
         </p>
       </section>
     );
@@ -145,6 +147,7 @@ class Preview extends React.Component {
             </ul>
           </section>
         </div>
+        <div className="background"></div>
       </div>
     );
   }

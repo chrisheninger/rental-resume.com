@@ -10,6 +10,7 @@
 	height: 600px;
 	height: 100vh;
 	@include bp(medium) {
+		padding: 0 2em;
 		height: 600px;
 		height: 100vh;
 	}
@@ -77,7 +78,6 @@
 		display: none;
 	}
 }
-
 
 //Buttons on Homepage
 .btn--learn-more {

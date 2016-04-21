@@ -71,7 +71,7 @@
   background: $secondary!important;
 }
 
-.input {
+.input, .select {
   margin-bottom: 2.35765%;;
   @include span-columns(12);
   @include bp(medium) {
@@ -83,6 +83,15 @@
   line-height: 1.4;
   font-size: 1em;
 }
+
+.select {
+  background: $secondary url(../images/arrows.svg) no-repeat 97% 0!important;
+}
+
+.select-disabled {
+  color: #a9a9a9;
+}
+
 
 //Contact
 .input--full-name {
@@ -96,7 +105,6 @@
   padding-right: 3em;
 }
 
-
 .input--email {
   @include bp(medium) {
     margin-bottom: 0!important;
@@ -109,8 +117,6 @@
     margin-bottom: 0!important;
   }
 }
-
-
 
 //Summary
 .textarea--summary {
@@ -157,9 +163,6 @@
   margin-right: 0;
 }
 
-
-
-
 //Employment History
 .input--title {
   @include span-columns(12);
@@ -181,20 +184,37 @@
   margin-right: 0;
 }
 
-
 //Income
-
 .fieldset--income {
   text-align: center;
 }
 
 .input--income {
   width: 100%;
-  max-width: 600px;
   margin: 0 auto 2em;
-  height: 75px;
+  height: 50px;
   display: inline-block;
-  float: none;
+  text-align: center;
+  @include bp(medium) {
+    @include span-columns(4);
+    @include shift(4);
+  }
+}
+
+.input-group {
+  @extend %clearfix;
+  position: relative;
+}
+
+.input-prefix {
+  position: absolute;
+  left: .5em;
+  line-height: 50px;
+  font-weight: bold;
+  color: gray;
+  @include bp(medium) {
+    @include shift(4);
+  }
 }
 
 //Buttons on Form
@@ -261,8 +281,8 @@
   background: $highlight;
   color: white;
   @include bp(medium) {
-    @include span-columns(6);
-    @include shift(3);
+    @include span-columns(4);
+    @include shift(4);
   }
 }
 
