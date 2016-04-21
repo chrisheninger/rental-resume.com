@@ -36,7 +36,6 @@ class ResumeApp extends React.Component {
         title: '',
         dateStart: '',
         dateEnd: '',
-        income: '',
       }],
       income: '',
     };
