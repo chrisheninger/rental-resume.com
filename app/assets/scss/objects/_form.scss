@@ -80,6 +80,7 @@
 }
 
 .textarea {
+  overflow: hidden;
   line-height: 1.4;
   font-size: 1em;
 }
@@ -91,7 +92,6 @@
 .select-disabled {
   color: #a9a9a9;
 }
-
 
 //Contact
 .input--full-name {

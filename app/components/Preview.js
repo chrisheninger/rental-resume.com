@@ -21,8 +21,8 @@ class Preview extends React.Component {
     }
     if (!applicant.name || !applicant.email || !applicant.phone) {
       return (
-        <li className="applicant" key={index}>
-          This section is incomplete <Link to="/create">[edit]</Link>
+        <li className="applicant incomplete" key={index}>
+          <Link to="/create">This section is incomplete</Link>
         </li>
       );
     }
@@ -37,7 +37,14 @@ class Preview extends React.Component {
 
   renderIncomeSection(income) {
     if (!income) {
-      return null;
+      return (
+        <section className="resume--section resume--section--income">
+          <h2 className="resume--subtitle">Income</h2>
+          <p className="applicant-income incomplete">
+            <Link to="/create">This section is incomplete</Link>
+          </p>
+        </section>
+      );
     }
     return (
       <section className="resume--section resume--section--income">
@@ -54,8 +61,8 @@ class Preview extends React.Component {
       return (
         <section className="resume--section resume--section--summary">
           <h2 className="resume--subtitle">About</h2>
-          <p className="applicant-summary">
-            This section is incomplete <Link to="/create">[edit]</Link>
+          <p className="applicant-summary incomplete">
+            <Link to="/create">This section is incomplete</Link>
           </p>
         </section>
       );
@@ -76,8 +83,8 @@ class Preview extends React.Component {
     }
     if (!employment.title || !employment.company || !employment.dateStart || !employment.dateEnd) {
       return (
-        <li className="job" key={index}>
-          This section is incomplete <Link to="/create">[edit]</Link>
+        <li className="job incomplete" key={index}>
+          <Link to="/create">This section is incomplete</Link>
         </li>
       );
     }
@@ -99,8 +106,8 @@ class Preview extends React.Component {
     }
     if (!rental.address1 || !rental.city || !rental.state || !rental.zip || !rental.dateStart || !rental.dateEnd || !rental.reason) {
       return (
-        <li className="apartment" key={index}>
-          This section is incomplete <Link to="/create">[edit]</Link>
+        <li className="apartment incomplete" key={index}>
+          <Link to="/create">This section is incomplete</Link>
         </li>
       );
     }
