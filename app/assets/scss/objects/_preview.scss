@@ -7,7 +7,7 @@
 	max-width: 960px;
 	padding: 0 1em;
 	@include bp(medium) {
-		margin: 6em auto 1em;
+		margin: 6em auto 2em;
 		padding: 0 2em;
 	}
 }
@@ -83,6 +83,9 @@
 
 .applicant-list li {
 	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
 	@include bp(medium) {
 		margin-bottom: 0;
 	}
@@ -141,4 +144,33 @@
 .applicant-income {
 	line-height: 1.4;
 	margin-bottom: 0;
+}
+
+//Incomplete Sections
+.incomplete {
+	border: 1px dashed darken($secondary, 15%);
+	list-style-type: none !important;
+	&:hover {
+		border: 1px solid $highlight !important;
+		background: $highlight !important;
+	}
+	@include bp(medium) {
+		text-align: center;
+	}
+	a {
+		color: darken($secondary, 15%) !important;
+		text-decoration: none;
+		padding: .5em;
+		display: block;
+		width: 100%;
+		height: 100%;
+		&:hover {
+			color: white !important;
+		}
+	}
+}
+
+.applicant.incomplete {
+	margin-bottom: 0;
+	width: 100%;
 }
