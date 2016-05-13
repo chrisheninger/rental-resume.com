@@ -52,11 +52,17 @@
 	.resume--section {
 		margin-bottom: 7.5mm;
 	}
-	.resume--section--income, .resume--section--applicant  {
+	.resume--section--income {
 		margin-bottom: 2.5mm;
 	}
 	.header {
 		display: none;
+	}
+	.incomplete {
+		display: none;
+	}
+	.resume--section--rent {
+		margin-top: -2.5mm;
 	}
 }
 @page {
