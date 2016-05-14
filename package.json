@@ -12,7 +12,7 @@
     "build": "node_modules/.bin/webpack -p",
     "postinstall": "webpack -p",
     "start": "node server.js",
-    "develop": "webpack-dev-server --config webpack-dev.config.js --inline --content-base app --history-api-fallback"
+    "develop": "webpack-dev-server --inline --content-base app --history-api-fallback"
   },
   "contributors": [
     "Chris Heninger <heninger@gmail.com> (http://chrisheninger.com/)",
