@@ -3,16 +3,12 @@ import cloneDeep from 'lodash/cloneDeep';
 
 class Select extends React.Component {
 
-  constructor() {
-    super();
-  }
-
   renderOption(option) {
     return (
       <option
-        value = {option.value}
-        key = {option.text}
-        disabled = {option.disabled || false}
+        value={option.value}
+        key={option.text}
+        disabled={option.disabled || false}
       >
         {option.text}
       </option>

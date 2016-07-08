@@ -91,7 +91,7 @@ class EmploymentHistory extends React.Component {
       <fieldset id="employment" className="fieldset fieldset--employment">
         <legend className="legend legend--employment">Employment History</legend>
         <label className="label label--employment">Next your landlord will want to know a brief history of your income and employment. Don't worry about putting down your first highschool job. Usually a record of the last five years or so will suffice.</label>
-      <img className="img img--employment" src={employmentImage} />
+        <img className="img img--employment" src={employmentImage} alt="Employment history section" />
         <ol className="ol ol--employment">
 
           {employmentHistory.map(this.renderHistory)}

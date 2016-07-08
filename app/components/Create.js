@@ -7,44 +7,42 @@ import RentalHistory from './RentalHistory';
 import EmploymentHistory from './EmploymentHistory';
 import Income from './Income';
 
-class Create extends React.Component {
-  render() {
-    return (
-      <div>
-        <form className="resume-form">
-          <ContactInformation
-            people = {this.props.people}
-            onInputChange = {this.props.onInputChange}
-            onAddSection = {this.props.onAddSection}
-            onRemoveSection = {this.props.onRemoveSection}
-          />
-          <Summary
-            summary = {this.props.summary}
-            onInputChange = {this.props.onInputChange}
-          />
-          <RentalHistory
-            rentalHistory = {this.props.rentalHistory}
-            onInputChange = {this.props.onInputChange}
-            onAddSection = {this.props.onAddSection}
-            onRemoveSection = {this.props.onRemoveSection}
-          />
-          <EmploymentHistory
-            employmentHistory = {this.props.employmentHistory}
-            onInputChange = {this.props.onInputChange}
-            onAddSection = {this.props.onAddSection}
-            onRemoveSection = {this.props.onRemoveSection}
-          />
-          <Income
-            income = {this.props.income}
-            onInputChange = {this.props.onInputChange}
-          />
-          <Link to="/preview" className="btn btn--submit">
-            Preview Rental Resume
-          </Link>
-        </form>
-      </div>
-    );
-  }
+function Create(props) {
+  return (
+    <div>
+      <form className="resume-form">
+        <ContactInformation
+          people={props.people}
+          onInputChange={props.onInputChange}
+          onAddSection={props.onAddSection}
+          onRemoveSection={props.onRemoveSection}
+        />
+        <Summary
+          summary={props.summary}
+          onInputChange={props.onInputChange}
+        />
+        <RentalHistory
+          rentalHistory={props.rentalHistory}
+          onInputChange={props.onInputChange}
+          onAddSection={props.onAddSection}
+          onRemoveSection={props.onRemoveSection}
+        />
+        <EmploymentHistory
+          employmentHistory={props.employmentHistory}
+          onInputChange={props.onInputChange}
+          onAddSection={props.onAddSection}
+          onRemoveSection={props.onRemoveSection}
+        />
+        <Income
+          income={props.income}
+          onInputChange={props.onInputChange}
+        />
+        <Link to="/preview" className="btn btn--submit">
+          Preview Rental Resume
+        </Link>
+      </form>
+    </div>
+  );
 }
 
 Create.propTypes = {

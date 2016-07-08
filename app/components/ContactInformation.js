@@ -38,13 +38,13 @@ class ContactInformation extends React.Component {
           maskChar=" "
           onChange={(event) => onInputChange(event.target.value, ['people', index, 'phone'])}
         />
-        { index > 0 ? (
+        {index > 0 ? (
           <button
             className="btn btn--remove icon-cross"
             onClick={(event) => onRemoveSection(event, 'people', index)}
           >
           </button>
-        ) : null }
+        ) : null}
       </li>
     );
   }
@@ -55,7 +55,7 @@ class ContactInformation extends React.Component {
       <fieldset id="contact" className="fieldset fieldset--contact">
         <legend className="legend legend--contact">Contact</legend>
         <label className="label label--contact">Let's start with the basics. First fill out the relevant contact information for the people that would live in the apartment.</label>
-        <img className="img img--contact" src={contactImage} />
+        <img className="img img--contact" src={contactImage} alt="Contact information section" />
         <ol className="ol ol--contact">
 
           {people.map(this.renderPerson)}

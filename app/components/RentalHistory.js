@@ -46,9 +46,9 @@ class RentalHistory extends React.Component {
         />
         <Select
           className={selectClassNames}
-          options = {stateOptions}
-          value = {history.state || stateOptions[0].value}
-          onChange = {(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}
+          options={stateOptions}
+          value={history.state || stateOptions[0].value}
+          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}
         />
         <InputMask
           className="input input--zip"
@@ -80,12 +80,12 @@ class RentalHistory extends React.Component {
           value={history.reason}
           onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'reason'])}
         />
-        { index !== 0 ? (
+        {index !== 0 ? (
           <button
             className="btn btn--remove icon-cross"
             onClick={(event) => onRemoveSection(event, 'rentalHistory', index)}
           ></button>
-        ) : null }
+        ) : null}
       </li>
     );
   }
@@ -96,7 +96,7 @@ class RentalHistory extends React.Component {
       <fieldset id="rent" className="fieldset fieldset--rent">
         <legend className="legend legend--rent">Rental History</legend>
         <label className="label label--rent">Now let's outline a history of your recent places of residence. This doesn't have to be extensive but be sure to include at least two or three.</label>
-        <img className="img img--rent" src={rentalImage} />
+        <img className="img img--rent" src={rentalImage} alt="Rental history section" />
         <ol className="ol ol--rent">
           {rentalHistory.map(this.renderHistory)}
           <button
