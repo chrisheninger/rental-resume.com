@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-function Header(props) {
+function Header({ printResume }) {
   return (
     <header className="header">
       <nav className="nav">
@@ -19,7 +19,7 @@ function Header(props) {
             <Link to="/preview" title="Preview" className="btn btn--action icon-preview" activeClassName="btn--action--active" />
           </li>
           <li>
-            <button title="Print" className="btn btn--action icon-print" onClick={props.printResume} />
+            <button title="Print" className="btn btn--action icon-print" onClick={printResume} />
           </li>
         </ul>
       </nav>

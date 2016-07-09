@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-function Animations(props) {
+function Animations({ children, location }) {
   const transitionNames = {
     enter: 'transition--enter',
     enterActive: 'is-active',
@@ -15,11 +15,11 @@ function Animations(props) {
       transitionAppearTimeout={400}
       transitionLeave={false}
       transitionEnterTimeout={400}
-      component="div"
       transitionName={transitionNames}
+      component="div"
     >
-      {React.cloneElement(props.children, {
-        key: props.location.pathname,
+      {React.cloneElement(children, {
+        key: location.pathname,
       })}
     </ReactCSSTransitionGroup>
   );

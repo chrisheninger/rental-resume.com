@@ -46,8 +46,6 @@ class ResumeApp extends React.Component {
     this.onRemoveSection = this.onRemoveSection.bind(this);
     this.printResume = this.printResume.bind(this);
     this.generateResumeLink = this.generateResumeLink.bind(this);
-
-    this.renderPage = this.renderPage.bind(this);
   }
 
   componentWillMount() {
