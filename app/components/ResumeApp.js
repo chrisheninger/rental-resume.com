@@ -46,8 +46,6 @@ class ResumeApp extends React.Component {
     this.onRemoveSection = this.onRemoveSection.bind(this);
     this.printResume = this.printResume.bind(this);
     this.generateResumeLink = this.generateResumeLink.bind(this);
-
-    this.renderPage = this.renderPage.bind(this);
   }
 
   componentWillMount() {
@@ -114,43 +112,43 @@ class ResumeApp extends React.Component {
         return (
           <Create
             {...this.props}
-            people = {this.state.people}
-            summary = {this.state.summary}
-            rentalHistory = {this.state.rentalHistory}
-            employmentHistory = {this.state.employmentHistory}
-            income = {this.state.income}
-            onInputChange = {this.onInputChange}
-            onAddSection = {this.onAddSection}
-            onRemoveSection = {this.onRemoveSection}
+            people={this.state.people}
+            summary={this.state.summary}
+            rentalHistory={this.state.rentalHistory}
+            employmentHistory={this.state.employmentHistory}
+            income={this.state.income}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
           />
         );
       case 'Preview':
         return (
           <Preview
             {...this.props}
-            people = {this.state.people}
-            summary = {this.state.summary}
-            rentalHistory = {this.state.rentalHistory}
-            employmentHistory = {this.state.employmentHistory}
-            income = {this.state.income}
+            people={this.state.people}
+            summary={this.state.summary}
+            rentalHistory={this.state.rentalHistory}
+            employmentHistory={this.state.employmentHistory}
+            income={this.state.income}
           />
         );
       default:
-        break;
+        return null;
     }
   }
 
   render() {
     return (
-        <div>
-          <Header
-            {...this.props}
-            printResume = {this.printResume}
-          />
-          <main className="transition">
-            {this.renderPage()}
-          </main>
-        </div>
+      <div>
+        <Header
+          {...this.props}
+          printResume={this.printResume}
+        />
+        <main className="transition">
+          {this.renderPage()}
+        </main>
+      </div>
     );
   }
 

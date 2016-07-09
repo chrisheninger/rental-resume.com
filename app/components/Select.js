@@ -1,20 +1,14 @@
 import React from 'react';
+import cloneDeep from 'lodash/cloneDeep';
 
 class Select extends React.Component {
-
-  constructor() {
-    super();
-
-    this.renderOption = this.renderOption.bind(this);
-    this.renderOptions = this.renderOptions.bind(this);
-  }
 
   renderOption(option) {
     return (
       <option
-        value = {option.value}
-        key = {option.text}
-        disabled = {option.disabled || false}
+        value={option.value}
+        key={option.text}
+        disabled={option.disabled || false}
       >
         {option.text}
       </option>
@@ -30,9 +24,12 @@ class Select extends React.Component {
   }
 
   render() {
+    const selectProps = cloneDeep(this.props);
+    delete selectProps.options;
+
     return (
       <select
-        {...this.props}
+        {...selectProps}
       >
         {this.renderOptions()}
       </select>

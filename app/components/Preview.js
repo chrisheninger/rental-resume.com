@@ -161,11 +161,11 @@ class Preview extends React.Component {
 }
 
 Preview.propTypes = {
-  people: React.PropTypes.any,
-  summary: React.PropTypes.any,
-  rentalHistory: React.PropTypes.any,
-  employmentHistory: React.PropTypes.any,
-  income: React.PropTypes.any,
+  people: React.PropTypes.array,
+  summary: React.PropTypes.string,
+  rentalHistory: React.PropTypes.array,
+  employmentHistory: React.PropTypes.array,
+  income: React.PropTypes.string,
 };
 
 export default Preview;

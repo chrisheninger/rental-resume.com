@@ -227,6 +227,6 @@ module.exports = {
       text: 'WY',
       value: 'WY',
     },
-  ]
+  ],
 
 };
