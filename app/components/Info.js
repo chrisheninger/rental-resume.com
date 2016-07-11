@@ -9,7 +9,7 @@ function Info() {
       <li>
         <span className="faq__question">What is a rental resume?</span>
         <p>
-          A rental resume is a document intended to market yoursef to a potential landlord.
+          A rental resume is a document intended to market yourself to a potential landlord.
           Much like a traditional resume it is a high level view of your background and positive characteristics.
           With city living on the rise there has never been a better time to create a rental resume to land the apartment of your dreams.
         </p>
