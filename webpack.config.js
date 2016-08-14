@@ -10,6 +10,12 @@ var config = {
       filename: 'index.html',
       inject: 'body',
       favicon: path.join(__dirname, '/app/assets/images/favicon.ico')
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '/app/index.html'),
+      filename: '200.html',
+      inject: 'body',
+      favicon: path.join(__dirname, '/app/assets/images/favicon.ico')
     })
   ]
 };
