@@ -27,10 +27,10 @@
   },
   "devDependencies": {
     "eslint": "^3.0.1",
-    "eslint-config-airbnb": "^9.0.1",
+    "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-import": "^1.10.2",
-    "eslint-plugin-jsx-a11y": "^1.5.5",
-    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-jsx-a11y": "^2.1.0",
+    "eslint-plugin-react": "^6.0.0",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
@@ -41,7 +41,7 @@
     "css-loader": "^0.23.1",
     "classnames": "^2.2.3",
     "express": "^4.13.4",
-    "file-loader": "^0.8.5",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.7.1",
     "json-loader": "^0.5.4",
     "lodash": "^4.9.0",
@@ -56,7 +56,7 @@
     "react-input-mask": "^0.7.2",
     "react-router": "^2.0.0",
     "react-addons-css-transition-group": "^15.2.1",
-    "sass-loader": "^3.2.0",
+    "sass-loader": "^4.0.0",
     "store2": "^2.3.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.11"
