@@ -9,10 +9,11 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "node_modules/.bin/webpack -p",
-    "postinstall": "webpack -p",
-    "start": "node server.js",
-    "develop": "webpack-dev-server --inline --content-base app --history-api-fallback"
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack -p",
+    "deploy:staging": "npm run build && surge dist staging.rental-resume.com",
+    "deploy:prod": "npm run build && surge dist rental-resume.com",
+    "develop": "webpack-dev-server --inline --content-base app --history-api-fallback",
+    "start": "npm run develop"
   },
   "contributors": [
     "Chris Heninger <heninger@gmail.com> (http://chrisheninger.com/)",
