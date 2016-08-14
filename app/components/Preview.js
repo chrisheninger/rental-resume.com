@@ -154,7 +154,7 @@ class Preview extends React.Component {
             </ul>
           </section>
         </div>
-        <div className="background"></div>
+        <div className="background" />
       </div>
     );
   }

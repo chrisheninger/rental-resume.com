@@ -1,3 +1,4 @@
+/* globals history */
 import React from 'react';
 import { Link } from 'react-router';
 
@@ -27,7 +28,7 @@ function Info() {
         <p>
           This website was made as a proof of concept by <Link to="http://chrisheninger.com/" target="_blank" rel="noopener noreferrer">Chris Heninger</Link> and <Link to="http://ryanwiemer.com/" target="_blank" rel="noopener noreferrer">Ryan Wiemer</Link>.
           If you have a great idea for a new feature or something to make it better we would love to hear your feedback.
-          Feel free to file an issue on our <Link to="https://github.com/chrisheninger/rental-resume.com/issues" target="_blank"> GitHub repository</Link>.
+          Feel free to file an issue on our <Link to="https://github.com/chrisheninger/rental-resume.com/issues" target="_blank" rel="noopener noreferrer"> GitHub repository</Link>.
         </p>
       </li>
     </ul>

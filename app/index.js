@@ -1,6 +1,4 @@
-import './assets/scss/style.scss';
-require('./assets/js/vendor/modernizr.min.js');
-
+/* globals document, window */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
@@ -9,6 +7,9 @@ import Home from './components/Home';
 import ResumeApp from './components/ResumeApp';
 import NotFound from './components/NotFound';
 import Animations from './components/Animations';
+
+import './assets/scss/style.scss';
+import './assets/js/vendor/modernizr.min.js';
 
 const routes = (
   <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>

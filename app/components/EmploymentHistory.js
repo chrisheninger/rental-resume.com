@@ -57,8 +57,7 @@ class EmploymentHistory extends React.Component {
             id={`remove-employment-section-${index}`}
             className="btn btn--remove icon-cross"
             onClick={(event) => onRemoveSection(event, 'employmentHistory', index)}
-          >
-          </button>
+          />
         ) : null}
       </li>
     );
@@ -71,7 +70,7 @@ class EmploymentHistory extends React.Component {
         <legend className="legend legend--employment">
           Employment History
         </legend>
-        <label className="label label--employment">
+        <label htmlFor="organization-title" className="label label--employment">
           Next your landlord will want to know a brief history of your employment.
           Usually a record of the last 5 years or so will suffice.
         </label>

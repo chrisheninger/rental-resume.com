@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Select from './Select';
 
 import { stateOptions } from '../util/helpers';
+
 const rentalImage = require('../assets/images/rental-history.jpg');
 
 class RentalHistory extends React.Component {
@@ -106,7 +107,7 @@ class RentalHistory extends React.Component {
             id={`remove-rental-section-${index}`}
             className="btn btn--remove icon-cross"
             onClick={(event) => onRemoveSection(event, 'rentalHistory', index)}
-          ></button>
+          />
         ) : null}
       </li>
     );
@@ -119,7 +120,7 @@ class RentalHistory extends React.Component {
         <legend className="legend legend--rent">
           Rental History
         </legend>
-        <label className="label label--rent">
+        <label htmlFor="address-line1" className="label label--rent">
           Now let's outline a history of your recent places of residence.
           This doesn't have to be extensive but be sure to include at least two or three.
         </label>

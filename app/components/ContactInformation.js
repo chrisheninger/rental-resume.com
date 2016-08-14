@@ -52,8 +52,7 @@ class ContactInformation extends React.Component {
             id={`remove-contact-section-${index}`}
             className="btn btn--remove icon-cross"
             onClick={(event) => onRemoveSection(event, 'people', index)}
-          >
-          </button>
+          />
         ) : null}
       </li>
     );
@@ -66,7 +65,7 @@ class ContactInformation extends React.Component {
         <legend className="legend legend--contact">
           Contact
         </legend>
-        <label className="label label--contact">
+        <label htmlFor="name" className="label label--contact">
           Let's start with the basics.
           First fill out the relevant contact information for the people that would live in the apartment.
         </label>
