@@ -43,7 +43,7 @@
     "modernizr-webpack-plugin": "^1.0.5",
     "node-bourbon": "^4.2.3",
     "node-neat": "^1.7.2",
-    "node-sass": "^3.4.2",
+    "node-sass": "^3.9.2",
     "path": "^0.12.7",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
