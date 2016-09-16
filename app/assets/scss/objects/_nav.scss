@@ -2,68 +2,131 @@
  *   Nav   *
  * ------- */
 
-.header {
+//Top Navigation Bar
+.topbar {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	height: 60px;
+	line-height: 60px;
 	background: white;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	@extend %clearfix;
 	z-index: 3;
 	width: 100%;
-	text-align: center;
 	@extend %clearfix;
-	.nav {
-		max-width: 1200px;
-		padding: 0 1em;
-		margin: 0 auto;
-		@include bp(medium) {
-			padding: 0 2em;
-		}
-	}
-	ul {
-		position: relative;
-		margin: 0 auto;
-		float: right;
-	}
-	li {
-		display: inline-block;
-		float: left;
-	}
-	a {
-		line-height: 60px;
-		text-decoration: none;
-		display: block;
-	}
-	h1 {
-		display: block;
-	}
-  @include bp(medium) {
-		display: block;
-	}
 }
 
-//Logo
 .logo {
+	text-decoration: none;
+	margin-left: 1em;
 	float: left;
 	color: $base;
 	font-weight: bold;
 }
 
-.no-touchevents .logo a:hover, .no-touchevents .btn--list:hover {
-	color: gray!important;
+.toggle {
+	position: relative;
+	float: right;
+	margin-right: 1em;
+	line-height: 60px;
+	span {
+		position: absolute;
+		background: $base;
+		display: block;
+		transition: all 300ms ease out;
+		-webkit-transition: all 300ms ease-out;
+		transform-origin: 50% 50%;
+		-webkit-transform-origin: 50% 50%;
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	&:hover {
+		color: gray;
+		span {
+			background: gray;
+		}
+	}
 }
+
+.horizontal {
+	top: 30px;
+	left: -14px;
+	width: 9px;
+	height: 1px
+}
+
+.vertical {
+	top: 26px;
+	left: -10px;
+	width: 1px;
+	height: 9px
+}
+
+.toggle--active .vertical{
+	opacity: 0;
+	height: 1px;
+	top: 30px;
+}
+
+
+
+
+
+
+
+
+
+//Off Canvas Nav
+.nav {
+		transition: all 300ms ease out;
+		-webkit-transition: all 300ms ease-out;
+		position: fixed;
+		right: 0;
+		transform: translate3d(250px,0,0);
+		top: 60px;
+		bottom: 0;
+		background: gray;
+		z-index: 99;
+	ul {
+		float: right;
+	}
+	li {}
+	a {}
+	.btn {
+		text-decoration: none;
+	}
+}
+
+.toggle--active .nav {
+	transform: translate3d(0,0,0);
+}
+
+.transition {
+	//transform: translate3d(0,0,0);
+	transition: all 300ms ease out;
+	-webkit-transition: all 300ms ease-out;
+}
+
+.toggle--active .transition {
+		transform: translate3d(-250px,0,0);
+}
+
+
+
+
+
+
+
+
+
+
 
 //Nav Buttons
 .btn--action {
-	padding: 0 1.17em!important;
-	line-height: 59px!important;
-	border-right: 1px solid darken($secondary, 5%);
   color: darken($secondary,10%);
 	position: relative;
-	z-index: 99;
 }
 
 .btn--action--active {

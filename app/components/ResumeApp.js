@@ -91,6 +91,11 @@ class ResumeApp extends React.Component {
     }
   }
 
+  openMenu() {
+    var app = document.getElementById('app');
+    app.classList.toggle('toggle--active');
+  }
+
   generateResumeLink(event) {
     event.preventDefault();
     console.log(`/?data=${encodeURIComponent(JSON.stringify(this.state))}`);
@@ -145,6 +150,7 @@ class ResumeApp extends React.Component {
         <Header
           {...this.props}
           printResume={this.printResume}
+          openMenu={this.openMenu}
         />
         <main className="transition">
           {this.renderPage()}
