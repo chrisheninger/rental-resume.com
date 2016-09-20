@@ -10,6 +10,9 @@
 	top: 0;
 	z-index: 999;
 	border-bottom: 1px solid $secondary;
+	@include bp(medium) {
+		border: 0;
+	}
 }
 
  .nav {
@@ -30,6 +33,7 @@
 	}
  	ul {
  		float: left;
+		clear: both;
  		padding: 2em;
  	}
  	li {

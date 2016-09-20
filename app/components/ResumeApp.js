@@ -6,7 +6,7 @@ import store from 'store2';
 import { tryParseJSON } from '../util/helpers';
 
 import Header from './Header';
-import Info from './Info';
+import Intro from './Intro';
 import Create from './Create';
 import Preview from './Preview';
 
@@ -91,9 +91,14 @@ class ResumeApp extends React.Component {
     }
   }
 
-  openMenu() {
-    var app = document.getElementById('app');
+  toggleMenu() {
+    const app = document.getElementById('app');
     app.classList.toggle('toggle--active');
+  }
+
+  closeMenu() {
+    const app = document.getElementById('app');
+    app.classList.remove('toggle--active');
   }
 
   generateResumeLink(event) {
@@ -103,14 +108,14 @@ class ResumeApp extends React.Component {
 
   renderPage() {
     const pageMap = {
-      '/info': 'Info',
+      '/intro': 'Intro',
       '/create': 'Create',
       '/preview': 'Preview',
     };
     switch (pageMap[this.props.location.pathname]) {
-      case 'Info':
+      case 'Intro':
         return (
-          <Info
+          <Intro
             {...this.props}
           />
         );
@@ -150,7 +155,8 @@ class ResumeApp extends React.Component {
         <Header
           {...this.props}
           printResume={this.printResume}
-          openMenu={this.openMenu}
+          toggleMenu={this.toggleMenu}
+          closeMenu={this.closeMenu}
         />
         <main className="transition">
           {this.renderPage()}

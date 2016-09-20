@@ -2,11 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-function Info() {
+function Intro() {
   return (
+    <section className="page">
+    <div className="page__header page__header--intro">
+      <h1 className="page__title">Introduction</h1>
+    </div>
     <ul className="faq">
-      <button className="btn btn--back" onClick={() => (history.back(-1))}>&larr; Back</button>
-      <h1 className="faq__title">Info</h1>
       <li>
         <span className="faq__question">What is a rental resume?</span>
         <p>
@@ -32,6 +34,7 @@ function Info() {
         </p>
       </li>
     </ul>
+    </section>
   );
 }
-export default Info;
+export default Intro;

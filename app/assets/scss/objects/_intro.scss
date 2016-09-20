@@ -1,12 +1,16 @@
 /* --------- *
- *   Info   *
+ *   Intro   *
  * --------- */
+
+.page__header--intro {
+	background-image: url(../../assets/images/rental-history.jpg);
+}
 
 .faq {
 	position: relative;
 	max-width: 600px;
 	padding: 0 1em;
-	margin: 90px auto 0;
+	margin: 60px auto 0;
 	text-align: center;
 	.faq__title {
 		font-weight: bold;
@@ -27,15 +31,4 @@
 	li {
 		margin-bottom: 2em;
 	}
-}
-
-.btn--back {
-	position: absolute;
-	left: .5em;
-	top: 0;
-	text-decoration: underline;
-}
-
-.no-touchevents .btn--back:hover {
-	color: $highlight;
 }
