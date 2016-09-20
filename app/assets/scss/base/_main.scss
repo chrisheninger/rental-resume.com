@@ -4,4 +4,9 @@
 #app {
 	@extend %clearfix;
 	margin: 0;
+	width: 100%;
+	@include bp(medium) {
+		width: 67%;
+		margin-left: 33%;
+	}
 }

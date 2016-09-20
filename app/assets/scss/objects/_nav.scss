@@ -2,35 +2,97 @@
  *   Nav   *
  * ------- */
 
-//Top Navigation Bar
-.topbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 60px;
-	line-height: 60px;
+.header {
 	background: white;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-	@extend %clearfix;
-	z-index: 3;
 	width: 100%;
 	@extend %clearfix;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	border-bottom: 1px solid $secondary;
 }
+
+ .nav {
+ 		transition: all 300ms ease out;
+ 		-webkit-transition: all 300ms ease-out;
+		width: 300px;
+		transform: translate3d(-300px,0,0);
+ 		position: fixed;
+ 		left: 0;
+ 		top: 0;
+ 		bottom: 0;
+ 		background: lighten($base, 5%);
+ 		z-index: 99;
+ 		padding: 4em 2em 0 2em;
+	@include bp(medium) {
+		width: 33%;
+		transform: translate3d(0,0,0);
+	}
+ 	ul {
+ 		float: left;
+ 		padding: 2em;
+ 	}
+ 	li {
+ 		margin-bottom: 1em;
+ 		list-style: disc;
+ 	}
+ 	a {}
+ 	.btn {
+ 		text-decoration: none;
+ 	}
+ }
+
+ .toggle--active .nav {
+ 	transform: translate3d(0,0,0);
+ }
+
+.toggle__close {
+	color: darken($secondary,35%);
+	position: absolute;
+	font-size: 1.5em;
+	top: .75em;
+	right: .75em;
+	@include bp(medium) {
+		display: none;
+	}
+	&:hover {
+		color: white;
+	}
+}
+
+
+
 
 .logo {
 	text-decoration: none;
-	margin-left: 1em;
+	margin-left: 2em;
 	float: left;
-	color: $base;
+	color: white;
 	font-weight: bold;
 }
+
+.logo--mobile {
+	text-decoration: none;
+	float: left;
+	font-weight: bold;
+	color: $base;
+	margin-left: 1em;
+	line-height: 50px;
+	@include bp(medium) {
+		display: none;
+	}
+}
+
+
 
 .toggle {
 	position: relative;
 	float: right;
 	margin-right: 1em;
-	line-height: 60px;
+	line-height: 50px;
+	@include bp(medium) {
+		display: none;
+	}
 	span {
 		position: absolute;
 		background: $base;
@@ -51,14 +113,14 @@
 }
 
 .horizontal {
-	top: 30px;
+	top: 24px;
 	left: -14px;
 	width: 9px;
 	height: 1px
 }
 
 .vertical {
-	top: 26px;
+	top: 20px;
 	left: -10px;
 	width: 1px;
 	height: 9px
@@ -67,82 +129,26 @@
 .toggle--active .vertical{
 	opacity: 0;
 	height: 1px;
-	top: 30px;
 }
-
-
-
-
-
-
-
-
-
-//Off Canvas Nav
-.nav {
-		transition: all 300ms ease out;
-		-webkit-transition: all 300ms ease-out;
-		position: fixed;
-		right: 0;
-		transform: translate3d(250px,0,0);
-		top: 60px;
-		bottom: 0;
-		background: gray;
-		z-index: 99;
-	ul {
-		float: right;
-	}
-	li {}
-	a {}
-	.btn {
-		text-decoration: none;
-	}
-}
-
-.toggle--active .nav {
-	transform: translate3d(0,0,0);
-}
-
-.transition {
-	//transform: translate3d(0,0,0);
-	transition: all 300ms ease out;
-	-webkit-transition: all 300ms ease-out;
-}
-
-.toggle--active .transition {
-		transform: translate3d(-250px,0,0);
-}
-
-
-
-
-
-
-
-
 
 
 
 //Nav Buttons
 .btn--action {
-  color: darken($secondary,10%);
+  color: darken($secondary,35%);
 	position: relative;
 }
 
 .btn--action--active {
-	background: $highlight;
+	//background: $highlight;
 	color: white;
 }
 
 .no-touchevents .btn--action:hover {
-	color: $highlight;
+	//color: $highlight;
 }
 
 .no-touchevents .btn--action--active:hover {
-  background: darken($highlight, 5%);
-	color: white;
-}
-
-.icon-info {
-	border-left: 1px solid darken($secondary, 5%);
+  //background: darken($highlight, 5%);
+	//color: white;
 }

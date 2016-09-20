@@ -4,15 +4,13 @@ import { Link } from 'react-router';
 function Header({ printResume, openMenu }) {
   return (
     <header className="header">
-      <div className="topbar">
-        <Link className="logo" to="/">Rental Resume</Link>
-        <button className="toggle" onClick={openMenu}>
-          Menu
-          <span className="vertical"></span>
-          <span className="horizontal"></span>
-        </button>
-      </div>
+      <Link className="logo--mobile" to="/">Rental Resume</Link>
+      <button className="toggle" onClick={openMenu}>
+        Menu
+      </button>
       <nav className="nav">
+        <Link className="logo" to="/">Rental Resume</Link>
+          <button className="toggle__close icon-cross" onClick={openMenu} />
         <ul>
           <li>
             <Link to="/info" title="Info" className="btn btn--action" activeClassName="btn--action--active">Introduction</Link>
