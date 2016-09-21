@@ -9,9 +9,12 @@ function Header({ printResume, toggleMenu, closeMenu }) {
         Menu
       </button>
       <nav className="nav">
-        <Link className="logo" to="/">Rental Resume</Link>
         <button className="toggle__close icon-cross" onClick={closeMenu} />
         <ul>
+        <Link to="/" div className="logo">
+          <span className="icon icon-preview" />
+          <h1 to="/">Rental Resume</h1>
+        </Link>
           <li>
             <Link to="/intro" title="Intro" className="btn btn--action" activeClassName="btn--action--active" onClick={closeMenu}>Introduction</Link>
           </li>

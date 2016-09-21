@@ -28,7 +28,7 @@ body, p, input, textarea, select, button, select, option, textarea  {
     font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], .icon {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icons' !important;
     speak: none;

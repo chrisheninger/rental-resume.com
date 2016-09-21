@@ -26,7 +26,7 @@
  		bottom: 0;
  		background: lighten($base, 5%);
  		z-index: 99;
- 		padding: 4em 2em 0 2em;
+ 		padding: 4em 2em 0 3em;
 	@include bp(medium) {
 		width: 33%;
 		transform: translate3d(0,0,0);
@@ -34,16 +34,16 @@
  	ul {
  		float: left;
 		clear: both;
- 		padding: 2em;
+ 		padding: 0;
  	}
  	li {
  		margin-bottom: 1em;
+		clear: both;
  		list-style: disc;
  	}
- 	a {}
- 	.btn {
- 		text-decoration: none;
- 	}
+	a {
+		text-decoration: none;
+	}
  }
 
  .toggle--active .nav {
@@ -68,11 +68,29 @@
 
 
 .logo {
-	text-decoration: none;
-	margin-left: 2em;
+	display: inline-block;
+	margin-bottom: 2em;
 	float: left;
-	color: white;
-	font-weight: bold;
+	text-decoration: none;
+	clear: both;
+	//background: darken($base, 1%);
+	//border: 2px solid darken($base, 1%);
+	padding: .25em;
+	h1 {
+		color: white;
+		//font-weight: bold;
+		line-height: 1.1;
+		font-size: 1.1em;
+	}
+	span {
+		float: left;
+		font-size: 2.25em;
+		color: white;
+		margin: 0 .25em 0 0;
+	}
+	&:hover {
+		//opacity: .5;
+	}
 }
 
 .logo--mobile {
