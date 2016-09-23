@@ -6,32 +6,31 @@ function Header({ printResume, toggleMenu, closeMenu }) {
     <header className="header">
       <Link className="logo--mobile" to="/">Rental Resume</Link>
       <button className="toggle" onClick={toggleMenu}>
-        Menu
+        <span class="toggle__bars"></span>
       </button>
       <nav className="nav">
-        <button className="toggle__close icon-cross" onClick={closeMenu} />
         <ul>
-        <Link to="/" div className="logo">
-          <span className="icon icon-preview" />
-          <h1 to="/">Rental Resume</h1>
-        </Link>
+          <Link to="/" div className="logo">
+            <span className="icon-resume" />
+            <h1 to="/">Rental Resume</h1>
+          </Link>
           <li>
-            <Link to="/intro" title="Intro" className="btn btn--action" activeClassName="btn--action--active" onClick={closeMenu}>Introduction</Link>
+            <Link to="/intro" title="Intro" className="btn btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>Introduction</Link>
           </li>
           <li>
-            <Link to="/create" title="Create" className="btn btn--action" activeClassName="btn--action--active" onClick={closeMenu}>Contact</Link>
+            <Link to="/create" title="Create" className="btn btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>Contact</Link>
           </li>
           <li>
-            <Link to="#" title="Summary" className="btn btn--action" activeClassName="btn--action--active" onClick={closeMenu}>Summary</Link>
+            <Link to="#" title="Summary" className="btn btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>Summary</Link>
           </li>
           <li>
-            <Link to="#" title="Rental History" className="btn btn--action" activeClassName="btn--action--active" onClick={closeMenu}>Rental History</Link>
+            <Link to="#" title="Rental History" className="btn btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>Rental History</Link>
           </li>
           <li>
-            <Link to="#" title="Employment History" className="btn btn--action" activeClassName="btn--action--active" onClick={closeMenu}>Employment History</Link>
+            <Link to="#" title="Employment History" className="btn btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>Employment History</Link>
           </li>
           <li>
-            <Link to="/preview" title="Preview" className="btn btn--action" activeClassName="btn--action--active" onClick={printResume}>Preview</Link>
+            <Link to="/preview" title="Preview" className="btn btn--nav" activeClassName="btn--nav--active" onClick={printResume}>Preview</Link>
           </li>
         </ul>
       </nav>

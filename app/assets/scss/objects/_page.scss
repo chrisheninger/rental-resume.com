@@ -3,7 +3,10 @@
  * --------- */
 
 .page {
+	background: $secondary;
 	margin-top: 50px;
+	@extend %clearfix;
+	min-height: 100vh;
 	@include bp(medium) {
 		margin: 0;
 	}
