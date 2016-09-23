@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import InputMask from 'react-input-mask';
 
 const contactImage = require('../assets/images/contact.jpg');

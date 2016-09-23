@@ -14,21 +14,20 @@
 		border: 0;
 	}
 }
-
- .nav {
- 		transition: all 300ms ease out;
- 		-webkit-transition: all 300ms ease-out;
-		width: 300px;
-		transform: translate3d(-300px,0,0);
- 		position: fixed;
- 		left: 0;
- 		top: 0;
- 		bottom: 0;
- 		background: white;
- 		z-index: 99;
- 		padding: 4em 2em 0 3em;
-		border-right: 1px solid $secondary;
-		box-shadow: 0 0 0 1px rgba(0,0,0,0.1),0 2px 15px rgba(0,0,0,0.1);
+.nav {
+	transition: all 300ms ease out;
+	-webkit-transition: all 300ms ease-out;
+	width: 300px;
+	transform: translate3d(-300px,0,0);
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: white;
+	z-index: 99;
+	padding: 4em 2em 0 3em;
+	border-right: 1px solid $secondary;
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.1),0 2px 15px rgba(0,0,0,0.1);
 	@include bp(medium) {
 		width: 33%;
 		transform: translate3d(0,0,0);
@@ -41,13 +40,17 @@
 		max-width: 300px;
  	}
  	li {
- 		margin-bottom: 1em;
+ 		margin: 0 0 .5em 1em;
 		clear: both;
  	}
 	a {
 		text-decoration: none;
 	}
  }
+
+ .toggle--active .nav {
+  	transform: translate3d(0,0,0);
+  }
 
 .logo {
 	display: inline-block;
@@ -84,8 +87,6 @@
 }
 
 //Fancy Toggle Button
-
-
 .toggle {
 	display: block;
 	position: absolute;
@@ -135,34 +136,60 @@
   transform: rotate(-45deg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.toggle--active .nav {
- 	transform: translate3d(0,0,0);
- }
-
 //Nav Buttons
 .btn--nav {
   color: lighten($base, 50%);
-	position: relative;
 }
 
 .btn--nav--active {
-	//background: $highlight;
 	color: $base;
+	.btn--nav__lines {
+		background: $base;
+	}
+}
+
+.btn--nav__lines {
+	content: "";
+	display: block;
+	background: darken($secondary, 10%);
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	top: 10px;
+	position: relative;
+	right: 1em;
+	&:after {
+		content: "";
+		display: block;
+		background: $secondary;
+		height: 30px;
+		width: 2px;
+		position: relative;
+		left: 2px;
+		top: 6px;
+	}
+}
+
+.btn--nav__lines--last {
+	&:after {
+		display: none;
+	}
+}
+
+.btn--preview {
+	position: relative;
+	top: 1.5em;
+	right: 1em;
+	padding: .25em .5em;
+	background: $highlight;
+	color: white;
+	border-radius: 2px;
+	.icon-print {
+		margin-right: .25em;
+		position: relative;
+		top: 2px;
+	}
+ 	&:before, &:after {
+		display: none;
+	}
 }

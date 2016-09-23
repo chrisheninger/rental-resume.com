@@ -16,7 +16,7 @@ const routes = (
     <Route component={Animations}>
       <Route path="/" component={Home} />
       <Route path="/intro" component={ResumeApp} />
-      <Route path="/contact-information" component={ResumeApp} />
+      <Route path="/contact" component={ResumeApp} />
       <Route path="/create" component={ResumeApp} />
       <Route path="/preview" component={ResumeApp} />
       <Route path="*" component={NotFound} />

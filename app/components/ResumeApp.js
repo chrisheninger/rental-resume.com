@@ -7,6 +7,7 @@ import { tryParseJSON } from '../util/helpers';
 
 import Header from './Header';
 import Intro from './Intro';
+import ContactInformation from './ContactInformation';
 import Create from './Create';
 import Preview from './Preview';
 
@@ -111,12 +112,23 @@ class ResumeApp extends React.Component {
       '/intro': 'Intro',
       '/create': 'Create',
       '/preview': 'Preview',
+      '/contact': 'ContactInformation',
     };
     switch (pageMap[this.props.location.pathname]) {
       case 'Intro':
         return (
           <Intro
             {...this.props}
+          />
+        );
+      case 'ContactInformation':
+        return (
+          <ContactInformation
+            {...this.props}
+            people={this.state.people}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
           />
         );
       case 'Create':
