@@ -2,10 +2,11 @@ import React from 'react';
 
 function Income({ income, onInputChange }) {
   return (
+    <section className="page">
+      <div className="page__header">
+        <h1 className="page__title">Finances</h1>
+      </div>
     <fieldset className="fieldset fieldset--income">
-      <legend className="legend legend--income">
-        Household Income
-      </legend>
       <label className="label label--income">
         Last but not least your landlord will want to know your annual household income.
         Feel free to be as exact or vague as you are comfortable sharing with your landlord.
@@ -24,6 +25,7 @@ function Income({ income, onInputChange }) {
         />
       </div>
     </fieldset>
+    </section>
   );
 }
 

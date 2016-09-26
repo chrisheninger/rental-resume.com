@@ -176,7 +176,30 @@
 	}
 }
 
+
+
 .btn--preview {
+	position: relative;
+	top: 1.5em;
+	right: 1em;
+	padding: .25em .5em;
+	background: $highlight;
+	color: white;
+	border-radius: 2px;
+	margin-right: .5em;
+	.icon-preview {
+		margin-right: .25em;
+		position: relative;
+		top: 2px;
+	}
+ 	&:before, &:after {
+		display: none;
+	}
+}
+
+
+
+.btn--print {
 	position: relative;
 	top: 1.5em;
 	right: 1em;

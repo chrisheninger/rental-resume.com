@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import InputMask from 'react-input-mask';
 
-const contactImage = require('../assets/images/contact.jpg');
-
 class ContactInformation extends React.Component {
 
   constructor() {
@@ -62,30 +60,26 @@ class ContactInformation extends React.Component {
   render() {
     const { people, onAddSection } = this.props;
     return (
-      <fieldset id="contact" className="fieldset fieldset--contact">
-        <legend className="legend legend--contact">
-          Contact
-        </legend>
-        <label htmlFor="name" className="label label--contact">
-          Let's start with the basics.
-          First fill out the relevant contact information for the people that would live in the apartment.
-        </label>
-        <img
-          id="contact-section-image"
-          className="img img--contact"
-          src={contactImage}
-          alt="Contact information section"
-        />
-        <ol className="ol ol--contact">
-          {people.map(this.renderPerson)}
-          <button
-            className="btn btn--add"
-            onClick={(event) => onAddSection(event, 'people')}
-          >
-            Add Another Person
-          </button>
-        </ol>
-      </fieldset>
+      <section className="page">
+        <div className="page__header">
+          <h1 className="page__title">Applicant</h1>
+        </div>
+        <fieldset id="contact" className="fieldset fieldset--contact">
+          <label htmlFor="name" className="label label--contact">
+            Let's start with the basics.
+            First fill out the relevant contact information for the people that would live in the apartment.
+          </label>
+          <ol className="ol ol--contact">
+            {people.map(this.renderPerson)}
+            <button
+              className="btn btn--add"
+              onClick={(event) => onAddSection(event, 'people')}
+            >
+              Add Another Person
+            </button>
+          </ol>
+        </fieldset>
+      </section>
     );
   }
 

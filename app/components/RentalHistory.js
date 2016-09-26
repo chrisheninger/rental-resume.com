@@ -5,8 +5,6 @@ import Select from './Select';
 
 import { stateOptions } from '../util/helpers';
 
-const rentalImage = require('../assets/images/rental-history.jpg');
-
 class RentalHistory extends React.Component {
 
   constructor() {
@@ -116,20 +114,15 @@ class RentalHistory extends React.Component {
   render() {
     const { rentalHistory, onAddSection } = this.props;
     return (
+      <section className="page">
+        <div className="page__header">
+          <h1 className="page__title">Rental History</h1>
+        </div>
       <fieldset id="rent" className="fieldset fieldset--rent">
-        <legend className="legend legend--rent">
-          Rental History
-        </legend>
         <label htmlFor="address-line1" className="label label--rent">
           Now let's outline a history of your recent places of residence.
           This doesn't have to be extensive but be sure to include at least two or three.
         </label>
-        <img
-          id="rental-section-image"
-          className="img img--rent"
-          src={rentalImage}
-          alt="Rental history section"
-        />
         <ol className="ol ol--rent">
           {rentalHistory.map(this.renderHistory)}
           <button
@@ -141,6 +134,7 @@ class RentalHistory extends React.Component {
           </button>
         </ol>
       </fieldset>
+      </section>
     );
   }
 

@@ -1,7 +1,5 @@
 import React from 'react';
 
-const employmentImage = require('../assets/images/employment-history.jpg');
-
 class EmploymentHistory extends React.Component {
 
   constructor() {
@@ -66,20 +64,15 @@ class EmploymentHistory extends React.Component {
   render() {
     const { employmentHistory, onAddSection } = this.props;
     return (
+      <section className="page">
+        <div className="page__header">
+          <h1 className="page__title">Employment History</h1>
+        </div>
       <fieldset id="employment" className="fieldset fieldset--employment">
-        <legend className="legend legend--employment">
-          Employment History
-        </legend>
         <label htmlFor="organization-title" className="label label--employment">
           Next your landlord will want to know a brief history of your employment.
           Usually a record of the last 5 years or so will suffice.
         </label>
-        <img
-          id="employment-section-image"
-          className="img img--employment"
-          src={employmentImage}
-          alt="Employment history section"
-        />
         <ol className="ol ol--employment">
           {employmentHistory.map(this.renderHistory)}
           <button
@@ -91,6 +84,7 @@ class EmploymentHistory extends React.Component {
           </button>
         </ol>
       </fieldset>
+      </section>
     );
   }
 

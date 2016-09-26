@@ -21,34 +21,43 @@ function Header({ printResume, toggleMenu, closeMenu }) {
             </Link>
           </li>
           <li>
-            <Link to="/contact" title="Contact" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+            <Link to="/applicant" title="Applicant" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
               <span className="btn--nav__lines" />
-              Contact
+              Applicant
             </Link>
           </li>
           <li>
-            <Link to="#" title="Summary" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+            <Link to="/summary" title="Summary" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
               <span className="btn--nav__lines" />
               Summary
             </Link>
           </li>
           <li>
-            <Link to="#" title="Rental History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+            <Link to="/rental-history" title="Rental History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
             <span className="btn--nav__lines" />
             Rental History
             </Link>
           </li>
           <li>
-            <Link to="#" title="Employment History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
-              <span className="btn--nav__lines btn--nav__lines--last" />
+            <Link to="/employment-history" title="Employment History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines" />
               Employment History
             </Link>
-
           </li>
           <li>
-            <Link to="/preview" title="Preview" className="btn--nav btn--preview" activeClassName="btn--nav--active" onClick={printResume}>
-              <span className="icon-print" />
+            <Link to="/finances" title="Finances" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines btn--nav__lines--last" />
+              Finances
+            </Link>
+          </li>
+          <li>
+            <Link to="/preview" title="preview" className="btn--nav btn--preview" activeClassName="btn--nav--active">
+              <span className="icon-preview" />
               Preview
+            </Link>
+            <Link to="/preview" title="print" className="btn--nav btn--print" activeClassName="btn--nav--active" onClick={printResume}>
+              <span className="icon-print" />
+              Print
             </Link>
           </li>
         </ul>

@@ -8,7 +8,11 @@ import { tryParseJSON } from '../util/helpers';
 import Header from './Header';
 import Intro from './Intro';
 import ContactInformation from './ContactInformation';
-import Create from './Create';
+import Summary from './Summary';
+import RentalHistory from './RentalHistory';
+import EmploymentHistory from './EmploymentHistory';
+import Income from './Income';
+// import Create from './Create';
 import Preview from './Preview';
 
 class ResumeApp extends React.Component {
@@ -112,7 +116,11 @@ class ResumeApp extends React.Component {
       '/intro': 'Intro',
       '/create': 'Create',
       '/preview': 'Preview',
-      '/contact': 'ContactInformation',
+      '/applicant': 'ContactInformation',
+      '/summary': 'Summary',
+      '/rental-history': 'RentalHistory',
+      '/employment-history': 'EmploymentHistory',
+      '/finances': 'Income',
     };
     switch (pageMap[this.props.location.pathname]) {
       case 'Intro':
@@ -126,6 +134,43 @@ class ResumeApp extends React.Component {
           <ContactInformation
             {...this.props}
             people={this.state.people}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
+          />
+        );
+      case 'Summary':
+        return (
+          <Summary
+            {...this.props}
+            summary={this.state.summary}
+          />
+        );
+      case 'RentalHistory':
+        return (
+          <RentalHistory
+            {...this.props}
+            rentalHistory={this.state.rentalHistory}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
+          />
+        );
+      case 'EmploymentHistory':
+        return (
+          <EmploymentHistory
+            {...this.props}
+            employmentHistory={this.state.employmentHistory}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
+          />
+        );
+      case 'Income':
+        return (
+          <Income
+            {...this.props}
+            income={this.state.income}
             onInputChange={this.onInputChange}
             onAddSection={this.onAddSection}
             onRemoveSection={this.onRemoveSection}
