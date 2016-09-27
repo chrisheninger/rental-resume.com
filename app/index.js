@@ -20,7 +20,7 @@ const routes = (
       <Route path="/summary" component={ResumeApp} />
       <Route path="/rental-history" component={ResumeApp} />
       <Route path="/employment-history" component={ResumeApp} />
-      <Route path="/finances" component={ResumeApp} />
+      <Route path="/income" component={ResumeApp} />
       <Route path="/preview" component={ResumeApp} />
       <Route path="*" component={NotFound} />
     </Route>

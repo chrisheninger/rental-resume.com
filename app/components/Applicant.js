@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
 import InputMask from 'react-input-mask';
 
-class ContactInformation extends React.Component {
+class Applicant extends React.Component {
 
   constructor() {
     super();
@@ -58,17 +57,22 @@ class ContactInformation extends React.Component {
   }
 
   render() {
-    const { people, onAddSection } = this.props;
+    const { people, onAddSection, toggleHeader } = this.props;
     return (
       <section className="page">
         <div className="page__header">
-          <h1 className="page__title">Applicant</h1>
+          <div className="page__header__container">
+            <h1 className="page__title">Applicant</h1>
+            <p className="page__subtitle">
+              Let's start with the basics.
+              First fill out the relevant contact information for the people that would live in the apartment.
+            </p>
+            <button className="btn--header" onClick={toggleHeader}>
+              <span />
+            </button>
+          </div>
         </div>
         <fieldset id="contact" className="fieldset fieldset--contact">
-          <label htmlFor="name" className="label label--contact">
-            Let's start with the basics.
-            First fill out the relevant contact information for the people that would live in the apartment.
-          </label>
           <ol className="ol ol--contact">
             {people.map(this.renderPerson)}
             <button
@@ -85,11 +89,12 @@ class ContactInformation extends React.Component {
 
 }
 
-ContactInformation.propTypes = {
+Applicant.propTypes = {
   people: React.PropTypes.array,
   onInputChange: React.PropTypes.func,
   onAddSection: React.PropTypes.func,
   onRemoveSection: React.PropTypes.func,
+  toggleHeader: React.PropTypes.func,
 };
 
-export default ContactInformation;
+export default Applicant;

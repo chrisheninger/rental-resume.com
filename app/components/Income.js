@@ -1,16 +1,21 @@
 import React from 'react';
 
-function Income({ income, onInputChange }) {
+function Income({ income, onInputChange, toggleHeader }) {
   return (
     <section className="page">
       <div className="page__header">
-        <h1 className="page__title">Finances</h1>
+        <div className="page__header__container">
+          <h1 className="page__title">Income</h1>
+          <p className="page__subtitle">
+            Last but not least your landlord will want to know your annual household income.
+            Feel free to be as exact or vague as you are comfortable sharing with your landlord.
+          </p>
+          <button className="btn--header" onClick={toggleHeader}>
+            <span />
+          </button>
+        </div>
       </div>
     <fieldset className="fieldset fieldset--income">
-      <label className="label label--income">
-        Last but not least your landlord will want to know your annual household income.
-        Feel free to be as exact or vague as you are comfortable sharing with your landlord.
-      </label>
       <div className="input-group">
         <span className="input-prefix">$</span>
         <input
@@ -32,6 +37,7 @@ function Income({ income, onInputChange }) {
 Income.propTypes = {
   income: React.PropTypes.string,
   onInputChange: React.PropTypes.func,
+  toggleHeader: React.PropTypes.func,
 };
 
 

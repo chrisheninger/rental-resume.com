@@ -22,7 +22,7 @@ class Preview extends React.Component {
     if (!applicant.name || !applicant.email || !applicant.phone) {
       return (
         <li className="applicant incomplete" key={index}>
-          <Link to="/create">This section is incomplete</Link>
+          <Link to="/applicant">This section is incomplete</Link>
         </li>
       );
     }
@@ -41,7 +41,7 @@ class Preview extends React.Component {
         <section className="resume--section resume--section--income">
           <h2 className="resume--subtitle">Income</h2>
           <p className="applicant-income incomplete">
-            <Link to="/create">This section is incomplete</Link>
+            <Link to="/income">This section is incomplete</Link>
           </p>
         </section>
       );
@@ -60,16 +60,16 @@ class Preview extends React.Component {
     if (!summary) {
       return (
         <section className="resume--section resume--section--summary">
-          <h2 className="resume--subtitle">About</h2>
+          <h2 className="resume--subtitle">Summary</h2>
           <p className="applicant-summary incomplete">
-            <Link to="/create">This section is incomplete</Link>
+            <Link to="/summary">This section is incomplete</Link>
           </p>
         </section>
       );
     }
     return (
       <section className="resume--section resume--section--summary">
-        <h2 className="resume--subtitle">About</h2>
+        <h2 className="resume--subtitle">Summary</h2>
         <p className="applicant-summary">
           {summary}
         </p>
@@ -84,7 +84,7 @@ class Preview extends React.Component {
     if (!employment.title || !employment.company || !employment.dateStart || !employment.dateEnd) {
       return (
         <li className="job incomplete" key={index}>
-          <Link to="/create">This section is incomplete</Link>
+          <Link to="/employment-history">This section is incomplete</Link>
         </li>
       );
     }
@@ -107,7 +107,7 @@ class Preview extends React.Component {
     if (!rental.address1 || !rental.city || !rental.state || !rental.zip || !rental.dateStart || !rental.dateEnd || !rental.reason) {
       return (
         <li className="apartment incomplete" key={index}>
-          <Link to="/create">This section is incomplete</Link>
+          <Link to="/rental-history">This section is incomplete</Link>
         </li>
       );
     }
@@ -128,7 +128,7 @@ class Preview extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <section className="page">
         <div className="resume">
           <header className="resume--header">
             <h1 className="resume--title">Rental Resume</h1>
@@ -154,8 +154,7 @@ class Preview extends React.Component {
             </ul>
           </section>
         </div>
-        <div className="background" />
-      </div>
+      </section>
     );
   }
 }

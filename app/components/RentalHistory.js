@@ -112,17 +112,22 @@ class RentalHistory extends React.Component {
   }
 
   render() {
-    const { rentalHistory, onAddSection } = this.props;
+    const { rentalHistory, onAddSection, toggleHeader } = this.props;
     return (
       <section className="page">
         <div className="page__header">
-          <h1 className="page__title">Rental History</h1>
+          <div className="page__header__container">
+            <h1 className="page__title">Rental History</h1>
+            <p className="page__subtitle">
+              Now let's outline a history of your recent places of residence.
+              This doesn't have to be extensive but be sure to include at least two or three.
+            </p>
+            <button className="btn--header" onClick={toggleHeader}>
+              <span />
+            </button>
+          </div>
         </div>
       <fieldset id="rent" className="fieldset fieldset--rent">
-        <label htmlFor="address-line1" className="label label--rent">
-          Now let's outline a history of your recent places of residence.
-          This doesn't have to be extensive but be sure to include at least two or three.
-        </label>
         <ol className="ol ol--rent">
           {rentalHistory.map(this.renderHistory)}
           <button
@@ -145,6 +150,7 @@ RentalHistory.propTypes = {
   onInputChange: React.PropTypes.func,
   onAddSection: React.PropTypes.func,
   onRemoveSection: React.PropTypes.func,
+  toggleHeader: React.PropTypes.func,
 };
 
 export default RentalHistory;

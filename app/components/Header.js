@@ -15,12 +15,6 @@ function Header({ printResume, toggleMenu, closeMenu }) {
             <h1 to="/">Rental Resume</h1>
           </Link>
           <li>
-            <Link to="/intro" title="Intro" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
-              <span className="btn--nav__lines" />
-              Introduction
-            </Link>
-          </li>
-          <li>
             <Link to="/applicant" title="Applicant" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
               <span className="btn--nav__lines" />
               Applicant
@@ -34,8 +28,8 @@ function Header({ printResume, toggleMenu, closeMenu }) {
           </li>
           <li>
             <Link to="/rental-history" title="Rental History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
-            <span className="btn--nav__lines" />
-            Rental History
+              <span className="btn--nav__lines" />
+              Rental History
             </Link>
           </li>
           <li>
@@ -45,9 +39,9 @@ function Header({ printResume, toggleMenu, closeMenu }) {
             </Link>
           </li>
           <li>
-            <Link to="/finances" title="Finances" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+            <Link to="/income" title="Income" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
               <span className="btn--nav__lines btn--nav__lines--last" />
-              Finances
+              Income
             </Link>
           </li>
           <li>

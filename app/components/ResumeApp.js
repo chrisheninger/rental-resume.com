@@ -7,12 +7,11 @@ import { tryParseJSON } from '../util/helpers';
 
 import Header from './Header';
 import Intro from './Intro';
-import ContactInformation from './ContactInformation';
+import Applicant from './Applicant';
 import Summary from './Summary';
 import RentalHistory from './RentalHistory';
 import EmploymentHistory from './EmploymentHistory';
 import Income from './Income';
-// import Create from './Create';
 import Preview from './Preview';
 
 class ResumeApp extends React.Component {
@@ -101,6 +100,11 @@ class ResumeApp extends React.Component {
     app.classList.toggle('toggle--active');
   }
 
+  toggleHeader() {
+    const app = document.getElementById('app');
+    app.classList.toggle('btn--header--active');
+  }
+
   closeMenu() {
     const app = document.getElementById('app');
     app.classList.remove('toggle--active');
@@ -114,13 +118,12 @@ class ResumeApp extends React.Component {
   renderPage() {
     const pageMap = {
       '/intro': 'Intro',
-      '/create': 'Create',
       '/preview': 'Preview',
-      '/applicant': 'ContactInformation',
+      '/applicant': 'Applicant',
       '/summary': 'Summary',
       '/rental-history': 'RentalHistory',
       '/employment-history': 'EmploymentHistory',
-      '/finances': 'Income',
+      '/income': 'Income',
     };
     switch (pageMap[this.props.location.pathname]) {
       case 'Intro':
@@ -129,14 +132,15 @@ class ResumeApp extends React.Component {
             {...this.props}
           />
         );
-      case 'ContactInformation':
+      case 'Applicant':
         return (
-          <ContactInformation
+          <Applicant
             {...this.props}
             people={this.state.people}
             onInputChange={this.onInputChange}
             onAddSection={this.onAddSection}
             onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
           />
         );
       case 'Summary':
@@ -144,6 +148,7 @@ class ResumeApp extends React.Component {
           <Summary
             {...this.props}
             summary={this.state.summary}
+            toggleHeader={this.toggleHeader}
           />
         );
       case 'RentalHistory':
@@ -154,6 +159,7 @@ class ResumeApp extends React.Component {
             onInputChange={this.onInputChange}
             onAddSection={this.onAddSection}
             onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
           />
         );
       case 'EmploymentHistory':
@@ -164,6 +170,7 @@ class ResumeApp extends React.Component {
             onInputChange={this.onInputChange}
             onAddSection={this.onAddSection}
             onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
           />
         );
       case 'Income':
@@ -174,20 +181,7 @@ class ResumeApp extends React.Component {
             onInputChange={this.onInputChange}
             onAddSection={this.onAddSection}
             onRemoveSection={this.onRemoveSection}
-          />
-        );
-      case 'Create':
-        return (
-          <Create
-            {...this.props}
-            people={this.state.people}
-            summary={this.state.summary}
-            rentalHistory={this.state.rentalHistory}
-            employmentHistory={this.state.employmentHistory}
-            income={this.state.income}
-            onInputChange={this.onInputChange}
-            onAddSection={this.onAddSection}
-            onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
           />
         );
       case 'Preview':
@@ -199,6 +193,7 @@ class ResumeApp extends React.Component {
             rentalHistory={this.state.rentalHistory}
             employmentHistory={this.state.employmentHistory}
             income={this.state.income}
+            toggleHeader={this.toggleHeader}
           />
         );
       default:

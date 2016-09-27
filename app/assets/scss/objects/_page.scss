@@ -14,12 +14,14 @@
 
 .page__header {
 	position: relative;
-	background: $base;
+	background: gray;
 	background-size: cover;
 	background-position: center center;
-	margin: 0 auto;
-	height: 500px;
-	height: 33vh;
+	margin: 50px auto 0;
+	text-align: center;
+	@include bp(medium) {
+		margin-top: 0;
+	}
 	&:after {
 		content: '';
 	  position: absolute;
@@ -28,26 +30,42 @@
 	  width: 100%;
 	  height: 100%;
 	  background: rgba(0, 0, 0, 0.2);
+		display: none;
 	}
 }
 
-.page__title {
-	font-size: 2em;
-	color: white;
-	font-weight: bold;
-	text-shadow: 0 1px 1px rgba(0,0,0,.1);
-	text-transform: uppercase;
+.page__header__container {
+	padding: 2em 1em;
+	margin: 0 auto;
+	max-width: 500px;
 	text-align: center;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 99;
 }
 
-.lable--summary {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+.page__title {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	z-index: 99;
+	bottom: -.5em;
+	font-size: 3em;
+	font-weight: bold;
+	line-height: 1.2;
+	text-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.page__subtitle {
+	transition: all 300ms ease-in-out;
+	-webkit-transition: all 300ms ease-in-out;
+	line-height: 1.4;
+	padding-top: .5em;
+	max-height: 0;
+	visibility: hidden;
+}
+
+.btn--header--active .page__subtitle {
+	visibility: visible;
+	max-height: 500px;
+	height: auto;
 }
 
 
@@ -55,4 +73,42 @@
   margin: 0 auto;
   padding: 2.5em 1em;
   text-align: center;
+}
+
+//Expanding Header Button
+.btn--header {
+	transition: all 300ms ease-in-out;
+	-webkit-transition: all 300ms ease-in-out;
+	position: absolute;
+	margin: 0 auto;
+	display: inline-block;
+	background: $tertiary;
+	width: 36px;
+	height: 36px;
+	bottom: -18px;
+	margin-left: -18px;
+	border-radius: 50%;
+	span {
+		display: block;
+		width: 16px;
+		height: 2px;
+		background: $base;
+		position: relative;
+		left: 10px;
+		&:after {
+			position: relative;
+			top: -7px;
+			left: 7px;
+			display: block;
+			background: $base;
+			content: "";
+			width: 2px;
+			height: 16px;
+		}
+	}
+}
+
+.btn--header--active .btn--header {
+		-webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
