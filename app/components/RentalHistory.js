@@ -2,6 +2,7 @@ import React from 'react';
 import InputMask from 'react-input-mask';
 import classNames from 'classnames';
 import Select from './Select';
+import { Link } from 'react-router';
 
 import { stateOptions } from '../util/helpers';
 
@@ -141,6 +142,7 @@ class RentalHistory extends React.Component {
           </button>
         </ol>
       </fieldset>
+        <Link to="/employment-history" title="Employment History" className="page__link">Continue...</Link>
       </section>
     );
   }

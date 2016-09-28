@@ -2,12 +2,13 @@
  *  Main  *
  * ------- */
 #app {
+	position: relative;
 	@extend %clearfix;
 	margin: 0;
 	width: 100%;
 	background: $secondary;
 	@include bp(medium) {
+		margin: 0 0 0 33%;
 		width: 67%;
-		margin-left: 33%;
 	}
 }

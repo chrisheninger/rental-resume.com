@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class EmploymentHistory extends React.Component {
 
@@ -53,9 +54,11 @@ class EmploymentHistory extends React.Component {
         {index > 0 ? (
           <button
             id={`remove-employment-section-${index}`}
-            className="btn btn--remove icon-cross"
+            className="btn btn--remove"
             onClick={(event) => onRemoveSection(event, 'employmentHistory', index)}
-          />
+          >
+            <span />
+          </button>
         ) : null}
       </li>
     );
@@ -89,6 +92,7 @@ class EmploymentHistory extends React.Component {
           </button>
         </ol>
       </fieldset>
+        <Link to="/income" title="Income" className="page__link">Continue...</Link>
       </section>
     );
   }

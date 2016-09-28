@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 function Income({ income, onInputChange, toggleHeader }) {
   return (
@@ -30,6 +31,7 @@ function Income({ income, onInputChange, toggleHeader }) {
         />
       </div>
     </fieldset>
+      <Link to="/preview" title="Preview" className="page__link">Preview Resume</Link>
     </section>
   );
 }

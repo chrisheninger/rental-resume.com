@@ -3,15 +3,21 @@
  * ----------------- */
 
 .resume {
-	margin: 2em auto;
+	margin: 0 auto;
+}
+
+.resume__container {
+	margin: 4em 1em;
 	padding: 2.5em 1em;
 	max-width: 750px;
-	background: gray;
+	background: white;
+	@extend %clearfix;
 	@include bp(medium) {
 		padding: 4em;
-		margin: 4em auto;
+		margin: 4em 2em;
 	}
 }
+
 
 .resume a {
 	color: $base;
@@ -21,19 +27,19 @@
 	color: $highlight;
 }
 
-.resume--title {
+.resume__title {
 	font-size: 2em;
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 
-.resume--section {
+.resume__section {
 	@extend %clearfix;
 	margin-bottom: 2em;
 }
 
-.resume--subtitle {
+.resume__subtitle {
 	font-weight: bold;
 	margin-bottom: 1em;
 	@include bp(medium) {
@@ -126,6 +132,7 @@
 //Incomplete Sections
 .incomplete {
 	border: 1px dashed darken($secondary, 15%);
+	border-radius: 2px;
 	list-style-type: none !important;
 	&:hover {
 		border: 1px solid $highlight !important;

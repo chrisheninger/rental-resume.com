@@ -32,6 +32,7 @@
 		width: 33%;
 		transform: translate3d(0,0,0);
 		box-shadow: none;
+		border: 0;
 	}
  	ul {
 		clear: both;
@@ -183,8 +184,9 @@
 	top: 1.5em;
 	right: 1em;
 	padding: .25em .5em;
-	background: $highlight;
-	color: white;
+	background: $secondary;
+	border: 2px solid white;
+	color: $base;
 	border-radius: 2px;
 	margin-right: .5em;
 	.icon-preview {
@@ -197,6 +199,9 @@
 	}
 }
 
+.btn--preview.btn--nav--active {
+	border: 2px solid $base;
+}
 
 
 .btn--print {
@@ -204,9 +209,10 @@
 	top: 1.5em;
 	right: 1em;
 	padding: .25em .5em;
-	background: $highlight;
-	color: white;
+	background: $secondary;
+	color: $base;
 	border-radius: 2px;
+	border: 2px solid white;
 	.icon-print {
 		margin-right: .25em;
 		position: relative;

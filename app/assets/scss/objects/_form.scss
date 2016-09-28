@@ -3,10 +3,13 @@
  * ------- */
 
  .fieldset {
-   margin: 0 auto;
-   padding: 2.5em 1em;
+   margin: 2em auto;
+   padding: 2em 1em;
  	 max-width: 750px;
    text-align: center;
+   @include bp(medium) {
+     padding: 2.5em 2em;
+   }
  }
 
 .input, .select, .textarea {
@@ -47,10 +50,7 @@
 .ol li {
   position: relative;
   @extend %clearfix;
-  margin-bottom: 1em;
-  @include bp(medium) {
-    margin-bottom: 2em;
-  }
+  margin-bottom: 2em;
   &:hover .btn--remove {
     opacity: 1;
   }
@@ -176,13 +176,12 @@
   padding: .5em;
   @include span-columns(12);
   color: white;
-  background: lighten($base, 15%);
+  background: $base;
   border-radius: 2px;
 }
 
 .no-touchevents .btn--add:hover {
-  background: $base;
-  color: white;
+  background: lighten($base, 15%);
 }
 
 .btn--remove {

@@ -4,17 +4,18 @@
 
 .page {
 	background: $secondary;
-	margin-top: 50px;
-	@extend %clearfix;
 	min-height: 100vh;
-	@include bp(medium) {
-		margin: 0;
-	}
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	@extend %clearfix;
 }
 
 .page__header {
 	position: relative;
-	background: gray;
+	background: darken($secondary,5%);
 	background-size: cover;
 	background-position: center center;
 	margin: 50px auto 0;
@@ -23,6 +24,13 @@
 		margin-top: 0;
 	}
 }
+
+.page__header--applicant {
+	//background: url('/../assets/images/rental-history.jpg');
+}
+
+
+
 
 .page__header__container {
 	padding: 2em 1em;
@@ -65,7 +73,7 @@
 	position: absolute;
 	margin: 0 auto;
 	display: inline-block;
-	background: $tertiary;
+	background: $base;
 	width: 36px;
 	height: 36px;
 	bottom: -18px;
@@ -75,7 +83,7 @@
 		display: block;
 		width: 16px;
 		height: 2px;
-		background: $base;
+		background: white;
 		position: relative;
 		left: 10px;
 		&:after {
@@ -83,15 +91,37 @@
 			top: -7px;
 			left: 7px;
 			display: block;
-			background: $base;
+			background: white;
 			content: "";
 			width: 2px;
 			height: 16px;
 		}
+	}
+	&:hover {
+		background: lighten($base, 15%);
 	}
 }
 
 .btn--header--active .btn--header {
 	-webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+//Link at the bottom of each page
+.page__link {
+	text-decoration: none;
+	text-align: center;
+	background: $base;
+	padding: 1em;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	&:hover {
+	}
+}
+
+.page__link--disabled {
+
 }

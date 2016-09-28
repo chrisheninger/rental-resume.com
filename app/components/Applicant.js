@@ -1,5 +1,6 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
+import { Link } from 'react-router';
 
 class Applicant extends React.Component {
 
@@ -62,7 +63,7 @@ class Applicant extends React.Component {
     const { people, onAddSection, toggleHeader } = this.props;
     return (
       <section className="page">
-        <div className="page__header">
+        <div className="page__header page__header--applicant">
           <div className="page__header__container">
             <h1 className="page__title">Applicant</h1>
             <p className="page__subtitle">
@@ -85,6 +86,7 @@ class Applicant extends React.Component {
             </button>
           </ol>
         </fieldset>
+        <Link to="/summary" title="Summary" className="page__link">Continue...</Link>
       </section>
     );
   }
