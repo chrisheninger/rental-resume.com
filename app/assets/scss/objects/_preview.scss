@@ -3,13 +3,13 @@
  * ----------------- */
 
 .resume {
-	margin: 1em;
-	padding: 1em;
-	background: white;
-	max-width: 960px;
+	margin: 2em auto;
+	padding: 2.5em 1em;
+	max-width: 750px;
+	background: gray;
 	@include bp(medium) {
 		padding: 4em;
-		margin: 2em auto;
+		margin: 4em auto;
 	}
 }
 

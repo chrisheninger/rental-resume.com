@@ -5,6 +5,7 @@
 	@extend %clearfix;
 	margin: 0;
 	width: 100%;
+	background: $secondary;
 	@include bp(medium) {
 		width: 67%;
 		margin-left: 33%;

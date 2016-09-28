@@ -48,9 +48,11 @@ class Applicant extends React.Component {
         {index > 0 ? (
           <button
             id={`remove-contact-section-${index}`}
-            className="btn btn--remove icon-cross"
+            className="btn btn--remove"
             onClick={(event) => onRemoveSection(event, 'people', index)}
-          />
+          >
+            <span />
+          </button>
         ) : null}
       </li>
     );
@@ -73,7 +75,7 @@ class Applicant extends React.Component {
           </div>
         </div>
         <fieldset id="contact" className="fieldset fieldset--contact">
-          <ol className="ol ol--contact">
+          <ol className="ol ol--applicant">
             {people.map(this.renderPerson)}
             <button
               className="btn btn--add"

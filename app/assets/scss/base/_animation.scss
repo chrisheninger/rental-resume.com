@@ -6,6 +6,30 @@
 	transition: all .15s;
 }
 
+.page__subtitle {
+	transition: transform all 200ms ease-in;
+	-webkit-transition: all 200ms ease-in;
+}
+
+.btn--header {
+	transition: all 150ms ease-in;
+	-webkit-transition: all 150ms ease-in;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Home Animation
 .transition--enter .home {
   opacity: 0.01;
@@ -15,29 +39,12 @@
 	transition: all .4s ease-in-out;
 }
 
-//Info Animation
-.transition--enter .faq {
-  opacity: 0.01;
-}
-.transition--enter.is-active .faq {
-  opacity: 1;
-	transition: all .4s ease-in-out;
-}
 
-//Create Animation
-.transition--enter .resume-form {
+//Page Animation
+.transition--enter .page {
   opacity: 0.01;
 }
-.transition--enter.is-active .resume-form {
-  opacity: 1;
-	transition: all .4s ease-in-out;
-}
-
-//Preivew Animation
-.transition--enter .resume {
-  opacity: 0.01;
-}
-.transition--enter.is-active .resume {
+.transition--enter.is-active .page {
   opacity: 1;
 	transition: all .4s ease-in-out;
 }

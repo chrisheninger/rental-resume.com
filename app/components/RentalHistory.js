@@ -103,9 +103,11 @@ class RentalHistory extends React.Component {
         {index !== 0 ? (
           <button
             id={`remove-rental-section-${index}`}
-            className="btn btn--remove icon-cross"
+            className="btn btn--remove"
             onClick={(event) => onRemoveSection(event, 'rentalHistory', index)}
-          />
+          >
+            <span />
+          </button>
         ) : null}
       </li>
     );

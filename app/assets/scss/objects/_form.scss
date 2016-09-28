@@ -2,56 +2,12 @@
  *   Form  *
  * ------- */
 
-.resume-form {
-  padding: 0 1em;
-  margin: 1em auto 3em;
-  max-width: 1200px;
-  @extend %clearfix;
-  ol {
-    @include span-columns(12);
-    @include bp(medium) {
-      @include span-columns(6);
-    }
-    li {
-      margin-bottom: 1.5em;
-      @extend %clearfix;
-      position: relative;
-      &:hover .btn--remove {
-        opacity: 1;
-      }
-    }
-  }
-  img {
-    margin-bottom: 1em;
-    @include span-columns(12);
-    @include bp(medium) {
-      @include span-columns(6);
-    }
-  }
-  @include bp(medium) {
-    padding: 0 2em;
-  }
-}
-
-.legend {
-  display: inline-block;
-  font-weight: bold;
-  margin: 1em 0 .5em;
-  float: left;
-  font-size: 2.5em;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.label {
-  display: inline-block;
-  line-height: 1.4;
-  margin-bottom: 0 auto;
-  padding-bottom: 2em;
-  max-width: 600px;
-  color: white;
-}
+ .fieldset {
+   margin: 0 auto;
+   padding: 2.5em 1em;
+ 	 max-width: 750px;
+   text-align: center;
+ }
 
 .input, .select, .textarea {
   padding: .5em;
@@ -81,14 +37,25 @@
 }
 
 .select {
-  background: $secondary url(../images/arrows.svg) no-repeat 97% 0!important;
+  background: white url(../images/arrows.svg) no-repeat 97% 0!important;
 }
 
 .select-disabled {
   color: #a9a9a9;
 }
 
-//Contact
+.ol li {
+  position: relative;
+  @extend %clearfix;
+  margin-bottom: 1em;
+  @include bp(medium) {
+    margin-bottom: 2em;
+  }
+  &:hover .btn--remove {
+    opacity: 1;
+  }
+}
+//Appicant Page
 .input--full-name {
   @include span-columns(12);
   padding-right: 3em;
@@ -96,6 +63,7 @@
     padding-right: .5em;
   }
 }
+
 .touch .input--full-name {
   padding-right: 3em;
 }
@@ -113,19 +81,15 @@
   }
 }
 
+//Summary
+.textarea--summary {
+  height: 300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5em !important;
+}
+
 //Rental History
-.ol--rent {
-  @include bp(medium) {
-    @include shift(-12);
-  }
-}
-
-.img--rent {
-  @include bp(medium) {
-    @include shift(6);
-  }
-}
-
 .input--street {
   padding-right: 3em;
   @include bp(medium) {
@@ -181,15 +145,17 @@
   height: 50px;
   display: inline-block;
   text-align: center;
-  @include bp(medium) {
-    @include span-columns(4);
-    @include shift(4);
-  }
 }
 
 .input-group {
   @extend %clearfix;
   position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+  @include bp(medium) {
+    width: auto;
+  }
 }
 
 .input-prefix {
@@ -199,15 +165,19 @@
   font-weight: bold;
   color: gray;
   @include bp(medium) {
-    @include shift(4);
+    width: auto;
+    //@include span-columns(4);
+    //@include shift(4);
   }
 }
 
 //Buttons on Form
 .btn--add {
+  padding: .5em;
   @include span-columns(12);
   color: white;
   background: lighten($base, 15%);
+  border-radius: 2px;
 }
 
 .no-touchevents .btn--add:hover {
@@ -216,63 +186,38 @@
 }
 
 .btn--remove {
-  background: darken($secondary, 25%);
-  color: $secondary;
-  font-size: 1.5em;
   position: absolute;
-  right: 0;
   top: 0;
-  line-height: 0;
-  height: 35px;
-  padding: .5em;
-  &:hover {
-    background: $warning;
-  }
-  @include bp(medium) {
-    right: -.75em;
-    width: 1.25em;
-    background: none;
-    color: darken($secondary, 25%);
-    opacity: 0;
-    &:hover {
-      color: $warning;
-      background: none;
-    }
+  right: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	bottom: -18px;
+	margin-left: -18px;
+	border-radius: 50%;
+  opacity: .4;
+  span {
+		display: block;
+		width: 16px;
+		height: 2px;
+		background: $warning;
+		position: relative;
+		left: 10px;
+		&:after {
+			position: relative;
+			top: -7px;
+			left: 7px;
+			display: block;
+			background: $warning;
+			content: "";
+			width: 2px;
+			height: 16px;
+		}
   }
 }
 
 .touchevents .btn--remove {
-  background: darken($secondary, 25%);
-  color: $secondary;
-  font-size: 1.5em;
-  position: absolute;
-  right: 0px;
-  top: 2px;
-  line-height: .1;
-  height: 36px;
-  padding-left: .25em;
-  padding-right: .25em;
   opacity: 1;
-  &:hover, &:focus, &:visited {
-    background: darken($secondary, 25%)!important;
-  }
-  @include bp(medium) {
-    padding-right: 1.25em;
-    right: 0;
-  }
-}
-
-.btn--submit {
-  border-radius: 2px;
-  @include span-columns(12);
-  background: $highlight;
-  color: white;
-  @include bp(medium) {
-    @include span-columns(4);
-    @include shift(4);
-  }
-}
-
-.no-touchevents .btn--submit:hover {
-  background: darken($highlight, 5%)!important;
 }

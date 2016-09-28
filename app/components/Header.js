@@ -6,7 +6,7 @@ function Header({ printResume, toggleMenu, closeMenu }) {
     <header className="header">
       <Link className="logo--mobile" to="/">Rental Resume</Link>
       <button className="toggle" onClick={toggleMenu}>
-        <span class="toggle__bars"></span>
+        <span className="toggle__bars" />
       </button>
       <nav className="nav">
         <ul>
