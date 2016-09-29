@@ -25,7 +25,7 @@ function Summary({ summary, onInputChange, toggleHeader }) {
           onChange={(event) => onInputChange(event.target.value, ['summary'])}
         />
       </fieldset>
-        <Link to="/rental-history" title="Rental History" className="page__link">Continue...</Link>
+      <Link to="/rental-history" title="Rental History" className="page__link">Continue...</Link>
     </section>
   );
 }

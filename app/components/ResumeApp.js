@@ -148,6 +148,7 @@ class ResumeApp extends React.Component {
           <Summary
             {...this.props}
             summary={this.state.summary}
+            onInputChange={this.onInputChange}
             toggleHeader={this.toggleHeader}
           />
         );
