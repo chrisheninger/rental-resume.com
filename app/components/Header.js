@@ -4,13 +4,13 @@ import { Link } from 'react-router';
 function Header({ printResume, toggleMenu, closeMenu }) {
   return (
     <header className="header">
-      <Link className="logo--mobile" to="/">Rental Resume</Link>
+      <Link className="logo--mobile" to="/" onClick={closeMenu}>Rental Resume</Link>
       <button className="toggle" onClick={toggleMenu}>
         <span className="toggle__bars" />
       </button>
       <nav className="nav">
         <ul>
-          <Link to="/" div className="logo">
+          <Link to="/" div className="logo" onClick={closeMenu}>
             <span className="icon-resume" />
             <h1 to="/">Rental Resume</h1>
           </Link>
@@ -45,7 +45,7 @@ function Header({ printResume, toggleMenu, closeMenu }) {
             </Link>
           </li>
           <li>
-            <Link to="/preview" title="preview" className="btn--nav btn--preview" activeClassName="btn--nav--active">
+            <Link to="/preview" title="preview" className="btn--nav btn--preview" activeClassName="btn--nav--active" onClick={closeMenu}>
               <span className="icon-preview" />
               Preview
             </Link>

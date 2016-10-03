@@ -86,15 +86,6 @@ class ResumeApp extends React.Component {
     store.set('data', newState);
   }
 
-  printResume() {
-    if (this.props.location.pathname !== '/preview') {
-      this.context.router.push('/preview');
-      setTimeout(() => (window.print()), 250);
-    } else {
-      window.print();
-    }
-  }
-
   toggleMenu() {
     const app = document.getElementById('app');
     app.classList.toggle('toggle--active');
@@ -108,6 +99,17 @@ class ResumeApp extends React.Component {
   closeMenu() {
     const app = document.getElementById('app');
     app.classList.remove('toggle--active');
+  }
+
+  printResume() {
+    const app = document.getElementById('app');
+    if (this.props.location.pathname !== '/preview') {
+      this.context.router.push('/preview');
+      setTimeout(() => (window.print()), 250);
+    } else {
+      app.classList.remove('toggle--active');
+      window.print();
+    }
   }
 
   generateResumeLink(event) {
@@ -130,6 +132,8 @@ class ResumeApp extends React.Component {
         return (
           <About
             {...this.props}
+            toggleHeader={this.toggleHeader}
+            closeMenu={this.closeMenu}
           />
         );
       case 'Applicant':

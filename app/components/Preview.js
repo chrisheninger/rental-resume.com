@@ -168,7 +168,6 @@ Preview.propTypes = {
   rentalHistory: React.PropTypes.array,
   employmentHistory: React.PropTypes.array,
   income: React.PropTypes.string,
-  printResume: React.PropTypes.func,
 };
 
 export default Preview;
