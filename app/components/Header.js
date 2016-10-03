@@ -27,15 +27,15 @@ function Header({ printResume, toggleMenu, closeMenu }) {
             </Link>
           </li>
           <li>
-            <Link to="/rental-history" title="Rental History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
-              <span className="btn--nav__lines" />
-              Rental History
-            </Link>
-          </li>
-          <li>
             <Link to="/employment-history" title="Employment History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
               <span className="btn--nav__lines" />
               Employment History
+            </Link>
+          </li>
+          <li>
+            <Link to="/rental-history" title="Rental History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines" />
+              Rental History
             </Link>
           </li>
           <li>

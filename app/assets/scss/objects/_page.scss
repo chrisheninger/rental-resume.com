@@ -3,7 +3,7 @@
  * --------- */
 
 .page {
-	background: $secondary;
+	background: white;
 	min-height: 100vh;
 	position: absolute;
 	top: 0;
@@ -11,26 +11,21 @@
 	right: 0;
 	margin: 0;
 	@extend %clearfix;
+	@include bp(medium) {
+		margin: 0 0 0 33%;
+		width: 67%;
+	}
 }
 
 .page__header {
 	position: relative;
-	background: darken($secondary,5%);
-	background-size: cover;
-	background-position: center center;
+	background: $secondary;
 	margin: 50px auto 0;
 	text-align: center;
 	@include bp(medium) {
 		margin-top: 0;
 	}
 }
-
-.page__header--applicant {
-	//background: url('/../assets/images/rental-history.jpg');
-}
-
-
-
 
 .page__header__container {
 	padding: 2em 1em;
@@ -48,7 +43,6 @@
 	font-size: 3em;
 	font-weight: bold;
 	line-height: 1.2;
-	text-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
 .page__subtitle {
@@ -58,6 +52,7 @@
 	opacity: 0;
 	-webkit-transform: translateY(20px);
 	transform: translateY(20px);
+	color: darken($secondary, 50%);
 }
 
 .btn--header--active .page__subtitle {
@@ -73,9 +68,9 @@
 	position: absolute;
 	margin: 0 auto;
 	display: inline-block;
-	background: $base;
-	width: 36px;
-	height: 36px;
+	background: darken($secondary, 15%);
+	width: 39px;
+	height: 39px;
 	bottom: -18px;
 	margin-left: -18px;
 	border-radius: 50%;
@@ -85,7 +80,7 @@
 		height: 2px;
 		background: white;
 		position: relative;
-		left: 10px;
+		left: 12px;
 		&:after {
 			position: relative;
 			top: -7px;
@@ -97,9 +92,10 @@
 			height: 16px;
 		}
 	}
-	&:hover {
-		background: lighten($base, 15%);
-	}
+}
+
+.no-touchevents .btn--header:hover {
+	opacity: .75;
 }
 
 .btn--header--active .btn--header {
@@ -111,17 +107,16 @@
 .page__link {
 	text-decoration: none;
 	text-align: center;
-	background: $base;
-	padding: 1em;
+	color: $highlight;
 	color: white;
+	background: $highlight;
+	border-radius: 2em;
+	padding: .5em 1em;
 	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	&:hover {
-	}
+	bottom: 2em;
+	right: 2em;
 }
 
-.page__link--disabled {
-
+.no-touchevents .page__link:hover {
+	opacity: .75;
 }

@@ -30,8 +30,8 @@ function Income({ income, onInputChange, toggleHeader }) {
           onChange={(event) => onInputChange(event.target.value, ['income'])}
         />
       </div>
-    </fieldset>
       <Link to="/preview" title="Preview" className="page__link">Preview Resume</Link>
+    </fieldset>
     </section>
   );
 }

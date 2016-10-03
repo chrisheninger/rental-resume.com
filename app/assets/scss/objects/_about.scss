@@ -1,22 +1,16 @@
 /* --------- *
- *   Intro   *
+ *   About   *
  * --------- */
 
-.page__header--intro {
-	background-image: url(../../assets/images/rental-history.jpg);
-}
-
-
-
-
-
 .faq {
-	display: none;
-	position: relative;
-	max-width: 600px;
-	padding: 0 1em;
-	margin: 60px auto 0;
-	text-align: center;
+	margin: 2em auto;
+	padding: 2em 1em;
+	max-width: 750px;
+	@extend %clearfix;
+	@include bp(medium) {
+		padding: 2.5em 2em;
+	}
+
 	.faq__title {
 		font-weight: bold;
 		width: 100%;
@@ -34,6 +28,14 @@
 		line-height: 1.4;
 	}
 	li {
+		float: left;
+		clear: both;
 		margin-bottom: 2em;
 	}
+}
+
+.page__link--about {
+	position: static;
+	float: left;
+	clear: both;
 }

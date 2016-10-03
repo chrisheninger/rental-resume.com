@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-
 import { numberWithCommas } from '../util/helpers';
 
 class Preview extends React.Component {
-
   constructor() {
     super();
-
     this.renderHeader = this.renderHeader.bind(this);
     this.renderIncomeSection = this.renderIncomeSection.bind(this);
     this.renderSummarySection = this.renderSummarySection.bind(this);
@@ -132,6 +129,10 @@ class Preview extends React.Component {
         <div className="resume">
           <div className="resume__container">
             <header className="resume__header">
+              <button className="btn--print--prview">
+                <span className="icon-print" />
+                Print
+              </button>
               <h1 className="resume__title">Rental Resume</h1>
             </header>
             <section className="resume__section resume__section--applicant">
@@ -167,6 +168,7 @@ Preview.propTypes = {
   rentalHistory: React.PropTypes.array,
   employmentHistory: React.PropTypes.array,
   income: React.PropTypes.string,
+  printResume: React.PropTypes.func,
 };
 
 export default Preview;

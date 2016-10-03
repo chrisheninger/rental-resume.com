@@ -6,7 +6,7 @@ import store from 'store2';
 import { tryParseJSON } from '../util/helpers';
 
 import Header from './Header';
-import Intro from './Intro';
+import About from './About';
 import Applicant from './Applicant';
 import Summary from './Summary';
 import RentalHistory from './RentalHistory';
@@ -117,7 +117,7 @@ class ResumeApp extends React.Component {
 
   renderPage() {
     const pageMap = {
-      '/intro': 'Intro',
+      '/about': 'About',
       '/preview': 'Preview',
       '/applicant': 'Applicant',
       '/summary': 'Summary',
@@ -126,9 +126,9 @@ class ResumeApp extends React.Component {
       '/income': 'Income',
     };
     switch (pageMap[this.props.location.pathname]) {
-      case 'Intro':
+      case 'About':
         return (
-          <Intro
+          <About
             {...this.props}
           />
         );

@@ -23,16 +23,12 @@
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background: white;
+	background: $base;
 	z-index: 99;
 	padding: 4em 2em 0 3em;
-	border-right: 1px solid $secondary;
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.1),0 2px 15px rgba(0,0,0,0.1);
 	@include bp(medium) {
 		width: 33%;
 		transform: translate3d(0,0,0);
-		box-shadow: none;
-		border: 0;
 	}
  	ul {
 		clear: both;
@@ -59,9 +55,9 @@
 	float: left;
 	text-decoration: none;
 	clear: both;
-	color: $base;
+	color: white;
 	h1 {
-		color: $base;
+		color: white;
 		line-height: 1.1;
 		font-size: 1.1em;
 	}
@@ -69,9 +65,6 @@
 		float: left;
 		font-size: 2.25em;
 		margin: 0 .25em 0 0;
-	}
-	&:hover {
-		//opacity: .5;
 	}
 }
 
@@ -139,20 +132,21 @@
 
 //Nav Buttons
 .btn--nav {
-  color: lighten($base, 50%);
+  color: darken($secondary, 50%);
 }
 
 .btn--nav--active {
-	color: $base;
+	color: white;
+	opacity: 1 !important;
 	.btn--nav__lines {
-		background: $base;
+		background: white;
 	}
 }
 
 .btn--nav__lines {
 	content: "";
 	display: block;
-	background: darken($secondary, 10%);
+	background: darken($secondary, 50%);
 	height: 6px;
 	width: 6px;
 	border-radius: 50%;
@@ -162,7 +156,7 @@
 	&:after {
 		content: "";
 		display: block;
-		background: $secondary;
+		background: darken($secondary, 50%);
 		height: 30px;
 		width: 2px;
 		position: relative;
@@ -180,15 +174,16 @@
 
 
 .btn--preview {
+	float: left;
 	position: relative;
 	top: 1.5em;
 	right: 1em;
-	padding: .25em .5em;
-	background: $secondary;
-	border: 2px solid white;
+	padding: .25em 1em;
+	background: white;
 	color: $base;
-	border-radius: 2px;
+	border-radius: 2em;
 	margin-right: .5em;
+	margin-bottom: 1em;
 	.icon-preview {
 		margin-right: .25em;
 		position: relative;
@@ -200,19 +195,19 @@
 }
 
 .btn--preview.btn--nav--active {
-	border: 2px solid $base;
+	color: $base;
 }
 
 
 .btn--print {
+	float: left;
 	position: relative;
 	top: 1.5em;
 	right: 1em;
-	padding: .25em .5em;
-	background: $secondary;
+	padding: .25em 1em;
+	background: white;
 	color: $base;
-	border-radius: 2px;
-	border: 2px solid white;
+	border-radius: 2em;
 	.icon-print {
 		margin-right: .25em;
 		position: relative;
@@ -221,4 +216,8 @@
  	&:before, &:after {
 		display: none;
 	}
+}
+
+.no-touchevents .nav a:hover {
+	opacity: .75;
 }

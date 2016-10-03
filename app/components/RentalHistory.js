@@ -1,9 +1,8 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 import classNames from 'classnames';
-import Select from './Select';
 import { Link } from 'react-router';
-
+import Select from './Select';
 import { stateOptions } from '../util/helpers';
 
 class RentalHistory extends React.Component {
@@ -130,19 +129,19 @@ class RentalHistory extends React.Component {
             </button>
           </div>
         </div>
-      <fieldset id="rent" className="fieldset fieldset--rent">
-        <ol className="ol ol--rent">
-          {rentalHistory.map(this.renderHistory)}
-          <button
-            id="add-rental-section"
-            className="btn btn--add"
-            onClick={(event) => onAddSection(event, 'rentalHistory')}
-          >
-            Add Another Residence
-          </button>
-        </ol>
-      </fieldset>
-        <Link to="/employment-history" title="Employment History" className="page__link">Continue...</Link>
+        <fieldset id="rent" className="fieldset fieldset--rent">
+          <ol className="ol ol--rent">
+            {rentalHistory.map(this.renderHistory)}
+            <button
+              id="add-rental-section"
+              className="btn btn--add"
+              onClick={(event) => onAddSection(event, 'rentalHistory')}
+            >
+              Add Another Residence
+            </button>
+          </ol>
+          <Link to="/income" title="Income" className="page__link">Continue...</Link>
+        </fieldset>
       </section>
     );
   }

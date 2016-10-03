@@ -7,6 +7,7 @@
    padding: 2em 1em;
  	 max-width: 750px;
    text-align: center;
+   @extend %clearfix;
    @include bp(medium) {
      padding: 2.5em 2em;
    }
@@ -16,13 +17,13 @@
   padding: .5em;
   font-size: 1em;
   border-radius: 2px;
+  border: none;
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
   resize: none;
   outline: none;
-  border: none;
-  background: white!important;
+  background: $secondary!important;
 }
 
 .input, .select {
@@ -37,10 +38,11 @@
   overflow: hidden;
   line-height: 1.4;
   font-size: 1em;
+  margin-bottom: 1em;
 }
 
 .select {
-  background: white url(../images/arrows.svg) no-repeat 97% 0!important;
+  background: $secondary url(../images/arrows.svg) no-repeat 97% 0!important;
 }
 
 .select-disabled {
@@ -166,22 +168,23 @@
   color: gray;
   @include bp(medium) {
     width: auto;
-    //@include span-columns(4);
-    //@include shift(4);
   }
 }
 
 //Buttons on Form
 .btn--add {
-  padding: .5em;
-  @include span-columns(12);
-  color: white;
-  background: $base;
-  border-radius: 2px;
+  display: inline-block;
+  float: left;
+  color: $highlight;
+  border-bottom: 2px solid $highlight;
+  margin-bottom: 1em;
+  @include bp(medium) {
+
+  }
 }
 
 .no-touchevents .btn--add:hover {
-  background: lighten($base, 15%);
+  opacity: .75;
 }
 
 .btn--remove {
@@ -201,7 +204,7 @@
 		display: block;
 		width: 16px;
 		height: 2px;
-		background: $warning;
+		background: $highlight;
 		position: relative;
 		left: 10px;
 		&:after {
@@ -209,7 +212,7 @@
 			top: -7px;
 			left: 7px;
 			display: block;
-			background: $warning;
+			background: $highlight;
 			content: "";
 			width: 2px;
 			height: 16px;

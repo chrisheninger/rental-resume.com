@@ -91,8 +91,8 @@ class EmploymentHistory extends React.Component {
             Add Another Job
           </button>
         </ol>
+        <Link to="/rental-history" title="Rental History" className="page__link">Continue...</Link>
       </fieldset>
-        <Link to="/income" title="Income" className="page__link">Continue...</Link>
       </section>
     );
   }

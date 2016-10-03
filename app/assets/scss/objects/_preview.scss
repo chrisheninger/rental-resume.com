@@ -4,17 +4,38 @@
 
 .resume {
 	margin: 0 auto;
+	@extend %clearfix;
 }
 
 .resume__container {
-	margin: 4em 1em;
+	position: relative;
+	margin: 5em 1em 2em;
 	padding: 2.5em 1em;
 	max-width: 750px;
-	background: white;
+	background: $secondary;
 	@extend %clearfix;
 	@include bp(medium) {
-		padding: 4em;
-		margin: 4em 2em;
+		padding: 2.5em 4em;
+		margin: 2em;
+	}
+}
+
+.resume__header {
+	float: left;
+	width: 100%;
+}
+
+.btn--print--prview {
+	background: $highlight;
+	color: white;
+	float: left;
+	padding: .25em 1em;
+	border-radius: 2em;
+	margin: 0 0 2em 0;
+	span {
+		margin-right: .25em;
+		position: relative;
+		top: 2px;
 	}
 }
 
@@ -32,6 +53,8 @@
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
 	font-weight: bold;
+	float: left;
+	clear: both;
 }
 
 .resume__section {
