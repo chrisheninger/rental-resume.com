@@ -21,20 +21,6 @@
 	-webkit-transition: all 150ms ease-in;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Home Animation
 .transition--enter .home {
   opacity: 0.01;
@@ -44,6 +30,19 @@
 	transition: all .4s ease-in-out;
 }
 
+@keyframes zoom {
+    0% {transform: scale(1.1);}
+		100% {transform: scale(1);}
+}
+
+.home {
+	&:before {
+		@include bp(medium) {
+			animation-name: zoom;
+    	animation-duration: 25s;
+		}
+	}
+}
 
 //Page Animation
 .transition--enter .page {
