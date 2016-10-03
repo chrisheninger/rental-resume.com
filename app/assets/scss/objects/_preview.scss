@@ -4,7 +4,9 @@
 
 .resume {
 	margin: 0 auto;
+	display: inline-block;
 	@extend %clearfix;
+	text-align: left;
 }
 
 .resume__container {
