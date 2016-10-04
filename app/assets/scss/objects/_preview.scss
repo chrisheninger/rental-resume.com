@@ -4,16 +4,17 @@
 
 .resume {
 	margin: 0 auto;
-	display: inline-block;
 	@extend %clearfix;
 	text-align: left;
+	display: inline-block;
+	width: 100%;
+	max-width: 750px;
 }
 
 .resume__container {
 	position: relative;
 	margin: 5em 1em 2em;
 	padding: 2.5em 1em;
-	max-width: 750px;
 	background: $secondary;
 	@extend %clearfix;
 	@include bp(medium) {

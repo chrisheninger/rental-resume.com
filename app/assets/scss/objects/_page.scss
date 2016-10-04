@@ -80,10 +80,10 @@
 		width: 16px;
 		height: 2px;
 		background: white;
-		position: relative;
+		position: absolute;
 		left: 12px;
 		&:after {
-			position: relative;
+			position: absolute;
 			top: -7px;
 			left: 7px;
 			display: block;
