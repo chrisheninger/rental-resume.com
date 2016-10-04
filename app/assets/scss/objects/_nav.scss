@@ -91,11 +91,12 @@
 	@include bp(medium) {
 		display: none;
 	}
-	&:hover span,
-	&:hover span:before,
-	&:hover span:after {
+}
+
+.no-touchevents .toggle:hover span,
+.no-touchevents .toggle:hover span:before,
+.no-touchevents .toggle:hover span:after {
 		background: lighten($base, 50%);
-	}
 }
 
 .toggle span, .toggle span:before, .toggle span:after {
@@ -170,8 +171,6 @@
 		display: none;
 	}
 }
-
-
 
 .btn--preview {
 	float: left;
