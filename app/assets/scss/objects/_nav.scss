@@ -99,6 +99,13 @@
 		background: lighten($base, 50%);
 }
 
+.no-touchevents .toggle--active .toggle:hover span {
+	background: white;
+}
+
+
+
+
 .toggle span, .toggle span:before, .toggle span:after {
   cursor: pointer;
   height: 2px;
