@@ -10,7 +10,7 @@ function Header({ printResume, toggleMenu, closeMenu }) {
       </button>
       <nav className="nav">
         <ul>
-          <Link to="/" div className="logo" onClick={closeMenu}>
+          <Link to="/" className="logo" onClick={closeMenu}>
             <span className="icon-resume" />
             <h1 to="/">Rental Resume</h1>
           </Link>
