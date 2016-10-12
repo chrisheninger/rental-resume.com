@@ -1,4 +1,4 @@
-/* globals window */
+/* globals window, document */
 import React from 'react';
 import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
@@ -105,7 +105,10 @@ class ResumeApp extends React.Component {
     const app = document.getElementById('app');
     if (this.props.location.pathname !== '/preview') {
       this.context.router.push('/preview');
-      setTimeout(() => (window.print()), 250);
+      setTimeout(() => {
+        app.classList.remove('toggle--active');
+        window.print();
+      }, 500);
     } else {
       app.classList.remove('toggle--active');
       window.print();
@@ -199,6 +202,7 @@ class ResumeApp extends React.Component {
             employmentHistory={this.state.employmentHistory}
             income={this.state.income}
             toggleHeader={this.toggleHeader}
+            printResume={this.printResume}
           />
         );
       default:

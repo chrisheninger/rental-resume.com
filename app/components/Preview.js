@@ -129,7 +129,7 @@ class Preview extends React.Component {
         <div className="resume">
           <div className="resume__container">
             <header className="resume__header">
-              <button className="btn--print--prview">
+              <button className="btn--print--prview" onClick={this.props.printResume}>
                 <span className="icon-print" />
                 Print
               </button>
@@ -168,6 +168,7 @@ Preview.propTypes = {
   rentalHistory: React.PropTypes.array,
   employmentHistory: React.PropTypes.array,
   income: React.PropTypes.string,
+  printResume: React.PropTypes.func,
 };
 
 export default Preview;
