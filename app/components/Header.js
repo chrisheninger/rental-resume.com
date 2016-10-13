@@ -49,10 +49,6 @@ function Header({ printResume, toggleMenu, closeMenu }) {
               <span className="icon-preview" />
               Preview
             </Link>
-            <Link to="/preview" title="print" className="btn--nav btn--print" activeClassName="btn--nav--active" onClick={printResume}>
-              <span className="icon-print" />
-              Print
-            </Link>
           </li>
         </ul>
       </nav>

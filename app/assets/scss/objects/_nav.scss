@@ -158,7 +158,7 @@
 	height: 6px;
 	width: 6px;
 	border-radius: 50%;
-	top: 10px;
+	top: 11px;
 	position: relative;
 	right: 1em;
 	&:after {
@@ -202,26 +202,6 @@
 
 .btn--preview.btn--nav--active {
 	color: $base;
-}
-
-
-.btn--print {
-	float: left;
-	position: relative;
-	top: 1.5em;
-	right: 1em;
-	padding: .25em 1em;
-	background: white;
-	color: $base;
-	border-radius: 2em;
-	.icon-print {
-		margin-right: .25em;
-		position: relative;
-		top: 2px;
-	}
- 	&:before, &:after {
-		display: none;
-	}
 }
 
 .no-touchevents .nav a:hover {
