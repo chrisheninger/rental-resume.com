@@ -4,11 +4,11 @@
 
 .home {
 	width: 100%;
-	max-width: 960px;
 	margin: 0 auto;
 	padding: 0 1em;
 	height: 600px;
 	height: 100vh;
+	max-width: 650px;
 	@include bp(medium) {
 		padding: 0 2em;
 		height: 600px;
@@ -36,11 +36,12 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0,0,0,.3);
+		background: $base;
+		opacity: .9;
 	}
 }
 
-.home div {
+.home__text {
 	@extend %clearfix;
 	z-index: 3;
 	position: relative;
@@ -64,41 +65,28 @@
 	}
 }
 
-.home__text {
-	@include bp(medium) {
-		@include span-columns(6);
-	}
-}
-
-.home__image {
-	margin-top: 1em;
-	@include bp(medium) {
-		@include span-columns(6);
-		margin: 0;
-		display: none;
-	}
-}
-
 //Buttons on Homepage
 .btn--learn-more {
-	background: rgba(255,255,255,.1);
-  color: white;
-	border: 1px solid white;
+	background: white;
+	padding: .25em 1em;
+	border-radius: 2em;
+	color: $base;
+	margin-right: 1em;
+	text-decoration: none;
 }
 
 .no-touchevents .btn--learn-more:hover {
-  background: white;
-	color: $base;
+	background: rgba(355,355,355,.75);
 }
 
 .btn--get-started {
-	background: rgba(255,255,255,.1);
+	background: $highlight;
+	padding: .25em 1em;
+	border-radius: 2em;
 	color: white;
-	border: 1px solid white !important;
-	margin: 0 1em;
+	text-decoration: none;
 }
 
 .no-touchevents .btn--get-started:hover {
-	background: white;
-	color: $base;
+	background: rgba(222,103,61,.75);
 }

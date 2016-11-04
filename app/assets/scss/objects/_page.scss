@@ -1,0 +1,123 @@
+/* --------- *
+ *   Page   *
+ * --------- */
+
+.page {
+	background: white;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	text-align: center;
+	@extend %clearfix;
+	@include bp(medium) {
+		margin: 0 0 0 33%;
+		width: 67%;
+	}
+}
+
+.page__header {
+	position: relative;
+	background: $secondary;
+	margin: 50px auto 0;
+	text-align: center;
+	@include bp(medium) {
+		margin-top: 0;
+	}
+}
+
+.page__header__container {
+	padding: 2em 1em;
+	margin: 0 auto;
+	max-width: 500px;
+	text-align: center;
+}
+
+.page__title {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	z-index: 99;
+	bottom: -.5em;
+	font-size: 3em;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.page__subtitle {
+	line-height: 1.4;
+	padding-top: .5em;
+	max-height: 0;
+	opacity: 0;
+	-webkit-transform: translateY(20px);
+	transform: translateY(20px);
+	color: darken($secondary, 50%);
+}
+
+.btn--header--active .page__subtitle {
+	opacity: 1;
+	max-height: 100px;
+	height: auto;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+//Expanding Header Button
+.btn--header {
+	position: absolute;
+	margin: 0 auto;
+	display: inline-block;
+	background: darken($secondary, 15%);
+	width: 39px;
+	height: 39px;
+	bottom: -18px;
+	margin-left: -21px;
+	border-radius: 50%;
+	span {
+		display: block;
+		width: 16px;
+		height: 2px;
+		background: white;
+		position: absolute;
+		left: 12px;
+		&:after {
+			position: absolute;
+			top: -7px;
+			left: 7px;
+			display: block;
+			background: white;
+			content: "";
+			width: 2px;
+			height: 16px;
+		}
+	}
+}
+
+.no-touchevents .btn--header:hover {
+	opacity: .75;
+}
+
+.btn--header--active .btn--header {
+	-webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+//Link at the bottom of each page
+.page__link {
+	text-decoration: none;
+	text-align: center;
+	color: $highlight;
+	color: white;
+	background: $highlight;
+	border-radius: 2em;
+	padding: .5em 1em;
+	position: absolute;
+	bottom: 2em;
+	right: 2em;
+}
+
+.no-touchevents .page__link:hover {
+	opacity: .75;
+}

@@ -1,4 +1,4 @@
-/* globals window */
+/* globals window, document */
 import React from 'react';
 import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
@@ -6,8 +6,12 @@ import store from 'store2';
 import { tryParseJSON } from '../util/helpers';
 
 import Header from './Header';
-import Info from './Info';
-import Create from './Create';
+import About from './About';
+import Applicant from './Applicant';
+import Summary from './Summary';
+import RentalHistory from './RentalHistory';
+import EmploymentHistory from './EmploymentHistory';
+import Income from './Income';
 import Preview from './Preview';
 
 class ResumeApp extends React.Component {
@@ -82,11 +86,31 @@ class ResumeApp extends React.Component {
     store.set('data', newState);
   }
 
+  toggleMenu() {
+    const app = document.getElementById('app');
+    app.classList.toggle('toggle--active');
+  }
+
+  toggleHeader() {
+    const app = document.getElementById('app');
+    app.classList.toggle('btn--header--active');
+  }
+
+  closeMenu() {
+    const app = document.getElementById('app');
+    app.classList.remove('toggle--active');
+  }
+
   printResume() {
+    const app = document.getElementById('app');
     if (this.props.location.pathname !== '/preview') {
       this.context.router.push('/preview');
-      setTimeout(() => (window.print()), 250);
+      setTimeout(() => {
+        app.classList.remove('toggle--active');
+        window.print();
+      }, 500);
     } else {
+      app.classList.remove('toggle--active');
       window.print();
     }
   }
@@ -98,29 +122,74 @@ class ResumeApp extends React.Component {
 
   renderPage() {
     const pageMap = {
-      '/info': 'Info',
-      '/create': 'Create',
+      '/about': 'About',
       '/preview': 'Preview',
+      '/applicant': 'Applicant',
+      '/summary': 'Summary',
+      '/rental-history': 'RentalHistory',
+      '/employment-history': 'EmploymentHistory',
+      '/income': 'Income',
     };
     switch (pageMap[this.props.location.pathname]) {
-      case 'Info':
+      case 'About':
         return (
-          <Info
+          <About
             {...this.props}
+            toggleHeader={this.toggleHeader}
+            closeMenu={this.closeMenu}
           />
         );
-      case 'Create':
+      case 'Applicant':
         return (
-          <Create
+          <Applicant
             {...this.props}
             people={this.state.people}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
+          />
+        );
+      case 'Summary':
+        return (
+          <Summary
+            {...this.props}
             summary={this.state.summary}
+            onInputChange={this.onInputChange}
+            toggleHeader={this.toggleHeader}
+          />
+        );
+      case 'RentalHistory':
+        return (
+          <RentalHistory
+            {...this.props}
             rentalHistory={this.state.rentalHistory}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
+          />
+        );
+      case 'EmploymentHistory':
+        return (
+          <EmploymentHistory
+            {...this.props}
             employmentHistory={this.state.employmentHistory}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
+          />
+        );
+      case 'Income':
+        return (
+          <Income
+            {...this.props}
             income={this.state.income}
             onInputChange={this.onInputChange}
             onAddSection={this.onAddSection}
             onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
           />
         );
       case 'Preview':
@@ -132,6 +201,8 @@ class ResumeApp extends React.Component {
             rentalHistory={this.state.rentalHistory}
             employmentHistory={this.state.employmentHistory}
             income={this.state.income}
+            toggleHeader={this.toggleHeader}
+            printResume={this.printResume}
           />
         );
       default:
@@ -145,6 +216,8 @@ class ResumeApp extends React.Component {
         <Header
           {...this.props}
           printResume={this.printResume}
+          toggleMenu={this.toggleMenu}
+          closeMenu={this.closeMenu}
         />
         <main className="transition">
           {this.renderPage()}

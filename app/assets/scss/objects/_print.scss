@@ -21,23 +21,27 @@
 		padding: 0 !important;
 		font-size: 12pt;
 	}
+	.page {
+		width: 100%;
+		margin: 0;
+	}
 	.nav {
 		display: none;
 	}
 	.resume {
 		margin: 0;
 	}
-	.container {
-		margin: 0;
+	.resume__container {
+		margin: 0 5mm;
 	}
-	.resume--header {
-		margin-top: 10mm;
+	.resume__header {
+		margin-top: 0;
 	}
-	.resume--title {
+	.resume__title {
 		margin-bottom: 7.5mm;
 	}
-	.resume--subtitle {
-		width: 25%;
+	.resume__subtitle {
+		width: 30%;
 		float: left;
 	}
 	.applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list {
@@ -49,10 +53,10 @@
 		float: left;
 		margin-right: 2.5%;
 	}
-	.resume--section {
+	.resume__section {
 		margin-bottom: 7.5mm;
 	}
-	.resume--section--income {
+	.resume__section--income {
 		margin-bottom: 2.5mm;
 	}
 	.header {
@@ -61,8 +65,14 @@
 	.incomplete {
 		display: none;
 	}
-	.resume--section--rent {
+	.btn--print--prview {
+		display: none;
+	}
+	.resume__section--rent {
 		margin-top: -2.5mm;
+	}
+	.page {
+		width: 100%;
 	}
 }
 @page {

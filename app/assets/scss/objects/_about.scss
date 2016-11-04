@@ -1,13 +1,17 @@
 /* --------- *
- *   Info   *
+ *   About   *
  * --------- */
 
 .faq {
-	position: relative;
-	max-width: 600px;
-	padding: 0 1em;
-	margin: 90px auto 0;
-	text-align: center;
+	margin: 2em auto;
+	padding: 2em 1em;
+	max-width: 750px;
+	text-align: left;
+	@extend %clearfix;
+	@include bp(medium) {
+		padding: 2.5em 2em;
+	}
+
 	.faq__title {
 		font-weight: bold;
 		width: 100%;
@@ -25,17 +29,14 @@
 		line-height: 1.4;
 	}
 	li {
+		float: left;
+		clear: both;
 		margin-bottom: 2em;
 	}
 }
 
-.btn--back {
-	position: absolute;
-	left: .5em;
-	top: 0;
-	text-decoration: underline;
-}
-
-.no-touchevents .btn--back:hover {
-	color: $highlight;
+.page__link--about {
+	position: static;
+	float: left;
+	clear: both;
 }

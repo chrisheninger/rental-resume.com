@@ -1,25 +1,54 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-function Header({ printResume }) {
+function Header({ printResume, toggleMenu, closeMenu }) {
   return (
     <header className="header">
+      <Link className="logo--mobile" to="/" onClick={closeMenu}>Rental Resume</Link>
+      <button className="toggle" onClick={toggleMenu}>
+        <span className="toggle__bars" />
+      </button>
       <nav className="nav">
-        <Link className="logo" to="/">
-          Rental Resume
-        </Link>
         <ul>
+          <Link to="/" className="logo" onClick={closeMenu}>
+            <span className="icon-resume" />
+            <h1 to="/">Rental Resume</h1>
+          </Link>
           <li>
-            <Link to="/info" title="Info" className="btn btn--action icon-info" activeClassName="btn--action--active" />
+            <Link to="/applicant" title="Applicant" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines" />
+              Applicant
+            </Link>
           </li>
           <li>
-            <Link to="/create" title="Create" className="btn btn--action icon-edit" activeClassName="btn--action--active" />
+            <Link to="/summary" title="Summary" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines" />
+              Summary
+            </Link>
           </li>
           <li>
-            <Link to="/preview" title="Preview" className="btn btn--action icon-preview" activeClassName="btn--action--active" />
+            <Link to="/employment-history" title="Employment History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines" />
+              Employment History
+            </Link>
           </li>
           <li>
-            <button title="Print" className="btn btn--action icon-print" onClick={printResume} />
+            <Link to="/rental-history" title="Rental History" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines" />
+              Rental History
+            </Link>
+          </li>
+          <li>
+            <Link to="/income" title="Income" className="btn--nav" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="btn--nav__lines btn--nav__lines--last" />
+              Income
+            </Link>
+          </li>
+          <li>
+            <Link to="/preview" title="preview" className="btn--nav btn--preview" activeClassName="btn--nav--active" onClick={closeMenu}>
+              <span className="icon-preview" />
+              Preview
+            </Link>
           </li>
         </ul>
       </nav>
@@ -29,6 +58,8 @@ function Header({ printResume }) {
 
 Header.propTypes = {
   printResume: React.PropTypes.func,
+  toggleMenu: React.PropTypes.func,
+  closeMenu: React.PropTypes.func,
 };
 
 export default Header;
