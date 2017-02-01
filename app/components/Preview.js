@@ -142,28 +142,27 @@ class Preview extends React.Component {
 
             {this.props.rentalHistory.map(this.renderRentalHistory)}
 
-            <section className="resume__section incomplete">
-              <h2 className="resume__subtitle incomplete__subtitle incomplete__sbutitle--active">Omitted Sections</h2>
-              <ul className="incomplete-list">
-                <li className="incomplete__link incomplete__link--applicant">
-                  <Link to="/applicant">Applicant</Link>
-                </li>
-                <li className="incomplete__link incomplete__link--summary">
-                  <Link to="/summary">Summary</Link>
-                </li>
-                <li className="incomplete__link incomplete__link--employment-history">
-                  <Link to="/employment-history">Employment History</Link>
-                </li>
-                <li className="incomplete__link incomplete__link--rental-history">
-                  <Link to="/rental-history">Rental History</Link>
-                </li>
-                <li className="incomplete__link incomplete__link--income">
-                  <Link to="/income">Income</Link>
-                </li>
-              </ul>
-            </section>
-
           </div>
+          <section className="resume__section incomplete">
+            <h2 className="resume__subtitle incomplete__subtitle incomplete__sbutitle--active">Omitted Sections</h2>
+            <ul className="incomplete-list">
+              <li className="incomplete__link incomplete__link--applicant">
+                <Link to="/applicant">Applicant</Link>
+              </li>
+              <li className="incomplete__link incomplete__link--summary">
+                <Link to="/summary">Summary</Link>
+              </li>
+              <li className="incomplete__link incomplete__link--employment-history">
+                <Link to="/employment-history">Employment History</Link>
+              </li>
+              <li className="incomplete__link incomplete__link--rental-history">
+                <Link to="/rental-history">Rental History</Link>
+              </li>
+              <li className="incomplete__link incomplete__link--income">
+                <Link to="/income">Income</Link>
+              </li>
+            </ul>
+          </section>
         </div>
       </section>
     );
