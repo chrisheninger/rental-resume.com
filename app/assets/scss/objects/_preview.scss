@@ -161,17 +161,39 @@
 	border-top: 1px dashed darken($secondary, 15%);
 	background: $secondary;
 	padding: 2.5em 1em;
-	margin: -2em 1em 0 1em;
+	margin: -2em 1em 2em 1em;
+	display: none;
 	@include bp(medium) {
 		padding: 2.5em 4em;
-		margin: -2em 2em 0 2em;
+		margin: -2em 2em 2em 2em;
 	}
+}
+
+[class^="missing--"] .incomplete {
+	display: block;
 }
 
 .incomplete__subtitle {
 	margin-bottom: 1em;
 	font-weight: bold;
 	color: darken($secondary, 25%);
+	display: none;
+}
+
+[class^="missing--"] .incomplete__subtitle {
+	display: inline-block;
+}
+
+.incomplete__link {
+	display: none;
+}
+
+.missing--applicant .incomplete__link--applicant,
+.missing--rental-history .incomplete__link--rental-history,
+.missing--summary .incomplete__link--summary,
+.missing--income .incomplete__link--income,
+.missing--employment-history .incomplete__link--employment-history {
+	display: inline-block;
 }
 
 .incomplete a {

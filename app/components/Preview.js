@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { numberWithCommas } from '../util/helpers';
-// import { DragDropContext } from 'react-dnd';
-// import HTML5Backend from 'react-dnd-html5-backend';
+import { missingSection } from '../util/helpers';
 
 class Preview extends React.Component {
   constructor() {
@@ -19,7 +18,7 @@ class Preview extends React.Component {
       return null;
     }
     if (!applicant.name || !applicant.email || !applicant.phone) {
-      console.log ( 'Applicant info is missing...' );
+      missingSection('applicant');
       return null;
     }
     return (
@@ -38,7 +37,7 @@ class Preview extends React.Component {
 
   renderIncomeSection(income) {
     if (!income) {
-      console.log ( 'Income info is missing...' );
+      missingSection('income');
       return null;
     }
     return (
@@ -53,7 +52,7 @@ class Preview extends React.Component {
 
   renderSummarySection(summary) {
     if (!summary) {
-      console.log ( 'Summary info is missing...' );
+      missingSection('summary');
       return null;
     }
     return (
@@ -71,7 +70,7 @@ class Preview extends React.Component {
       return null;
     }
     if (!employment.title || !employment.company || !employment.dateStart || !employment.dateEnd) {
-      console.log ( 'Employment History info is missing...' );
+      missingSection('employment-history');
       return null;
     }
     return (
@@ -96,7 +95,7 @@ class Preview extends React.Component {
       return null;
     }
     if (!rental.address1 || !rental.city || !rental.state || !rental.zip || !rental.dateStart || !rental.dateEnd || !rental.reason) {
-      console.log ( 'Rental History info is missing...' );
+      missingSection('rental-history');
       return null;
     }
     return (
@@ -144,7 +143,7 @@ class Preview extends React.Component {
 
           </div>
           <section className="resume__section incomplete">
-            <h2 className="resume__subtitle incomplete__subtitle incomplete__sbutitle--active">Omitted Sections</h2>
+            <h2 className="resume__subtitle incomplete__subtitle incomplete__sbutitle--active">Missing Sections</h2>
             <ul className="incomplete-list">
               <li className="incomplete__link incomplete__link--applicant">
                 <Link to="/applicant">Applicant</Link>

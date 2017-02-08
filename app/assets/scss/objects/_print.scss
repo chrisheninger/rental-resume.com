@@ -63,7 +63,10 @@
 		display: none;
 	}
 	.incomplete {
-		display: none;
+		display: none !important;
+	}
+	.incomplete-list {
+		display: none !important;
 	}
 	.btn--print--prview {
 		display: none;
