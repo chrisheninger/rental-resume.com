@@ -2,39 +2,46 @@
  *   Resume Preview  *
  * ----------------- */
 
-.container {
-	margin: 5em auto 1em;
-	max-width: 960px;
-	padding: 0 1em;
-	@include bp(medium) {
-		margin: 6em auto 2em;
-		padding: 0 2em;
-	}
-}
-
-.background {
-	background: $secondary;
-	@extend %clearfix;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-}
-
 .resume {
 	margin: 0 auto;
-	padding: 1em;
-	background: white;
-	max-width: 960px;
+	@extend %clearfix;
+	text-align: left;
+	display: inline-block;
+	width: 100%;
+	max-width: 750px;
+}
+
+.resume__container {
+	position: relative;
+	margin: 5em 1em 2em;
+	padding: 2.5em 1em;
+	background: $secondary;
+	@extend %clearfix;
 	@include bp(medium) {
-		padding: 4em;
-		margin: 2em auto;
+		padding: 2.5em 4em;
+		margin: 2em;
 	}
 }
+
+.resume__header {
+	float: left;
+	width: 100%;
+}
+
+.btn--print--prview {
+	background: $highlight;
+	color: white;
+	float: left;
+	padding: .25em 1em;
+	border-radius: 2em;
+	margin: 0 0 2em 0;
+	span {
+		margin-right: .25em;
+		position: relative;
+		top: 2px;
+	}
+}
+
 
 .resume a {
 	color: $base;
@@ -44,19 +51,21 @@
 	color: $highlight;
 }
 
-.resume--title {
+.resume__title {
 	font-size: 2em;
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
 	font-weight: bold;
+	float: left;
+	clear: both;
 }
 
-.resume--section {
+.resume__section {
 	@extend %clearfix;
 	margin-bottom: 2em;
 }
 
-.resume--subtitle {
+.resume__subtitle {
 	font-weight: bold;
 	margin-bottom: 1em;
 	@include bp(medium) {
@@ -65,7 +74,7 @@
 	}
 }
 
-.applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list {
+.applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list, .incomplete-list {
 	@include bp(medium) {
 		@include span-columns(9);
 	}
@@ -147,27 +156,65 @@
 }
 
 //Incomplete Sections
+
 .incomplete {
-	border: 1px dashed darken($secondary, 15%);
-	list-style-type: none !important;
-	&:hover {
-		border: 1px solid $highlight !important;
-		background: $highlight !important;
+	border-top: 1px dashed darken($secondary, 15%);
+	background: $secondary;
+	padding: 2.5em 1em;
+	margin: -2em 1em 2em 1em;
+	display: none;
+	@include bp(medium) {
+		padding: 2.5em 4em;
+		margin: -2em 2em 2em 2em;
 	}
+}
+
+[class^="missing--"] .incomplete {
+	display: block;
+}
+
+.incomplete__subtitle {
+	margin-bottom: 1em;
+	font-weight: bold;
+	color: darken($secondary, 25%);
+	display: none;
+}
+
+[class^="missing--"] .incomplete__subtitle {
+	display: inline-block;
+}
+
+.incomplete__link {
+	display: none;
+}
+
+.missing--applicant .incomplete__link--applicant,
+.missing--rental-history .incomplete__link--rental-history,
+.missing--summary .incomplete__link--summary,
+.missing--income .incomplete__link--income,
+.missing--employment-history .incomplete__link--employment-history {
+	display: inline-block;
+}
+
+.incomplete a {
+	background: darken($secondary, 5%);
+	color: darken($secondary, 25%) !important;
+	border-radius: 2em;
+	text-decoration: none;
+	padding: .5em 1em;
+	display: inline-block;
+	float: left;
+	margin: 0 .5em .5em 0;
 	@include bp(medium) {
 		text-align: center;
 	}
-	a {
-		color: darken($secondary, 15%) !important;
-		text-decoration: none;
-		padding: .5em;
-		display: block;
-		width: 100%;
-		height: 100%;
-		&:hover {
-			color: white !important;
-		}
-	}
+}
+
+.no-touchevents .incomplete a:hover {
+	background: darken($secondary, 25%) !important;
+}
+.no-touchevents .incomplete a:hover {
+		color: white !important;
 }
 
 .applicant.incomplete {

@@ -1,6 +1,5 @@
 import React from 'react';
-
-const employmentImage = require('../assets/images/employment-history.jpg');
+import { Link } from 'react-router';
 
 class EmploymentHistory extends React.Component {
 
@@ -55,9 +54,10 @@ class EmploymentHistory extends React.Component {
         {index > 0 ? (
           <button
             id={`remove-employment-section-${index}`}
-            className="btn btn--remove icon-cross"
+            className="btn btn--remove"
             onClick={(event) => onRemoveSection(event, 'employmentHistory', index)}
           >
+            <span />
           </button>
         ) : null}
       </li>
@@ -65,22 +65,22 @@ class EmploymentHistory extends React.Component {
   }
 
   render() {
-    const { employmentHistory, onAddSection } = this.props;
+    const { employmentHistory, onAddSection, toggleHeader } = this.props;
     return (
+      <section className="page">
+        <div className="page__header">
+          <div className="page__header__container">
+            <h1 className="page__title">Employment History</h1>
+            <p className="page__subtitle">
+              Next your landlord will want to know a brief history of your employment.
+              Usually a record of the last 5 years or so will suffice.
+            </p>
+            <button className="btn--header" onClick={toggleHeader}>
+              <span />
+            </button>
+          </div>
+        </div>
       <fieldset id="employment" className="fieldset fieldset--employment">
-        <legend className="legend legend--employment">
-          Employment History
-        </legend>
-        <label className="label label--employment">
-          Next your landlord will want to know a brief history of your employment.
-          Usually a record of the last 5 years or so will suffice.
-        </label>
-        <img
-          id="employment-section-image"
-          className="img img--employment"
-          src={employmentImage}
-          alt="Employment history section"
-        />
         <ol className="ol ol--employment">
           {employmentHistory.map(this.renderHistory)}
           <button
@@ -91,7 +91,9 @@ class EmploymentHistory extends React.Component {
             Add Another Job
           </button>
         </ol>
+        <Link to="/rental-history" title="Rental History" className="page__link">Continue...</Link>
       </fieldset>
+      </section>
     );
   }
 
@@ -102,6 +104,7 @@ EmploymentHistory.propTypes = {
   onInputChange: React.PropTypes.func,
   onAddSection: React.PropTypes.func,
   onRemoveSection: React.PropTypes.func,
+  toggleHeader: React.PropTypes.func,
 };
 
 export default EmploymentHistory;

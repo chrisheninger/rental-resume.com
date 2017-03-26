@@ -3,83 +3,204 @@
  * ------- */
 
 .header {
+	background: white;
+	width: 100%;
+	@extend %clearfix;
 	position: fixed;
 	top: 0;
+	z-index: 999;
+	border-bottom: 1px solid $secondary;
+	@include bp(medium) {
+		border: 0;
+	}
+}
+.nav {
+	transition: all 300ms ease out;
+	-webkit-transition: all 300ms ease-out;
+	width: 300px;
+	transform: translate3d(-300px,0,0);
+	position: fixed;
 	left: 0;
-	right: 0;
-	height: 60px;
-	background: white;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-	@extend %clearfix;
-	z-index: 3;
-	width: 100%;
-	text-align: center;
-	@extend %clearfix;
-	.nav {
-		max-width: 1200px;
-		padding: 0 1em;
+	top: 0;
+	bottom: 0;
+	background: $base;
+	z-index: 99;
+	padding: 4em 2em 0 3em;
+	@include bp(medium) {
+		width: 33%;
+		transform: translate3d(0,0,0);
+	}
+ 	ul {
+		clear: both;
+ 		padding: 0;
 		margin: 0 auto;
-		@include bp(medium) {
-			padding: 0 2em;
-		}
-	}
-	ul {
-		position: relative;
-		margin: 0 auto;
-		float: right;
-	}
-	li {
-		display: inline-block;
-		float: left;
-	}
+		max-width: 300px;
+ 	}
+ 	li {
+ 		margin: 0 0 .5em 1em;
+		clear: both;
+ 	}
 	a {
-		line-height: 60px;
 		text-decoration: none;
-		display: block;
 	}
-	h1 {
-		display: block;
-	}
-  @include bp(medium) {
-		display: block;
-	}
-}
+ }
 
-//Logo
+ .toggle--active .nav {
+  	transform: translate3d(0,0,0);
+  }
+
 .logo {
+	display: inline-block;
+	margin-bottom: 2em;
 	float: left;
-	color: $base;
-	font-weight: bold;
+	text-decoration: none;
+	clear: both;
+	color: white;
+	h1 {
+		color: white;
+		line-height: 1.1;
+		font-size: 1.1em;
+	}
+	span {
+		float: left;
+		font-size: 2.25em;
+		margin: 0 .25em 0 0;
+	}
 }
 
-.no-touchevents .logo a:hover, .no-touchevents .btn--list:hover {
-	color: gray!important;
+.logo--mobile {
+	text-decoration: none;
+	float: left;
+	font-weight: bold;
+	color: $base;
+	margin-left: 1em;
+	line-height: 50px;
+	@include bp(medium) {
+		display: none;
+	}
+}
+
+//Fancy Toggle Button
+.toggle {
+	display: block;
+	position: absolute;
+	right: 1em;
+	top: 11px;
+  width: 26px;
+	height: 28px;
+	@include bp(medium) {
+		display: none;
+	}
+}
+
+.no-touchevents .toggle:hover span,
+.no-touchevents .toggle:hover span:before,
+.no-touchevents .toggle:hover span:after {
+		background: lighten($base, 50%);
+}
+
+.no-touchevents .toggle--active .toggle:hover span {
+	background: white;
+}
+
+.toggle span, .toggle span:before, .toggle span:after {
+  cursor: pointer;
+  height: 2px;
+  width: 25px;
+  background: $base;
+  position: absolute;
+  display: block;
+  content: '';
+}
+.toggle span:before {
+  top: -7px;
+}
+.toggle span:after {
+  bottom: -7px;
+}
+
+.toggle span, .toggle span:before, .toggle span:after {
+  transition: all 200ms ease-in-out;
+}
+.toggle--active .toggle span {
+  background-color: white;
+}
+.toggle--active .toggle span:before, .toggle--active .toggle span:after {
+  top: 0;
+}
+.toggle--active .toggle span:before {
+  transform: rotate(45deg);
+}
+.toggle--active .toggle span:after {
+  transform: rotate(-45deg);
 }
 
 //Nav Buttons
-.btn--action {
-	padding: 0 1.17em!important;
-	line-height: 59px!important;
-	border-right: 1px solid darken($secondary, 5%);
-  color: darken($secondary,10%);
+.btn--nav {
+  color: darken($secondary, 50%);
+}
+
+.btn--nav--active {
+	color: white;
+	opacity: 1 !important;
+	.btn--nav__lines {
+		background: white;
+	}
+}
+
+.btn--nav__lines {
+	content: "";
+	display: block;
+	background: darken($secondary, 50%);
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	top: 11px;
 	position: relative;
-	z-index: 99;
+	right: 1em;
+	&:after {
+		content: "";
+		display: block;
+		background: darken($secondary, 50%);
+		height: 30px;
+		width: 2px;
+		position: relative;
+		left: 2px;
+		top: 6px;
+	}
 }
 
-.btn--action--active {
-	background: $highlight;
-	color: white;
+.btn--nav__lines--last {
+	&:after {
+		display: none;
+	}
 }
 
-.no-touchevents .btn--action:hover {
-	color: $highlight;
+.btn--preview {
+	float: left;
+	position: relative;
+	top: 1.5em;
+	right: 1em;
+	padding: .25em 1em;
+	background: white;
+	color: $base;
+	border-radius: 2em;
+	margin-right: .5em;
+	margin-bottom: 1em;
+	.icon-preview {
+		margin-right: .25em;
+		position: relative;
+		top: 2px;
+	}
+ 	&:before, &:after {
+		display: none;
+	}
 }
 
-.no-touchevents .btn--action--active:hover {
-  background: darken($highlight, 5%);
-	color: white;
+.btn--preview.btn--nav--active {
+	color: $base;
 }
 
-.icon-info {
-	border-left: 1px solid darken($secondary, 5%);
+.no-touchevents .nav a:hover {
+	opacity: .75;
 }

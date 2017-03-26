@@ -6,6 +6,21 @@
 	transition: all .15s;
 }
 
+.page__subtitle {
+	transition: transform all 200ms ease-in;
+	-webkit-transition: all 200ms ease-in;
+}
+
+.btn--header {
+	transition: all 150ms ease-in;
+	-webkit-transition: all 150ms ease-in;
+}
+
+.page__link {
+	transition: all 150ms ease-in;
+	-webkit-transition: all 150ms ease-in;
+}
+
 //Home Animation
 .transition--enter .home {
   opacity: 0.01;
@@ -15,29 +30,25 @@
 	transition: all .4s ease-in-out;
 }
 
-//Info Animation
-.transition--enter .faq {
-  opacity: 0.01;
-}
-.transition--enter.is-active .faq {
-  opacity: 1;
-	transition: all .4s ease-in-out;
+@keyframes zoom {
+    0% {transform: scale(1.1);}
+		100% {transform: scale(1);}
 }
 
-//Create Animation
-.transition--enter .resume-form {
-  opacity: 0.01;
-}
-.transition--enter.is-active .resume-form {
-  opacity: 1;
-	transition: all .4s ease-in-out;
+.home {
+	&:before {
+		@include bp(medium) {
+			animation-name: zoom;
+    	animation-duration: 25s;
+		}
+	}
 }
 
-//Preivew Animation
-.transition--enter .resume {
+//Page Animation
+.transition--enter .page {
   opacity: 0.01;
 }
-.transition--enter.is-active .resume {
+.transition--enter.is-active .page {
   opacity: 1;
 	transition: all .4s ease-in-out;
 }

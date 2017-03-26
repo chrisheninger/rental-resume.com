@@ -4,7 +4,7 @@ module.exports = {
     let o;
     try {
       o = JSON.parse(querystring);
-      if (o && typeof(o) === 'object' && o !== null) {
+      if (o && typeof o === 'object' && o !== null) {
         return o;
       }
     } catch (e) {
@@ -228,5 +228,11 @@ module.exports = {
       value: 'WY',
     },
   ],
+
+  missingSection(sectionName) {
+    const app = document.getElementById('app');
+    const missingClass = 'missing--';
+    app.classList.toggle(missingClass + sectionName);
+  },
 
 };

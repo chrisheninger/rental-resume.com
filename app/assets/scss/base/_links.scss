@@ -2,10 +2,12 @@
  *  LINKS  *
  * ------- */
 
-p a {
-  color: $base;
+.faq li a {
+  color: $highlight;
+  text-decoration: none;
+  border-bottom: 2px solid $highlight;
 }
 
-.no-touchevents p a:hover {
-  color: $highlight;
+.no-touchevents .faq li a:hover {
+  opacity: .75;
 }

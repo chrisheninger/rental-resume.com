@@ -1,9 +1,8 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
+import { Link } from 'react-router';
 
-const contactImage = require('../assets/images/contact.jpg');
-
-class ContactInformation extends React.Component {
+class Applicant extends React.Component {
 
   constructor() {
     super();
@@ -50,9 +49,10 @@ class ContactInformation extends React.Component {
         {index > 0 ? (
           <button
             id={`remove-contact-section-${index}`}
-            className="btn btn--remove icon-cross"
+            className="btn btn--remove"
             onClick={(event) => onRemoveSection(event, 'people', index)}
           >
+            <span />
           </button>
         ) : null}
       </li>
@@ -60,42 +60,45 @@ class ContactInformation extends React.Component {
   }
 
   render() {
-    const { people, onAddSection } = this.props;
+    const { people, onAddSection, toggleHeader } = this.props;
     return (
-      <fieldset id="contact" className="fieldset fieldset--contact">
-        <legend className="legend legend--contact">
-          Contact
-        </legend>
-        <label className="label label--contact">
-          Let's start with the basics.
-          First fill out the relevant contact information for the people that would live in the apartment.
-        </label>
-        <img
-          id="contact-section-image"
-          className="img img--contact"
-          src={contactImage}
-          alt="Contact information section"
-        />
-        <ol className="ol ol--contact">
-          {people.map(this.renderPerson)}
-          <button
-            className="btn btn--add"
-            onClick={(event) => onAddSection(event, 'people')}
-          >
-            Add Another Person
-          </button>
-        </ol>
-      </fieldset>
+      <section className="page">
+        <div className="page__header">
+          <div className="page__header__container">
+            <h1 className="page__title">Applicant</h1>
+            <p className="page__subtitle">
+              Let's start with the basics.
+              First fill out the relevant contact information for the people that would live in the apartment.
+            </p>
+            <button className="btn--header" onClick={toggleHeader}>
+              <span />
+            </button>
+          </div>
+        </div>
+        <fieldset id="contact" className="fieldset fieldset--contact">
+          <ol className="ol ol--applicant">
+            {people.map(this.renderPerson)}
+            <button
+              className="btn btn--add"
+              onClick={(event) => onAddSection(event, 'people')}
+            >
+              Add Another Person
+            </button>
+          </ol>
+          <Link to="/summary" title="Summary" className="page__link">Continue...</Link>
+        </fieldset>
+      </section>
     );
   }
 
 }
 
-ContactInformation.propTypes = {
+Applicant.propTypes = {
   people: React.PropTypes.array,
   onInputChange: React.PropTypes.func,
   onAddSection: React.PropTypes.func,
   onRemoveSection: React.PropTypes.func,
+  toggleHeader: React.PropTypes.func,
 };
 
-export default ContactInformation;
+export default Applicant;

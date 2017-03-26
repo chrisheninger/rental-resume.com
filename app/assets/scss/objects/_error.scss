@@ -1,0 +1,49 @@
+/* --------- *
+ * 404 ERROR *
+ * --------- */
+
+.error {
+	background: $base;
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+}
+
+.error__container {
+	display: inline-block;
+	@extend %clearfix;
+	max-width: 650px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.error__title {
+	text-align: center;
+	color: white;
+	margin-bottom: 0;
+	font-size: 3em;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.error__subtitle {
+	color: darken($secondary, 50%);
+	font-size: 1.5em;
+	margin-bottom: 1em;
+}
+
+.error__link {
+	text-align: center;
+	color: white;
+	background: $highlight;
+	padding: .25em 1em;
+	border-radius: 2em;
+	text-decoration: none;
+}
+
+.no-touchevents .error__link:hover {
+	opacity: .75;
+}
