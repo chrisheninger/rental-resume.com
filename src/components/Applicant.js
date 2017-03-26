@@ -3,7 +3,6 @@ import InputMask from 'react-input-mask';
 import { Link } from 'react-router';
 
 class Applicant extends React.Component {
-
   constructor() {
     super();
 
@@ -22,7 +21,8 @@ class Applicant extends React.Component {
           placeholder="Full Name*"
           type="text"
           value={person.name}
-          onChange={(event) => onInputChange(event.target.value, ['people', index, 'name'])}
+          onChange={event =>
+            onInputChange(event.target.value, ['people', index, 'name'])}
         />
         <input
           id={`email${index > 0 ? `-contact-section-${index}` : ''}`}
@@ -32,7 +32,8 @@ class Applicant extends React.Component {
           placeholder="Email*"
           type="email"
           value={person.email}
-          onChange={(event) => onInputChange(event.target.value, ['people', index, 'email'])}
+          onChange={event =>
+            onInputChange(event.target.value, ['people', index, 'email'])}
         />
         <InputMask
           id={`tel${index > 0 ? `-contact-section-${index}` : ''}`}
@@ -44,17 +45,18 @@ class Applicant extends React.Component {
           value={person.phone}
           mask="(999) 999-9999"
           maskChar=" "
-          onChange={(event) => onInputChange(event.target.value, ['people', index, 'phone'])}
+          onChange={event =>
+            onInputChange(event.target.value, ['people', index, 'phone'])}
         />
-        {index > 0 ? (
-          <button
-            id={`remove-contact-section-${index}`}
-            className="btn btn--remove"
-            onClick={(event) => onRemoveSection(event, 'people', index)}
-          >
-            <span />
-          </button>
-        ) : null}
+        {index > 0
+          ? <button
+              id={`remove-contact-section-${index}`}
+              className="btn btn--remove"
+              onClick={event => onRemoveSection(event, 'people', index)}
+            >
+              <span />
+            </button>
+          : null}
       </li>
     );
   }
@@ -80,17 +82,18 @@ class Applicant extends React.Component {
             {people.map(this.renderPerson)}
             <button
               className="btn btn--add"
-              onClick={(event) => onAddSection(event, 'people')}
+              onClick={event => onAddSection(event, 'people')}
             >
               Add Another Person
             </button>
           </ol>
-          <Link to="/summary" title="Summary" className="page__link">Continue...</Link>
+          <Link to="/summary" title="Summary" className="page__link">
+            Continue...
+          </Link>
         </fieldset>
       </section>
     );
   }
-
 }
 
 Applicant.propTypes = {

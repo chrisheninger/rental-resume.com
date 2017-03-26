@@ -8,11 +8,6 @@ npm-debug.log
 .DS_Store/*
 .DS\_Store
 
-# Not-Needed System Files
-*.sw?
-*.swp
-*.bak
-
 # Build Folder
 dist
 dist/*

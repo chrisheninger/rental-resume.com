@@ -20,7 +20,9 @@ function About() {
           </p>
         </li>
         <li>
-          <span className="faq__question">Is any of my information stored?</span>
+          <span className="faq__question">
+            Is any of my information stored?
+          </span>
           <p>
             Unlike other online generators, there is absolutely no hidden agenda here.
             There are no logins or ads and most importantly your information is never sent to or stored on a server.
@@ -28,14 +30,50 @@ function About() {
           </p>
         </li>
         <li>
-          <span className="faq__question">Why can't the website do this, that or the other thing?</span>
+          <span className="faq__question">
+            Why can't the website do this, that or the other thing?
+          </span>
           <p>
-            This website was made as a proof of concept by <Link to="http://chrisheninger.com/" target="_blank" rel="noopener noreferrer">Chris Heninger</Link> and <Link to="http://ryanwiemer.com/" target="_blank" rel="noopener noreferrer">Ryan Wiemer</Link>.
+            This website was made as a proof of concept by
+            {' '}
+            <Link
+              to="http://chrisheninger.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chris Heninger
+            </Link>
+            {' '}
+            and
+            {' '}
+            <Link
+              to="http://ryanwiemer.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ryan Wiemer
+            </Link>
+            .
             If you have a great idea for a new feature or something to make it better we would love to hear your feedback.
-            Feel free to file an issue on our <Link to="https://github.com/chrisheninger/rental-resume.com/issues" target="_blank" rel="noopener noreferrer"> GitHub repository</Link>.
+            Feel free to file an issue on our
+            {' '}
+            <Link
+              to="https://github.com/chrisheninger/rental-resume.com/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {' '}GitHub repository
+            </Link>
+            .
           </p>
         </li>
-        <Link to="/applicant" title="Applicant" className="page__link page__link--about">Get Started</Link>
+        <Link
+          to="/applicant"
+          title="Applicant"
+          className="page__link page__link--about"
+        >
+          Get Started
+        </Link>
       </ul>
     </section>
   );

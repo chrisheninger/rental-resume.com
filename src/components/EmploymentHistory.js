@@ -2,26 +2,26 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class EmploymentHistory extends React.Component {
-
-  constructor() {
-    super();
-
-    this.renderHistory = this.renderHistory.bind(this);
-  }
-
   renderHistory(history, index) {
     const { onInputChange, onRemoveSection } = this.props;
     return (
       <li key={index}>
         <input
-          id={`organization-title${index > 0 ? `-employment-section-${index}` : ''}`}
+          id={
+            `organization-title${index > 0 ? `-employment-section-${index}` : ''}`
+          }
           className="input input--title"
           name="organization-title"
           autoComplete="organization-title"
           placeholder="Title*"
           type="text"
           value={history.title}
-          onChange={(event) => onInputChange(event.target.value, ['employmentHistory', index, 'title'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'employmentHistory',
+              index,
+              'title',
+            ])}
         />
         <input
           id={`organization${index > 0 ? `-employment-section-${index}` : ''}`}
@@ -31,7 +31,12 @@ class EmploymentHistory extends React.Component {
           placeholder="Employer*"
           type="text"
           value={history.company}
-          onChange={(event) => onInputChange(event.target.value, ['employmentHistory', index, 'company'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'employmentHistory',
+              index,
+              'company',
+            ])}
         />
         <input
           id={`start-date-employment-section-${index}`}
@@ -40,7 +45,12 @@ class EmploymentHistory extends React.Component {
           placeholder="Start Date*"
           type="text"
           value={history.dateStart}
-          onChange={(event) => onInputChange(event.target.value, ['employmentHistory', index, 'dateStart'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'employmentHistory',
+              index,
+              'dateStart',
+            ])}
         />
         <input
           id={`end-date-employment-section-${index}`}
@@ -49,17 +59,23 @@ class EmploymentHistory extends React.Component {
           placeholder="End Date*"
           type="text"
           value={history.dateEnd}
-          onChange={(event) => onInputChange(event.target.value, ['employmentHistory', index, 'dateEnd'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'employmentHistory',
+              index,
+              'dateEnd',
+            ])}
         />
-        {index > 0 ? (
-          <button
-            id={`remove-employment-section-${index}`}
-            className="btn btn--remove"
-            onClick={(event) => onRemoveSection(event, 'employmentHistory', index)}
-          >
-            <span />
-          </button>
-        ) : null}
+        {index > 0
+          ? <button
+              id={`remove-employment-section-${index}`}
+              className="btn btn--remove"
+              onClick={event =>
+                onRemoveSection(event, 'employmentHistory', index)}
+            >
+              <span />
+            </button>
+          : null}
       </li>
     );
   }
@@ -80,23 +96,28 @@ class EmploymentHistory extends React.Component {
             </button>
           </div>
         </div>
-      <fieldset id="employment" className="fieldset fieldset--employment">
-        <ol className="ol ol--employment">
-          {employmentHistory.map(this.renderHistory)}
-          <button
-            id="add-employment-section"
-            className="btn btn--add"
-            onClick={(event) => onAddSection(event, 'employmentHistory')}
+        <fieldset id="employment" className="fieldset fieldset--employment">
+          <ol className="ol ol--employment">
+            {employmentHistory.map(this.renderHistory)}
+            <button
+              id="add-employment-section"
+              className="btn btn--add"
+              onClick={event => onAddSection(event, 'employmentHistory')}
+            >
+              Add Another Job
+            </button>
+          </ol>
+          <Link
+            to="/rental-history"
+            title="Rental History"
+            className="page__link"
           >
-            Add Another Job
-          </button>
-        </ol>
-        <Link to="/rental-history" title="Rental History" className="page__link">Continue...</Link>
-      </fieldset>
+            Continue...
+          </Link>
+        </fieldset>
       </section>
     );
   }
-
 }
 
 EmploymentHistory.propTypes = {

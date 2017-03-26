@@ -6,13 +6,6 @@ import Select from './Select';
 import { stateOptions } from '../util/helpers';
 
 class RentalHistory extends React.Component {
-
-  constructor() {
-    super();
-
-    this.renderHistory = this.renderHistory.bind(this);
-  }
-
   renderHistory(history, index) {
     const { onInputChange, onRemoveSection } = this.props;
     const selectClassNames = classNames({
@@ -30,7 +23,12 @@ class RentalHistory extends React.Component {
           placeholder="Street Address*"
           type="text"
           value={history.address1}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'address1'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'rentalHistory',
+              index,
+              'address1',
+            ])}
         />
         <input
           id={`address-line2${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -40,7 +38,12 @@ class RentalHistory extends React.Component {
           placeholder="Apt #"
           type="text"
           value={history.address2}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'address2'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'rentalHistory',
+              index,
+              'address2',
+            ])}
         />
         <input
           id={`address-level2${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -50,7 +53,8 @@ class RentalHistory extends React.Component {
           placeholder="City*"
           type="text"
           value={history.city}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'city'])}
+          onChange={event =>
+            onInputChange(event.target.value, ['rentalHistory', index, 'city'])}
         />
         <Select
           id={`address-level1${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -59,7 +63,12 @@ class RentalHistory extends React.Component {
           autoComplete="shipping address-level1"
           options={stateOptions}
           value={history.state || stateOptions[0].value}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'state'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'rentalHistory',
+              index,
+              'state',
+            ])}
         />
         <InputMask
           id={`postal-code${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -71,7 +80,8 @@ class RentalHistory extends React.Component {
           value={history.zip}
           mask="99999"
           maskChar={null}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
+          onChange={event =>
+            onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
         />
         <input
           id={`start-date${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -80,7 +90,12 @@ class RentalHistory extends React.Component {
           placeholder="Move In Date*"
           type="text"
           value={history.dateStart}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'dateStart'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'rentalHistory',
+              index,
+              'dateStart',
+            ])}
         />
         <input
           id={`end-date${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -89,7 +104,12 @@ class RentalHistory extends React.Component {
           placeholder="Move Out Date*"
           type="text"
           value={history.dateEnd}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'dateEnd'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'rentalHistory',
+              index,
+              'dateEnd',
+            ])}
         />
         <textarea
           id={`leaving-reason${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -98,17 +118,22 @@ class RentalHistory extends React.Component {
           placeholder="Reason For Leaving"
           type="text"
           value={history.reason}
-          onChange={(event) => onInputChange(event.target.value, ['rentalHistory', index, 'reason'])}
+          onChange={event =>
+            onInputChange(event.target.value, [
+              'rentalHistory',
+              index,
+              'reason',
+            ])}
         />
-        {index !== 0 ? (
-          <button
-            id={`remove-rental-section-${index}`}
-            className="btn btn--remove"
-            onClick={(event) => onRemoveSection(event, 'rentalHistory', index)}
-          >
-            <span />
-          </button>
-        ) : null}
+        {index !== 0
+          ? <button
+              id={`remove-rental-section-${index}`}
+              className="btn btn--remove"
+              onClick={event => onRemoveSection(event, 'rentalHistory', index)}
+            >
+              <span />
+            </button>
+          : null}
       </li>
     );
   }
@@ -135,17 +160,18 @@ class RentalHistory extends React.Component {
             <button
               id="add-rental-section"
               className="btn btn--add"
-              onClick={(event) => onAddSection(event, 'rentalHistory')}
+              onClick={event => onAddSection(event, 'rentalHistory')}
             >
               Add Another Residence
             </button>
           </ol>
-          <Link to="/income" title="Income" className="page__link">Continue...</Link>
+          <Link to="/income" title="Income" className="page__link">
+            Continue...
+          </Link>
         </fieldset>
       </section>
     );
   }
-
 }
 
 RentalHistory.propTypes = {

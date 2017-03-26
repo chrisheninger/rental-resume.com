@@ -16,22 +16,24 @@ function Income({ income, onInputChange, toggleHeader }) {
           </button>
         </div>
       </div>
-    <fieldset className="fieldset fieldset--income">
-      <div className="input-group">
-        <span className="input-prefix">$</span>
-        <input
-          id="income"
-          className="input input--income"
-          name="income"
-          type="number"
-          step="1000"
-          placeholder="Annual Income"
-          value={income}
-          onChange={(event) => onInputChange(event.target.value, ['income'])}
-        />
-      </div>
-      <Link to="/preview" title="Preview" className="page__link">Preview Resume</Link>
-    </fieldset>
+      <fieldset className="fieldset fieldset--income">
+        <div className="input-group">
+          <span className="input-prefix">$</span>
+          <input
+            id="income"
+            className="input input--income"
+            name="income"
+            type="number"
+            step="1000"
+            placeholder="Annual Income"
+            value={income}
+            onChange={event => onInputChange(event.target.value, ['income'])}
+          />
+        </div>
+        <Link to="/preview" title="Preview" className="page__link">
+          Preview Resume
+        </Link>
+      </fieldset>
     </section>
   );
 }
@@ -41,6 +43,5 @@ Income.propTypes = {
   onInputChange: React.PropTypes.func,
   toggleHeader: React.PropTypes.func,
 };
-
 
 export default Income;
