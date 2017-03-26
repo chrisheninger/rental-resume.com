@@ -8,8 +8,8 @@ import ResumeApp from './components/ResumeApp';
 import NotFound from './components/NotFound';
 import Animations from './components/Animations';
 
-import './assets/scss/style.scss';
-import './assets/js/vendor/modernizr.min.js';
+// import './assets/scss/style.scss';
+// import './assets/js/vendor/modernizr.min.js';
 
 const routes = (
   <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
