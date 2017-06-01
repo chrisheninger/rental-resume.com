@@ -16,6 +16,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/scss -o src/  --include-path node_modules/bourbon/app/assets/stylesheets/ --include-path node_modules/bourbon-neat/app/assets/stylesheets/ --watch --recursive",
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "react-scripts start",
+    "precommit": "lint-staged",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
