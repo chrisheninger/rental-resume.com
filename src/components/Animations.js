@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 function Animations({ children, location }) {
@@ -26,8 +27,8 @@ function Animations({ children, location }) {
 }
 
 Animations.propTypes = {
-  children: React.PropTypes.object,
-  location: React.PropTypes.object,
+  children: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default Animations;

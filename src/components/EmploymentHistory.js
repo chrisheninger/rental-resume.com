@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 class EmploymentHistory extends React.Component {
   renderHistory = (history, index) => {
-    console.log(this);
     const { onInputChange, onRemoveSection } = this.props;
     return (
       <li key={index}>
@@ -122,11 +122,11 @@ class EmploymentHistory extends React.Component {
 }
 
 EmploymentHistory.propTypes = {
-  employmentHistory: React.PropTypes.array,
-  onInputChange: React.PropTypes.func,
-  onAddSection: React.PropTypes.func,
-  onRemoveSection: React.PropTypes.func,
-  toggleHeader: React.PropTypes.func,
+  employmentHistory: PropTypes.array,
+  onInputChange: PropTypes.func,
+  onAddSection: PropTypes.func,
+  onRemoveSection: PropTypes.func,
+  toggleHeader: PropTypes.func,
 };
 
 export default EmploymentHistory;

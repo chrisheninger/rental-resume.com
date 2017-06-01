@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 function Income({ income, onInputChange, toggleHeader }) {
@@ -39,9 +40,9 @@ function Income({ income, onInputChange, toggleHeader }) {
 }
 
 Income.propTypes = {
-  income: React.PropTypes.string,
-  onInputChange: React.PropTypes.func,
-  toggleHeader: React.PropTypes.func,
+  income: PropTypes.string,
+  onInputChange: PropTypes.func,
+  toggleHeader: PropTypes.func,
 };
 
 export default Income;

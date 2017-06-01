@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { numberWithCommas } from '../util/helpers';
 import { missingSection } from '../util/helpers';
@@ -15,10 +16,10 @@ class Preview extends React.Component {
       return null;
     }
     return (
-      <section className="resume__section resume__section--applicant">
+      <section className="resume__section resume__section--applicant" key={index}>
         <h2 className="resume__subtitle">Applicant</h2>
         <ul className="applicant-list">
-          <li className="applicant" key={index}>
+          <li className="applicant">
             <div className="applicant__name">{applicant.name}</div>
             <div className="applicant__email">{applicant.email}</div>
             <div className="applicant__phone">{applicant.phone}</div>
@@ -116,10 +117,10 @@ class Preview extends React.Component {
       return null;
     }
     return (
-      <section className="resume__section resume__section--rent">
+      <section className="resume__section resume__section--rent" key={index}>
         <h2 className="resume__subtitle">Rental History</h2>
         <ul className="rental-list">
-          <li className="apartment" key={index}>
+          <li className="apartment">
             {
               `${rental.address1} ${rental.address2} ${rental.city}, ${rental.state} ${rental.zip}`
             }
@@ -193,12 +194,12 @@ class Preview extends React.Component {
 }
 
 Preview.propTypes = {
-  people: React.PropTypes.array,
-  summary: React.PropTypes.string,
-  rentalHistory: React.PropTypes.array,
-  employmentHistory: React.PropTypes.array,
-  income: React.PropTypes.string,
-  printResume: React.PropTypes.func,
+  people: PropTypes.array,
+  summary: PropTypes.string,
+  rentalHistory: PropTypes.array,
+  employmentHistory: PropTypes.array,
+  income: PropTypes.string,
+  printResume: PropTypes.func,
 };
 
 export default Preview;

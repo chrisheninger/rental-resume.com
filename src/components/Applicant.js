@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import { Link } from 'react-router';
 
@@ -97,11 +98,11 @@ class Applicant extends React.Component {
 }
 
 Applicant.propTypes = {
-  people: React.PropTypes.array,
-  onInputChange: React.PropTypes.func,
-  onAddSection: React.PropTypes.func,
-  onRemoveSection: React.PropTypes.func,
-  toggleHeader: React.PropTypes.func,
+  people: PropTypes.array,
+  onInputChange: PropTypes.func,
+  onAddSection: PropTypes.func,
+  onRemoveSection: PropTypes.func,
+  toggleHeader: PropTypes.func,
 };
 
 export default Applicant;

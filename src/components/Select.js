@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 
 class Select extends React.Component {
@@ -38,24 +39,24 @@ class Select extends React.Component {
 }
 
 Select.propTypes = {
-  id: React.PropTypes.string,
-  className: React.PropTypes.string,
-  disabled: React.PropTypes.bool,
-  options: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      text: React.PropTypes.string,
-      value: React.PropTypes.any,
-      disabled: React.PropTypes.any,
+  id: PropTypes.string,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      value: PropTypes.any,
+      disabled: PropTypes.any,
     })
   ).isRequired,
-  value: React.PropTypes.any,
-  onFocus: React.PropTypes.func,
-  onBlur: React.PropTypes.func,
-  onChange: React.PropTypes.func,
-  onKeyDown: React.PropTypes.func,
-  onKeyUp: React.PropTypes.func,
-  onKeyPress: React.PropTypes.func,
-  tabIndex: React.PropTypes.string,
+  value: PropTypes.any,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  onKeyUp: PropTypes.func,
+  onKeyPress: PropTypes.func,
+  tabIndex: PropTypes.string,
 };
 
 export default Select;

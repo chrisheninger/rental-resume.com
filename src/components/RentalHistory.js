@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import classNames from 'classnames';
 import { Link } from 'react-router';
@@ -175,11 +176,11 @@ class RentalHistory extends React.Component {
 }
 
 RentalHistory.propTypes = {
-  rentalHistory: React.PropTypes.array,
-  onInputChange: React.PropTypes.func,
-  onAddSection: React.PropTypes.func,
-  onRemoveSection: React.PropTypes.func,
-  toggleHeader: React.PropTypes.func,
+  rentalHistory: PropTypes.array,
+  onInputChange: PropTypes.func,
+  onAddSection: PropTypes.func,
+  onRemoveSection: PropTypes.func,
+  toggleHeader: PropTypes.func,
 };
 
 export default RentalHistory;

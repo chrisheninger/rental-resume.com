@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 function Summary({ summary, onInputChange, toggleHeader }) {
@@ -31,9 +32,9 @@ function Summary({ summary, onInputChange, toggleHeader }) {
 }
 
 Summary.propTypes = {
-  summary: React.PropTypes.string,
-  onInputChange: React.PropTypes.func,
-  toggleHeader: React.PropTypes.func,
+  summary: PropTypes.string,
+  onInputChange: PropTypes.func,
+  toggleHeader: PropTypes.func,
 };
 
 export default Summary;

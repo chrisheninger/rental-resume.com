@@ -1,5 +1,6 @@
 /* globals window, document */
 import React from 'react';
+import PropTypes from 'prop-types';
 import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
 import store from 'store2';
@@ -229,11 +230,11 @@ class ResumeApp extends React.Component {
 }
 
 ResumeApp.propTypes = {
-  location: React.PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 ResumeApp.contextTypes = {
-  router: React.PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 export default ResumeApp;

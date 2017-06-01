@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 function Header({ printResume, toggleMenu, closeMenu }) {
@@ -95,9 +96,9 @@ function Header({ printResume, toggleMenu, closeMenu }) {
 }
 
 Header.propTypes = {
-  printResume: React.PropTypes.func,
-  toggleMenu: React.PropTypes.func,
-  closeMenu: React.PropTypes.func,
+  printResume: PropTypes.func,
+  toggleMenu: PropTypes.func,
+  closeMenu: PropTypes.func,
 };
 
 export default Header;
