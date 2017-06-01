@@ -8,6 +8,7 @@ import ResumeApp from './components/ResumeApp';
 import NotFound from './components/NotFound';
 import Animations from './components/Animations';
 
+import './index.css';
 // import './assets/scss/style.scss';
 // import './assets/js/vendor/modernizr.min.js';
 

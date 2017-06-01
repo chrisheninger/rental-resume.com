@@ -6,7 +6,7 @@ import Select from './Select';
 import { stateOptions } from '../util/helpers';
 
 class RentalHistory extends React.Component {
-  renderHistory(history, index) {
+  renderHistory = (history, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     const selectClassNames = classNames({
       select: true,
@@ -136,7 +136,7 @@ class RentalHistory extends React.Component {
           : null}
       </li>
     );
-  }
+  };
 
   render() {
     const { rentalHistory, onAddSection, toggleHeader } = this.props;

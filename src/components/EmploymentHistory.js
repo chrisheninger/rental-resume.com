@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class EmploymentHistory extends React.Component {
-  renderHistory(history, index) {
+  renderHistory = (history, index) => {
+    console.log(this);
     const { onInputChange, onRemoveSection } = this.props;
     return (
       <li key={index}>
@@ -78,7 +79,7 @@ class EmploymentHistory extends React.Component {
           : null}
       </li>
     );
-  }
+  };
 
   render() {
     const { employmentHistory, onAddSection, toggleHeader } = this.props;

@@ -7,31 +7,37 @@
     "type": "git",
     "url": "https://github.com/chrisheninger/rental-resume.com"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
   "contributors": [
     "Chris Heninger <heninger@gmail.com> (http://chrisheninger.com/)",
     "Ryan Wiemer <ryan@ryanwiemer.com> (http://ryanwiemer.com/)"
   ],
-  "devDependencies": {
-    "node-bourbon": "^4.2.8",
-    "node-neat": "^1.7.2",
-    "node-sass": "^4.5.1",
-    "react-scripts": "^0.9.5"
+  "scripts": {
+    "build-css": "node-sass-chokidar src/scss -o src/ --include-path node_modules/bourbon/app/assets/stylesheets/ --include-path node_modules/bourbon-neat/app/assets/stylesheets/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/scss -o src/  --include-path node_modules/bourbon/app/assets/stylesheets/ --include-path node_modules/bourbon-neat/app/assets/stylesheets/ --watch --recursive",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "react": "^15.4.2",
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-input-mask": "^0.7.8",
-    "react-router": "^3.0.0",
-    "store2": "^2.5.0"
+    "prop-types": "15.5.10",
+    "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.5.2",
+    "react-dom": "^15.5.4",
+    "react-input-mask": "^0.8.0",
+    "react-router": "^3.0.5",
+    "store2": "^2.5.1"
+  },
+  "devDependencies": {
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^1.7.2",
+    "node-sass": "^4.5.3",
+    "node-sass-chokidar": "0.0.2",
+    "npm-run-all": "^4.0.2",
+    "react-scripts": "^1.0.7"
   }
 }
