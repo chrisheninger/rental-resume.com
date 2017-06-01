@@ -16,7 +16,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/scss -o src/  --include-path node_modules/bourbon/app/assets/stylesheets/ --include-path node_modules/bourbon-neat/app/assets/stylesheets/ --watch --recursive",
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -33,11 +33,21 @@
     "store2": "^2.5.1"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-react-app": "^1.0.4",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "husky": "^0.13.4",
+    "lint-staged": "^3.5.1",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
     "node-sass": "^4.5.3",
     "node-sass-chokidar": "0.0.2",
     "npm-run-all": "^4.0.2",
-    "react-scripts": "^1.0.7"
+    "prettier": "^1.3.1",
+    "react-scripts": "1.0.7"
   }
 }
