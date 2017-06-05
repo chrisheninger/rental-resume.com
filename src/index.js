@@ -11,8 +11,6 @@ import Animations from './components/Animations';
 import registerServiceWorker from './service-worker-registration';
 
 import './index.css';
-// import './assets/scss/style.scss';
-// import './assets/js/vendor/modernizr.min.js';
 
 const routes = (
   <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
