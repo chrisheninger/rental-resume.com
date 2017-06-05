@@ -6,8 +6,8 @@ Rental Resume is a simple [ReactJS](https://github.com/facebook/react) single pa
 ## Setting up the development environment
   - Clone the repo
   - Run `npm install` to install dependencies
-  - Run `npm run develop` to start local development server
-  - Open a browser to http://localhost:8080/ and voilà!
+  - Run `npm run start` to start local development server
+  - Open a browser to http://localhost:3000/ and voilà!
 
 ## Want to contribute?
 Feel free to file a pull request with a detailed description of what you updated and why. Bonus points if you resolve open issues!

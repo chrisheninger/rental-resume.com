@@ -1,0 +1,225 @@
+/* ------- *
+ *   Form  *
+ * ------- */
+
+ .fieldset {
+   margin: 2em auto;
+   padding: 2em 1em;
+ 	 max-width: 750px;
+   text-align: center;
+   @extend %clearfix;
+   @include bp(medium) {
+     padding: 2.5em 2em;
+   }
+ }
+
+.input, .select, .textarea {
+  padding: .5em;
+  font-size: 1em;
+  border-radius: 2px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  resize: none;
+  outline: none;
+  background: $secondary!important;
+}
+
+.input, .select {
+  margin-bottom: 2.35765%;;
+  @include span-columns(12);
+  @include bp(medium) {
+    @include span-columns(6);
+  }
+}
+
+.textarea {
+  overflow: hidden;
+  line-height: 1.4;
+  font-size: 1em;
+  margin-bottom: 1em !important;
+}
+
+.select {
+  background: $secondary url(./images/arrows.svg) no-repeat 97% 0!important;
+}
+
+.select-disabled {
+  color: #a9a9a9;
+}
+
+.ol li {
+  position: relative;
+  @extend %clearfix;
+  margin-bottom: 2em;
+  &:hover .btn--remove {
+    opacity: 1;
+  }
+}
+//Appicant Page
+.input--full-name {
+  @include span-columns(12);
+  padding-right: 3em;
+  @include bp(medium) {
+    padding-right: .5em;
+  }
+}
+
+.touch .input--full-name {
+  padding-right: 3em;
+}
+
+.input--email {
+  @include bp(medium) {
+    margin-bottom: 0!important;
+  }
+}
+
+.input--phone {
+  margin-right: 0;
+  @include bp(medium) {
+    margin-bottom: 0!important;
+  }
+}
+
+//Summary
+.textarea--summary {
+  height: 300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5em !important;
+}
+
+//Rental History
+.input--street {
+  padding-right: 3em;
+  @include bp(medium) {
+    padding-right: .5em;
+  }
+}
+
+.touch .input--street {
+  padding-right: 3em;
+}
+
+.textarea--reason {
+  min-height: 100px;
+}
+
+.input--street, .textarea--reason {
+  width: 100%!important;
+}
+
+.input--city, .input--zip, .input--end-date {
+  margin-right: 0;
+}
+
+//Employment History
+.input--title {
+  @include span-columns(12);
+  padding-right: 3em;
+  @include bp(medium) {
+    padding-right: .5em;
+  }
+}
+
+.input--employer {
+  @include span-columns(12);
+}
+
+.touch .input--title {
+  padding-right: 3em;
+}
+
+.input--employer  {
+  margin-right: 0;
+}
+
+//Income
+.fieldset--income {
+  text-align: center;
+}
+
+.input--income {
+  width: 100%;
+  margin: 0 auto 2em;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+}
+
+.input-group {
+  @extend %clearfix;
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+  @include bp(medium) {
+    width: auto;
+  }
+}
+
+.input-prefix {
+  position: absolute;
+  left: .5em;
+  line-height: 50px;
+  font-weight: bold;
+  color: gray;
+  @include bp(medium) {
+    width: auto;
+  }
+}
+
+//Buttons on Form
+.btn--add {
+  display: inline-block;
+  float: left;
+  color: $highlight;
+  border-bottom: 2px solid $highlight;
+  margin-bottom: 1em;
+  @include bp(medium) {
+
+  }
+}
+
+.no-touchevents .btn--add:hover {
+  opacity: .75;
+}
+
+.btn--remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	top: 0px;
+	margin-left: -18px;
+	border-radius: 50%;
+  opacity: .4;
+  span {
+		display: block;
+		width: 16px;
+		height: 2px;
+		background: $highlight;
+		position: relative;
+		left: 10px;
+		&:after {
+			position: relative;
+			top: -7px;
+			left: 7px;
+			display: block;
+			background: $highlight;
+			content: "";
+			width: 2px;
+			height: 16px;
+		}
+  }
+}
+
+.touchevents .btn--remove {
+  opacity: 1;
+}
