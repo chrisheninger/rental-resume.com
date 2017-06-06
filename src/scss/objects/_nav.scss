@@ -57,10 +57,17 @@
 	clear: both;
 	color: white;
 	h1 {
+		display: flex;
 		color: white;
+    fill: white;
 		line-height: 1.1;
 		font-size: 1.1em;
 	}
+  svg {
+    width: 36px;
+    height: 36px;
+		margin-right: 8px;
+  }
 	span {
 		float: left;
 		font-size: 2.25em;
@@ -179,22 +186,22 @@
 .btn--preview {
 	float: left;
 	position: relative;
+  display: flex;
+	align-items: center;
 	top: 1.5em;
 	right: 1em;
 	padding: .25em 1em;
 	background: white;
 	color: $base;
+	fill: $base;
 	border-radius: 2em;
 	margin-right: .5em;
 	margin-bottom: 1em;
-	.icon-preview {
-		margin-right: .25em;
-		position: relative;
-		top: 2px;
-	}
- 	&:before, &:after {
-		display: none;
-	}
+  svg {
+    width: 16px;
+    height: 16px;
+		margin-right: 6px;
+  }
 }
 
 .btn--preview.btn--nav--active {

@@ -7,7 +7,10 @@ import { missingSection } from '../util/helpers';
 class Preview extends React.Component {
   renderHeader(applicant, index) {
     if (
-      !applicant.name && !applicant.email && !applicant.phone && index !== 0
+      !applicant.name &&
+      !applicant.email &&
+      !applicant.phone &&
+      index !== 0
     ) {
       return null;
     }
@@ -16,7 +19,10 @@ class Preview extends React.Component {
       return null;
     }
     return (
-      <section className="resume__section resume__section--applicant" key={index}>
+      <section
+        className="resume__section resume__section--applicant"
+        key={index}
+      >
         <h2 className="resume__subtitle">Applicant</h2>
         <ul className="applicant-list">
           <li className="applicant">
@@ -121,9 +127,7 @@ class Preview extends React.Component {
         <h2 className="resume__subtitle">Rental History</h2>
         <ul className="rental-list">
           <li className="apartment">
-            {
-              `${rental.address1} ${rental.address2} ${rental.city}, ${rental.state} ${rental.zip}`
-            }
+            {`${rental.address1} ${rental.address2} ${rental.city}, ${rental.state} ${rental.zip}`}
             <br />
             {` (${rental.dateStart} - ${rental.dateEnd})`}
             <br />
@@ -141,10 +145,13 @@ class Preview extends React.Component {
           <div className="resume__container">
             <header className="resume__header">
               <button
-                className="btn--print--prview"
+                className="btn--print--preview"
                 onClick={this.props.printResume}
               >
-                <span className="icon-print" />
+                <svg width="1024" height="1024" viewBox="0 0 1024 1024">
+                  <path d="M256 64h512v128h-512v-128z" />
+                  <path d="M960 256h-896c-35.2 0-64 28.8-64 64v320c0 35.2 28.794 64 64 64h192v256h512v-256h192c35.2 0 64-28.8 64-64v-320c0-35.2-28.8-64-64-64zM128 448c-35.346 0-64-28.654-64-64s28.654-64 64-64 64 28.654 64 64-28.652 64-64 64zM704 896h-384v-320h384v320z" />
+                </svg>
                 Print
               </button>
               <h1 className="resume__title">Rental Resume</h1>
@@ -162,9 +169,7 @@ class Preview extends React.Component {
 
           </div>
           <section className="resume__section incomplete">
-            <h2
-              className="resume__subtitle incomplete__subtitle incomplete__sbutitle--active"
-            >
+            <h2 className="resume__subtitle incomplete__subtitle incomplete__sbutitle--active">
               Missing Sections
             </h2>
             <ul className="incomplete-list">
@@ -174,9 +179,7 @@ class Preview extends React.Component {
               <li className="incomplete__link incomplete__link--summary">
                 <Link to="/summary">Summary</Link>
               </li>
-              <li
-                className="incomplete__link incomplete__link--employment-history"
-              >
+              <li className="incomplete__link incomplete__link--employment-history">
                 <Link to="/employment-history">Employment History</Link>
               </li>
               <li className="incomplete__link incomplete__link--rental-history">

@@ -28,18 +28,22 @@
 	width: 100%;
 }
 
-.btn--print--prview {
+.btn--print--preview {
+  display: flex;
+	align-items: center;
 	background: $highlight;
 	color: white;
+	fill: white;
 	float: left;
 	padding: .25em 1em;
 	border-radius: 2em;
 	margin: 0 0 2em 0;
-	span {
-		margin-right: .25em;
-		position: relative;
-		top: 2px;
-	}
+
+  svg {
+    width: 16px;
+    height: 16px;
+		margin-right: 6px;
+  }
 }
 
 
