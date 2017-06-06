@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <main className="transition">
+    <main>
       <section className="home">
         <div className="home__text">
           <h2 className="home__text__title">

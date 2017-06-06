@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class Applicant extends React.Component {
   constructor() {

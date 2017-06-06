@@ -147,13 +147,6 @@ button {
   transition: all 150ms ease-in;
   -webkit-transition: all 150ms ease-in; }
 
-.transition--enter .home {
-  opacity: 0.01; }
-
-.transition--enter.is-active .home {
-  opacity: 1;
-  transition: all .4s ease-in-out; }
-
 @keyframes zoom {
   0% {
     transform: scale(1.1); }
@@ -164,13 +157,6 @@ button {
   .home:before {
     animation-name: zoom;
     animation-duration: 25s; } }
-
-.transition--enter .page {
-  opacity: 0.01; }
-
-.transition--enter.is-active .page {
-  opacity: 1;
-  transition: all .4s ease-in-out; }
 
 /* --------- *
  *   Page   *

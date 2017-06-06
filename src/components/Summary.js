@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function Summary({ summary, onInputChange, toggleHeader }) {
   return (
@@ -23,9 +23,15 @@ function Summary({ summary, onInputChange, toggleHeader }) {
           name="summary"
           placeholder="Your summary..."
           value={summary}
-          onChange={(event) => onInputChange(event.target.value, ['summary'])}
+          onChange={event => onInputChange(event.target.value, ['summary'])}
         />
-        <Link to="/employment-history" title="Employment History" className="page__link">Continue...</Link>
+        <Link
+          to="/employment-history"
+          title="Employment History"
+          className="page__link"
+        >
+          Continue...
+        </Link>
       </fieldset>
     </section>
   );

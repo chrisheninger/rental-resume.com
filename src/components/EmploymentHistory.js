@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class EmploymentHistory extends React.Component {
   renderHistory = (history, index) => {
@@ -8,9 +8,7 @@ class EmploymentHistory extends React.Component {
     return (
       <li key={index}>
         <input
-          id={
-            `organization-title${index > 0 ? `-employment-section-${index}` : ''}`
-          }
+          id={`organization-title${index > 0 ? `-employment-section-${index}` : ''}`}
           className="input input--title"
           name="organization-title"
           autoComplete="organization-title"
