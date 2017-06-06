@@ -91,34 +91,6 @@ body, p, input, textarea, select, button, select, option, textarea {
   font-size-adjust: 0.508;
   color: #334050; }
 
-@font-face {
-  font-family: 'icons';
-  src: url("./fonts/icons.ttf") format("truetype"), url("./fonts/icons.woff") format("woff"), url("./fonts/icons.svg?#icons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icons' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-resume:before {
-  content: "\e926"; }
-
-.icon-print:before {
-  content: "\e903"; }
-
-.icon-preview:before {
-  content: "\e906"; }
-
 /* ------- *
  * IMAGES  *
  * ------- */
@@ -645,9 +617,15 @@ button {
   clear: both;
   color: white; }
   .logo h1 {
+    display: flex;
     color: white;
+    fill: white;
     line-height: 1.1;
     font-size: 1.1em; }
+  .logo svg {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px; }
   .logo span {
     float: left;
     font-size: 2.25em;
@@ -748,20 +726,21 @@ button {
 .btn--preview {
   float: left;
   position: relative;
+  display: flex;
+  align-items: center;
   top: 1.5em;
   right: 1em;
   padding: .25em 1em;
   background: white;
   color: #334050;
+  fill: #334050;
   border-radius: 2em;
   margin-right: .5em;
   margin-bottom: 1em; }
-  .btn--preview .icon-preview {
-    margin-right: .25em;
-    position: relative;
-    top: 2px; }
-  .btn--preview:before, .btn--preview:after {
-    display: none; }
+  .btn--preview svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px; }
 
 .btn--preview.btn--nav--active {
   color: #334050; }
@@ -793,17 +772,20 @@ button {
   float: left;
   width: 100%; }
 
-.btn--print--prview {
+.btn--print--preview {
+  display: flex;
+  align-items: center;
   background: #de673d;
   color: white;
+  fill: white;
   float: left;
   padding: .25em 1em;
   border-radius: 2em;
   margin: 0 0 2em 0; }
-  .btn--print--prview span {
-    margin-right: .25em;
-    position: relative;
-    top: 2px; }
+  .btn--print--preview svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px; }
 
 .resume a {
   color: #334050; }
@@ -1055,7 +1037,7 @@ button {
     display: none !important; }
   .incomplete-list {
     display: none !important; }
-  .btn--print--prview {
+  .btn--print--preview {
     display: none; }
   .resume__section--rental-history {
     margin-top: -2.5mm; }

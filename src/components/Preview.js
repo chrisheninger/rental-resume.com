@@ -137,10 +137,13 @@ class Preview extends React.Component {
           <div className="resume__container">
             <header className="resume__header">
               <button
-                className="btn--print--prview"
+                className="btn--print--preview"
                 onClick={this.props.printResume}
               >
-                <span className="icon-print" />
+                <svg width="1024" height="1024" viewBox="0 0 1024 1024">
+                  <path d="M256 64h512v128h-512v-128z" />
+                  <path d="M960 256h-896c-35.2 0-64 28.8-64 64v320c0 35.2 28.794 64 64 64h192v256h512v-256h192c35.2 0 64-28.8 64-64v-320c0-35.2-28.8-64-64-64zM128 448c-35.346 0-64-28.654-64-64s28.654-64 64-64 64 28.654 64 64-28.652 64-64 64zM704 896h-384v-320h384v320z" />
+                </svg>
                 Print
               </button>
               <h1 className="resume__title">Rental Resume</h1>
