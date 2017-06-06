@@ -200,6 +200,14 @@
 	display: inline-block;
 }
 
+.missing--applicant .resume__section--applicant,
+.missing--rental-history .resume__section--rental-history,
+.missing--summary .resume__section--summary,
+.missing--income .resume__section--income,
+.missing--employment-history .resume__section--employment {
+	display: none;
+}
+
 .incomplete a {
 	background: darken($secondary, 5%);
 	color: darken($secondary, 25%) !important;

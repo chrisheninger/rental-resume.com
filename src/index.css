@@ -921,6 +921,13 @@ button {
 .missing--employment-history .incomplete__link--employment-history {
   display: inline-block; }
 
+.missing--applicant .resume__section--applicant,
+.missing--rental-history .resume__section--rental-history,
+.missing--summary .resume__section--summary,
+.missing--income .resume__section--income,
+.missing--employment-history .resume__section--employment {
+  display: none; }
+
 .incomplete a {
   background: #dfe3e4;
   color: #a7b1b6 !important;
@@ -1032,7 +1039,7 @@ button {
     display: none !important; }
   .btn--print--preview {
     display: none; }
-  .resume__section--rent {
+  .resume__section--rental-history {
     margin-top: -2.5mm; }
   .page {
     width: 100%; } }
