@@ -59,7 +59,7 @@
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2",
     "react-dom": "^15.2.1",
-    "react-input-mask": "^0.7.2",
+    "react-input-mask": "^0.7.3",
     "react-router": "^2.0.0",
     "store2": "^2.3.0"
   }
