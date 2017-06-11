@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import classNames from 'classnames';
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Select from './Select';
 import { stateOptions } from '../util/helpers';
 
-class RentalHistory extends React.Component {
+class RentalHistory extends Component {
   renderHistory = (history, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     const selectClassNames = classNames({

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-class EmploymentHistory extends React.Component {
+class EmploymentHistory extends Component {
   renderHistory = (history, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     return (

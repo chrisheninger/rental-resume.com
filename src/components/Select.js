@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 
-class Select extends React.Component {
-
+class Select extends Component {
   renderOption(option) {
     return (
       <option
@@ -29,9 +28,7 @@ class Select extends React.Component {
     delete selectProps.options;
 
     return (
-      <select
-        {...selectProps}
-      >
+      <select {...selectProps}>
         {this.renderOptions()}
       </select>
     );

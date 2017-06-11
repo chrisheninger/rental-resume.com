@@ -272,7 +272,8 @@ button {
   padding: 0 1em;
   height: 600px;
   height: 100vh;
-  max-width: 650px; }
+  max-width: 650px;
+  background-color: #334050; }
   @media (min-width: 700px) {
     .home {
       padding: 0 2em;
@@ -299,7 +300,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #334050;
+    background-color: #334050;
     opacity: .9; }
 
 .home__text {

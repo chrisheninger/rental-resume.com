@@ -9,6 +9,7 @@
 	height: 600px;
 	height: 100vh;
 	max-width: 650px;
+	background-color: $base;
 
 	@include bp(medium) {
 		padding: 0 2em;
@@ -39,7 +40,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: $base;
+		background-color: $base;
 		opacity: .9;
 	}
 }

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { numberWithCommas } from '../util/helpers';
 import { missingSection } from '../util/helpers';
 
-class Preview extends React.Component {
+class Preview extends Component {
   renderHeader = people => {
     return (
       <section className="resume__section resume__section--applicant">
