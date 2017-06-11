@@ -4,8 +4,8 @@
 
 %clearfix {
 	&:after {
-    	display: table;
-    	content: "";
+		display: table;
+		content: '';
 		clear: both;
 	}
 }

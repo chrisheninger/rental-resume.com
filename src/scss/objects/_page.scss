@@ -1,6 +1,6 @@
-/* --------- *
- *   Page   *
- * --------- */
+/* ------ *
+ *  Page  *
+ * ------ */
 
 .page {
 	background: white;
@@ -11,7 +11,9 @@
 	right: 0;
 	margin: 0;
 	text-align: center;
+
 	@extend %clearfix;
+
 	@include bp(medium) {
 		margin: 0 0 0 33%;
 		width: 67%;
@@ -23,6 +25,7 @@
 	background: $secondary;
 	margin: 50px auto 0;
 	text-align: center;
+
 	@include bp(medium) {
 		margin-top: 0;
 	}
@@ -51,7 +54,6 @@
 	padding-top: .5em;
 	max-height: 0;
 	opacity: 0;
-	-webkit-transform: translateY(20px);
 	transform: translateY(20px);
 	color: darken($secondary, 50%);
 }
@@ -60,11 +62,10 @@
 	opacity: 1;
 	max-height: 100px;
 	height: auto;
-	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
 
-//Expanding Header Button
+// Expanding Header Button
 .btn--header {
 	position: absolute;
 	margin: 0 auto;
@@ -75,6 +76,7 @@
 	bottom: -18px;
 	margin-left: -21px;
 	border-radius: 50%;
+
 	span {
 		display: block;
 		width: 16px;
@@ -82,13 +84,14 @@
 		background: white;
 		position: absolute;
 		left: 12px;
+
 		&:after {
+			content: '';
 			position: absolute;
 			top: -7px;
 			left: 7px;
 			display: block;
 			background: white;
-			content: "";
 			width: 2px;
 			height: 16px;
 		}
@@ -100,11 +103,10 @@
 }
 
 .btn--header--active .btn--header {
-	-webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
-//Link at the bottom of each page
+// Link at the bottom of each page
 .page__link {
 	text-decoration: none;
 	text-align: center;

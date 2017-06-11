@@ -1,15 +1,14 @@
-/* ------- *
+/* ------------ *
  *  Typography  *
- * ------- */
+ * ------------ */
 
-//Font Families
-$body: "Source Sans Pro" ,Helvetica, Calibri, sans-serif;
+$body: "Source Sans Pro", Helvetica, Calibri, sans-serif;
 
-html,body,input, textarea, select, button, select, option, textarea  {
+html, body, input, textarea, select, button, option, textarea  {
 	font-size: 16px;
 }
 
-body, p, input, textarea, select, button, select, option, textarea  {
+body, p, input, textarea, select, button, option, textarea  {
 	font-family: $body;
 	font-weight: normal;
 	font-style: normal;

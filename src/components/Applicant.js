@@ -1,16 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import { Link } from 'react-router-dom';
 
-class Applicant extends React.Component {
-  constructor() {
-    super();
-
-    this.renderPerson = this.renderPerson.bind(this);
-  }
-
-  renderPerson(person, index) {
+class Applicant extends Component {
+  renderPerson = (person, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     return (
       <li key={index}>
@@ -60,7 +54,7 @@ class Applicant extends React.Component {
           : null}
       </li>
     );
-  }
+  };
 
   render() {
     const { people, onAddSection, toggleHeader } = this.props;

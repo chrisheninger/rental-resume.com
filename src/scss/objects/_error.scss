@@ -1,6 +1,6 @@
-/* --------- *
- * 404 ERROR *
- * --------- */
+/* ----------- *
+ *  404 ERROR  *
+ * ----------- */
 
 .error {
 	background: $base;
@@ -11,13 +11,14 @@
 
 .error__container {
 	display: inline-block;
-	@extend %clearfix;
 	max-width: 650px;
 	margin: 0 auto;
 	text-align: center;
 	position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+	top: 50%;
+	transform: translateY(-50%);
+
+	@extend %clearfix;
 }
 
 .error__title {

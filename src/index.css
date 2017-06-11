@@ -4,13 +4,13 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-/* ---------- *
- *  Variables *
- * ---------- */
+/* ----------- *
+ *  Variables  *
+ * ----------- */
 /**
- * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
- * http://cssreset.com
- */
+* Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+* http://cssreset.com
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,53 +54,57 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* Box-sizing border-box */
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+  background: transparent; }
+
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: inherit; }
 
 /* ------- *
 * Clearfix *
 * ------- */
 #app:after, .page:after, .home__text:after, .home__text__title:after, .fieldset:after, .ol li:after, .input-group:after, .header:after, .resume:after, .resume__container:after, .resume__section:after, .faq:after, .error__container:after {
   display: table;
-  content: "";
+  content: '';
   clear: both; }
 
+/* ------------- *
+ *   Responsive  *
+ * ------------- */
 /* ------- *
- * Responsive *
- * ------- */
-/* ------- *
- *  Main  *
+ *   Main  *
  * ------- */
 #app {
   position: relative;
   margin: 0;
   width: 100%; }
 
-/* ------- *
+/* ------------ *
  *  Typography  *
- * ------- */
-html, body, input, textarea, select, button, select, option, textarea {
+ * ------------ */
+html, body, input, textarea, select, button, option, textarea {
   font-size: 16px; }
 
-body, p, input, textarea, select, button, select, option, textarea {
+body, p, input, textarea, select, button, option, textarea {
   font-family: "Source Sans Pro", Helvetica, Calibri, sans-serif;
   font-weight: normal;
   font-style: normal;
   font-size-adjust: 0.508;
   color: #334050; }
 
-/* ------- *
- * IMAGES  *
- * ------- */
+/* --------- *
+ *   Images  *
+ * --------- */
 img {
   width: 100%;
   height: auto; }
 
-/* ------- *
- *  LINKS  *
- * ------- */
+/* -------- *
+ *   Links  *
+ * -------- */
 .faq li a {
   color: #de673d;
   text-decoration: none;
@@ -109,18 +113,18 @@ img {
 .no-touchevents .faq li a:hover {
   opacity: .75; }
 
-/* ------- *
- * Headings *
- * ------- */
+/* ---------- *
+ *  Headings  *
+ * ---------- */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4; }
 
-/* ------- *
+/* --------- *
  *  Buttons  *
- * ------- */
+ * --------- */
 button {
   border: none;
-  -webkit-appearance: none;
+  appearance: none;
   background: none;
   margin: 0;
   padding: 0; }
@@ -129,23 +133,20 @@ button {
   button:focus {
     outline: 0; }
 
-/* ------- *
+/* ----------- *
  *  Animation  *
- * ------- */
+ * ----------- */
 .btn--remove, .resume-form li, .nav a, .btn, .faq a, .btn--back, .resume a, .incomplete, .incomplete a {
   transition: all .15s; }
 
 .page__subtitle {
-  transition: transform all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in; }
+  transition: transform all 200ms ease-in; }
 
 .btn--header {
-  transition: all 150ms ease-in;
-  -webkit-transition: all 150ms ease-in; }
+  transition: all 150ms ease-in; }
 
 .page__link {
-  transition: all 150ms ease-in;
-  -webkit-transition: all 150ms ease-in; }
+  transition: all 150ms ease-in; }
 
 @keyframes zoom {
   0% {
@@ -158,9 +159,9 @@ button {
     animation-name: zoom;
     animation-duration: 25s; } }
 
-/* --------- *
- *   Page   *
- * --------- */
+/* ------ *
+ *  Page  *
+ * ------ */
 .page {
   background: white;
   min-height: 100vh;
@@ -205,7 +206,6 @@ button {
   padding-top: .5em;
   max-height: 0;
   opacity: 0;
-  -webkit-transform: translateY(20px);
   transform: translateY(20px);
   color: #657279; }
 
@@ -213,7 +213,6 @@ button {
   opacity: 1;
   max-height: 100px;
   height: auto;
-  -webkit-transform: translateY(0);
   transform: translateY(0); }
 
 .btn--header {
@@ -234,12 +233,12 @@ button {
     position: absolute;
     left: 12px; }
     .btn--header span:after {
+      content: '';
       position: absolute;
       top: -7px;
       left: 7px;
       display: block;
       background: white;
-      content: "";
       width: 2px;
       height: 16px; }
 
@@ -247,7 +246,6 @@ button {
   opacity: .75; }
 
 .btn--header--active .btn--header {
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .page__link {
@@ -266,8 +264,8 @@ button {
   opacity: .75; }
 
 /* ------- *
- *  Home   *
- * ------- */
+*  Home   *
+* ------- */
 .home {
   width: 100%;
   margin: 0 auto;
@@ -281,7 +279,7 @@ button {
       height: 600px;
       height: 100vh; } }
   .home:before {
-    content: "";
+    content: '';
     height: 100%;
     width: 100%;
     position: fixed;
@@ -293,7 +291,7 @@ button {
     background-size: cover;
     background-position: center; }
   .home:after {
-    content: "";
+    content: '';
     height: 100%;
     width: 100%;
     position: fixed;
@@ -309,10 +307,6 @@ button {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
-  @media (min-width: 700px) {
-    .home__text {
-      top: 50%;
-      transform: translateY(-50%); } }
 
 .home__text__title {
   font-size: 1.75em;
@@ -346,8 +340,8 @@ button {
   background: rgba(222, 103, 61, 0.75); }
 
 /* ------- *
- *   Form  *
- * ------- */
+*   Form  *
+* ------- */
 .fieldset {
   margin: 2em auto;
   padding: 2em 1em;
@@ -357,33 +351,37 @@ button {
     .fieldset {
       padding: 2.5em 2em; } }
 
-.input, .select, .textarea {
+.input,
+.select,
+.textarea {
   padding: .5em;
   font-size: 1em;
   border-radius: 2px;
   border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   resize: none;
   outline: none;
   background: #edeff0 !important; }
 
-.input, .select {
+.input,
+.select {
   margin-bottom: 2.35765%;
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%; }
-  .input:last-child, .select:last-child {
+  .input:last-child,
+  .select:last-child {
     margin-right: 0; }
   @media (min-width: 700px) {
-    .input, .select {
+    .input,
+    .select {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 48.82117%; }
-      .input:last-child, .select:last-child {
+      .input:last-child,
+      .select:last-child {
         margin-right: 0; } }
 
 .textarea {
@@ -393,7 +391,7 @@ button {
   margin-bottom: 1em !important; }
 
 .select {
-  background: #edeff0 url(./images/arrows.svg) no-repeat 97% 0 !important; }
+  background: #edeff0 url("./images/arrows.svg") no-repeat 97% 0 !important; }
 
 .select-disabled {
   color: #a9a9a9; }
@@ -522,7 +520,6 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   display: inline-block;
   width: 36px;
@@ -539,21 +536,21 @@ button {
     position: relative;
     left: 10px; }
     .btn--remove span:after {
+      content: '';
       position: relative;
       top: -7px;
       left: 7px;
       display: block;
       background: #de673d;
-      content: "";
       width: 2px;
       height: 16px; }
 
 .touchevents .btn--remove {
   opacity: 1; }
 
-/* ------- *
- *   Nav   *
- * ------- */
+/* ----- *
+ *  Nav  *
+ * ----- */
 .header {
   background: white;
   width: 100%;
@@ -567,7 +564,6 @@ button {
 
 .nav {
   transition: all 300ms ease out;
-  -webkit-transition: all 300ms ease-out;
   width: 300px;
   transform: translate3d(-300px, 0, 0);
   position: fixed;
@@ -647,14 +643,16 @@ button {
 .no-touchevents .toggle--active .toggle:hover span {
   background: white; }
 
-.toggle span, .toggle span:before, .toggle span:after {
+.toggle span,
+.toggle span:before,
+.toggle span:after {
+  content: '';
   cursor: pointer;
   height: 2px;
   width: 25px;
   background: #334050;
   position: absolute;
-  display: block;
-  content: ''; }
+  display: block; }
 
 .toggle span:before {
   top: -7px; }
@@ -662,7 +660,9 @@ button {
 .toggle span:after {
   bottom: -7px; }
 
-.toggle span, .toggle span:before, .toggle span:after {
+.toggle span,
+.toggle span:before,
+.toggle span:after {
   transition: all 200ms ease-in-out; }
 
 .toggle--active .toggle span {
@@ -687,7 +687,7 @@ button {
     background: white; }
 
 .btn--nav__lines {
-  content: "";
+  content: '';
   display: block;
   background: #657279;
   height: 6px;
@@ -697,7 +697,7 @@ button {
   position: relative;
   right: 1em; }
   .btn--nav__lines:after {
-    content: "";
+    content: '';
     display: block;
     background: #657279;
     height: 30px;
@@ -734,9 +734,9 @@ button {
 .no-touchevents .nav a:hover {
   opacity: .75; }
 
-/* ----------------- *
- *   Resume Preview  *
- * ----------------- */
+/* ---------------- *
+ *  Resume Preview  *
+ * ---------------- */
 .resume {
   margin: 0 auto;
   text-align: left;
@@ -804,12 +804,22 @@ button {
         margin-right: 0; } }
 
 @media (min-width: 700px) {
-  .applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list, .incomplete-list {
+  .applicant-summary,
+  .employment-list,
+  .rental-list,
+  .applicant-income,
+  .applicant-list,
+  .incomplete-list {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 74.41059%; }
-    .applicant-summary:last-child, .employment-list:last-child, .rental-list:last-child, .applicant-income:last-child, .applicant-list:last-child, .incomplete-list:last-child {
+    .applicant-summary:last-child,
+    .employment-list:last-child,
+    .rental-list:last-child,
+    .applicant-income:last-child,
+    .applicant-list:last-child,
+    .incomplete-list:last-child {
       margin-right: 0; } }
 
 .applicant {
@@ -937,9 +947,9 @@ button {
   margin-bottom: 0;
   width: 100%; }
 
-/* --------- *
- *   About   *
- * --------- */
+/* ------- *
+ *  About  *
+ * ------- */
 .faq {
   margin: 2em auto;
   padding: 2em 1em;
@@ -948,17 +958,6 @@ button {
   @media (min-width: 700px) {
     .faq {
       padding: 2.5em 2em; } }
-  .faq .faq__title {
-    font-weight: bold;
-    width: 100%;
-    font-size: 2.5em;
-    text-transform: uppercase;
-    margin-bottom: .5em; }
-  .faq .faq__question {
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: .5em; }
   .faq p {
     line-height: 1.4; }
   .faq li {
@@ -966,14 +965,27 @@ button {
     clear: both;
     margin-bottom: 2em; }
 
+.faq__title {
+  font-weight: bold;
+  width: 100%;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin-bottom: .5em; }
+
+.faq__question {
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: .5em; }
+
 .page__link--about {
   position: static;
   float: left;
   clear: both; }
 
-/* --------- *
- *   Print   *
- * --------- */
+/* ------- *
+ *  Print  *
+ * ------- */
 @media print {
   *,
   *:before,
@@ -1006,7 +1018,11 @@ button {
   .resume__subtitle {
     width: 30%;
     float: left; }
-  .applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list {
+  .applicant-summary,
+  .employment-list,
+  .rental-list,
+  .applicant-income,
+  .applicant-list {
     width: 70%;
     float: right; }
   .applicant {
@@ -1034,9 +1050,9 @@ button {
   size: auto;
   margin: 3mm; }
 
-/* --------- *
- * 404 ERROR *
- * --------- */
+/* ----------- *
+ *  404 ERROR  *
+ * ----------- */
 .error {
   background: #334050;
   width: 100%;

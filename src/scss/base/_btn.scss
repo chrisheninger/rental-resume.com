@@ -1,17 +1,19 @@
-/* ------- *
+/* --------- *
  *  Buttons  *
- * ------- */
+ * --------- */
 
 button {
- border: none;
- -webkit-appearance: none;
- background: none;
- margin: 0;
- padding: 0;
- &:hover {
-   cursor: pointer;
- }
- &:focus {
-   outline: 0;
- }
+	border: none;
+	appearance: none;
+	background: none;
+	margin: 0;
+	padding: 0;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: 0;
+	}
 }

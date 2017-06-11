@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import set from 'lodash/set';
-import cloneDeep from 'lodash/cloneDeep';
 import store from 'store2';
 import { tryParseJSON } from '../util/helpers';
 
@@ -16,59 +15,47 @@ import EmploymentHistory from './EmploymentHistory';
 import Income from './Income';
 import Preview from './Preview';
 
+const defaultState = {
+  people: [
+    {
+      name: '',
+      email: '',
+      phone: '',
+    },
+  ],
+  summary: '',
+  rentalHistory: [
+    {
+      address1: '',
+      address2: '',
+      city: '',
+      state: '',
+      zip: '',
+      dateStart: '',
+      dateEnd: '',
+      reason: '',
+    },
+  ],
+  employmentHistory: [
+    {
+      company: '',
+      title: '',
+      dateStart: '',
+      dateEnd: '',
+    },
+  ],
+  income: '',
+};
+
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.defaultState = {
-      people: [
-        {
-          name: '',
-          email: '',
-          phone: '',
-        },
-      ],
-      summary: '',
-      rentalHistory: [
-        {
-          address1: '',
-          address2: '',
-          city: '',
-          state: '',
-          zip: '',
-          dateStart: '',
-          dateEnd: '',
-          reason: '',
-        },
-      ],
-      employmentHistory: [
-        {
-          company: '',
-          title: '',
-          dateStart: '',
-          dateEnd: '',
-        },
-      ],
-      income: '',
-    };
-    this.state = store.get('data') || this.defaultState;
-
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onAddSection = this.onAddSection.bind(this);
-    this.onRemoveSection = this.onRemoveSection.bind(this);
-    this.printResume = this.printResume.bind(this);
-    this.generateResumeLink = this.generateResumeLink.bind(this);
-  }
-
-  componentWillMount() {
-    if (
-      tryParseJSON(
-        this.props.location &&
-          this.props.location.query &&
-          this.props.location.query.data
-      )
-    ) {
-      this.setState(JSON.parse(this.props.location.query.data));
+    const fromSaveLink = tryParseJSON(props.location && props.location.search);
+    if (fromSaveLink) {
+      this.state = fromSaveLink;
+    } else {
+      this.state = store.get('data') || defaultState;
     }
   }
 
@@ -76,28 +63,28 @@ class App extends Component {
     store.set('data', this.state);
   }
 
-  onInputChange(value, key) {
-    const newState = cloneDeep(this.state);
+  onInputChange = (value, key) => {
+    const newState = { ...this.state };
     set(newState, key, value);
     this.setState(newState);
     store.set('data', newState);
-  }
+  };
 
-  onAddSection(event, section) {
+  onAddSection = (event, section) => {
     event.preventDefault();
-    const newState = cloneDeep(this.state);
-    newState[section].push(this.defaultState[section][0]);
+    const newState = { ...this.state };
+    newState[section].push(defaultState[section][0]);
     this.setState(newState);
     store.set('data', newState);
-  }
+  };
 
-  onRemoveSection(event, section, index) {
+  onRemoveSection = (event, section, index) => {
     event.preventDefault();
-    const newState = cloneDeep(this.state);
+    const newState = { ...this.state };
     newState[section].splice(index, 1);
     this.setState(newState);
     store.set('data', newState);
-  }
+  };
 
   toggleMenu() {
     const app = document.getElementById('app');
@@ -114,7 +101,7 @@ class App extends Component {
     app.classList.remove('toggle--active');
   }
 
-  printResume() {
+  printResume = () => {
     const app = document.getElementById('app');
     if (this.props.location.pathname !== '/preview') {
       this.context.router.push('/preview');
@@ -126,12 +113,14 @@ class App extends Component {
       app.classList.remove('toggle--active');
       window.print();
     }
-  }
+  };
 
-  generateResumeLink(event) {
+  generateResumeLink = event => {
     event.preventDefault();
-    console.log(`/?data=${encodeURIComponent(JSON.stringify(this.state))}`);
-  }
+    console.log(
+      `${window.location.href}/?data=${encodeURIComponent(JSON.stringify(this.state))}`
+    );
+  };
 
   render() {
     return (
@@ -139,6 +128,7 @@ class App extends Component {
         {this.props.location.pathname !== '/'
           ? <Header
               {...this.props}
+              generateResumeLink={this.generateResumeLink}
               printResume={this.printResume}
               toggleMenu={this.toggleMenu}
               closeMenu={this.closeMenu}

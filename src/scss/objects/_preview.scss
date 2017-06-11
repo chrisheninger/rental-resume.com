@@ -1,14 +1,15 @@
-/* ----------------- *
- *   Resume Preview  *
- * ----------------- */
+/* ---------------- *
+ *  Resume Preview  *
+ * ---------------- */
 
 .resume {
 	margin: 0 auto;
-	@extend %clearfix;
 	text-align: left;
 	display: inline-block;
 	width: 100%;
 	max-width: 750px;
+
+	@extend %clearfix;
 }
 
 .resume__container {
@@ -16,7 +17,9 @@
 	margin: 5em 1em 2em;
 	padding: 2.5em 1em;
 	background: $secondary;
+
 	@extend %clearfix;
+
 	@include bp(medium) {
 		padding: 2.5em 4em;
 		margin: 2em;
@@ -29,7 +32,7 @@
 }
 
 .btn--print--preview {
-  display: flex;
+	display: flex;
 	align-items: center;
 	background: $highlight;
 	color: white;
@@ -39,11 +42,11 @@
 	border-radius: 2em;
 	margin: 0 0 2em 0;
 
-  svg {
-    width: 16px;
-    height: 16px;
+	svg {
+		width: 16px;
+		height: 16px;
 		margin-right: 6px;
-  }
+	}
 }
 
 
@@ -65,29 +68,37 @@
 }
 
 .resume__section {
-	@extend %clearfix;
 	margin-bottom: 2em;
+
+	@extend %clearfix;
 }
 
 .resume__subtitle {
 	font-weight: bold;
 	margin-bottom: 1em;
+
 	@include bp(medium) {
 		@include span-columns(3);
 		margin-bottom: 0;
 	}
 }
 
-.applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list, .incomplete-list {
+.applicant-summary,
+.employment-list,
+.rental-list,
+.applicant-income,
+.applicant-list,
+.incomplete-list {
 	@include bp(medium) {
 		@include span-columns(9);
 	}
 }
 
 
-//Applicants
+// Applicants
 .applicant {
 	line-height: 1.4;
+
 	@include bp(medium) {
 		@include span-columns(6);
 		@include omega(2n);
@@ -96,9 +107,11 @@
 
 .applicant-list li {
 	margin-bottom: 1em;
+
 	&:last-child {
 		margin-bottom: 0;
 	}
+
 	@include bp(medium) {
 		margin-bottom: 0;
 	}
@@ -114,12 +127,12 @@
 	font-weight: bold;
 }
 
-//summary
+// Summary
 .applicant-summary {
 	line-height: 1.4;
 }
 
-//Employment History
+// Employment History
 .employment-list {
 	line-height: 1.4;
 	list-style-position: inside;
@@ -134,7 +147,7 @@
 	margin-bottom: 0;
 }
 
-//Rental History
+// Rental History
 .rental-list {
 	line-height: 1.4;
 	list-style-position: inside;
@@ -153,14 +166,13 @@
 	text-decoration: underline;
 }
 
-//Income
+// Income
 .applicant-income {
 	line-height: 1.4;
 	margin-bottom: 0;
 }
 
-//Incomplete Sections
-
+// Incomplete Sections
 .incomplete {
 	border-top: 1px dashed darken($secondary, 15%);
 	background: $secondary;
@@ -217,6 +229,7 @@
 	display: inline-block;
 	float: left;
 	margin: 0 .5em .5em 0;
+
 	@include bp(medium) {
 		text-align: center;
 	}
@@ -226,7 +239,7 @@
 	background: darken($secondary, 25%) !important;
 }
 .no-touchevents .incomplete a:hover {
-		color: white !important;
+	color: white !important;
 }
 
 .applicant.incomplete {

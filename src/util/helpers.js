@@ -1,9 +1,8 @@
 module.exports = {
-
   tryParseJSON(querystring) {
     let o;
     try {
-      o = JSON.parse(querystring);
+      o = JSON.parse(decodeURIComponent(querystring.split('?data=')[1]));
       if (o && typeof o === 'object' && o !== null) {
         return o;
       }
@@ -234,5 +233,4 @@ module.exports = {
     const missingClass = 'missing--';
     app.classList.toggle(missingClass + sectionName);
   },
-
 };

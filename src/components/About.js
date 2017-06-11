@@ -37,7 +37,7 @@ function About() {
             This website was made as a proof of concept by
             {' '}
             <Link
-              to="http://chrisheninger.com/"
+              to="https://chrisheninger.com/"
               target="_blank"
               rel="noopener noreferrer"
             >

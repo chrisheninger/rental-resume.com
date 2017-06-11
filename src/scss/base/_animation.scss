@@ -1,6 +1,6 @@
-/* ------- *
+/* ----------- *
  *  Animation  *
- * ------- */
+ * ----------- */
 
 .btn--remove, .resume-form li, .nav a, .btn, .faq a, .btn--back, .resume a, .incomplete, .incomplete a {
 	transition: all .15s;
@@ -8,29 +8,24 @@
 
 .page__subtitle {
 	transition: transform all 200ms ease-in;
-	-webkit-transition: all 200ms ease-in;
 }
 
 .btn--header {
 	transition: all 150ms ease-in;
-	-webkit-transition: all 150ms ease-in;
 }
 
 .page__link {
 	transition: all 150ms ease-in;
-	-webkit-transition: all 150ms ease-in;
 }
 
 @keyframes zoom {
-    0% {transform: scale(1.1);}
-		100% {transform: scale(1);}
+	0% {transform: scale(1.1);}
+	100% {transform: scale(1);}
 }
 
-.home {
-	&:before {
-		@include bp(medium) {
-			animation-name: zoom;
-    	animation-duration: 25s;
-		}
+.home:before {
+	@include bp(medium) {
+		animation-name: zoom;
+		animation-duration: 25s;
 	}
 }

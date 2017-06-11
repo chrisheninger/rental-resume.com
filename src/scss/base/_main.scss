@@ -1,9 +1,11 @@
 /* ------- *
- *  Main  *
+ *   Main  *
  * ------- */
+
 #app {
 	position: relative;
-	@extend %clearfix;
 	margin: 0;
 	width: 100%;
+
+	@extend %clearfix;
 }

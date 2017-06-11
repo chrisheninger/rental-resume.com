@@ -1,6 +1,6 @@
 /* ------- *
- *  Home   *
- * ------- */
+*  Home   *
+* ------- */
 
 .home {
 	width: 100%;
@@ -9,13 +9,15 @@
 	height: 600px;
 	height: 100vh;
 	max-width: 650px;
+
 	@include bp(medium) {
 		padding: 0 2em;
 		height: 600px;
 		height: 100vh;
 	}
+
 	&:before {
-		content: "";
+		content: '';
 		height: 100%;
 		width: 100%;
 		position: fixed;
@@ -27,8 +29,9 @@
 		background-size: cover;
 		background-position: center;
 	}
+
 	&:after {
-		content: "";
+		content: '';
 		height: 100%;
 		width: 100%;
 		position: fixed;
@@ -42,30 +45,29 @@
 }
 
 .home__text {
-	@extend %clearfix;
 	z-index: 3;
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
-	@include bp(medium) {
-		top: 50%;
-		transform: translateY(-50%);
-	}
+
+	@extend %clearfix;
 }
 
 .home__text__title {
-	@extend %clearfix;
 	font-size: 1.75em;
 	margin: 0 0 1em 0;
 	line-height: 1.15;
 	color: white;
 	z-index: 3;
+
+	@extend %clearfix;
+
 	@include bp(medium) {
 		font-size: 2.25em;
 	}
 }
 
-//Buttons on Homepage
+// Buttons on Homepage
 .btn--learn-more {
 	background: white;
 	padding: .25em 1em;

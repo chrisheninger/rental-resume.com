@@ -1,6 +1,6 @@
-/* --------- *
- *   Print   *
- * --------- */
+/* ------- *
+ *  Print  *
+ * ------- */
 
 @media print {
 	*,
@@ -44,7 +44,11 @@
 		width: 30%;
 		float: left;
 	}
-	.applicant-summary, .employment-list, .rental-list, .applicant-income, .applicant-list {
+	.applicant-summary,
+	.employment-list,
+	.rental-list,
+	.applicant-income,
+	.applicant-list {
 		width: 70%;
 		float: right;
 	}
@@ -78,6 +82,7 @@
 		width: 100%;
 	}
 }
+
 @page {
 	size: auto;
 	margin: 3mm;
