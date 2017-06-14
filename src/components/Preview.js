@@ -39,7 +39,7 @@ class Preview extends Component {
       <section className="resume__section resume__section--income">
         <h2 className="resume__subtitle">Income</h2>
         <p className="applicant-income">
-          ${numberWithCommas(income)}
+          {numberWithCommas(income)}
         </p>
       </section>
     );

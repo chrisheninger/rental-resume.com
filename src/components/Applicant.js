@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import { Link } from 'react-router-dom';
+import MaskedTextInput from 'react-text-mask';
+import emailMask from 'text-mask-addons/dist/emailMask';
 
 class Applicant extends Component {
   renderPerson = (person, index) => {
@@ -19,7 +21,9 @@ class Applicant extends Component {
           onChange={event =>
             onInputChange(event.target.value, ['people', index, 'name'])}
         />
-        <input
+        <MaskedTextInput
+          mask={emailMask}
+          guide={false}
           id={`email${index > 0 ? `-contact-section-${index}` : ''}`}
           className="input input--email"
           name="email"
@@ -30,7 +34,24 @@ class Applicant extends Component {
           onChange={event =>
             onInputChange(event.target.value, ['people', index, 'email'])}
         />
-        <InputMask
+        <MaskedTextInput
+          mask={[
+            '(',
+            /[1-9]/,
+            /\d/,
+            /\d/,
+            ')',
+            ' ',
+            /\d/,
+            /\d/,
+            /\d/,
+            '-',
+            /\d/,
+            /\d/,
+            /\d/,
+            /\d/,
+          ]}
+          guide={false}
           id={`tel${index > 0 ? `-contact-section-${index}` : ''}`}
           className="input input--phone"
           name="tel"
@@ -38,8 +59,6 @@ class Applicant extends Component {
           placeholder="Phone Number*"
           type="text"
           value={person.phone}
-          mask="(999) 999-9999"
-          maskChar=" "
           onChange={event =>
             onInputChange(event.target.value, ['people', index, 'phone'])}
         />
@@ -65,7 +84,8 @@ class Applicant extends Component {
             <h1 className="page__title">Applicant</h1>
             <p className="page__subtitle">
               Let's start with the basics.
-              First fill out the relevant contact information for the people that would live in the apartment.
+              First fill out the relevant contact information for the people
+              that would live in the apartment.
             </p>
             <button className="btn--header" onClick={toggleHeader}>
               <span />

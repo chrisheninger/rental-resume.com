@@ -497,16 +497,6 @@ button {
     .input-group {
       width: auto; } }
 
-.input-prefix {
-  position: absolute;
-  left: .5em;
-  line-height: 50px;
-  font-weight: bold;
-  color: gray; }
-  @media (min-width: 700px) {
-    .input-prefix {
-      width: auto; } }
-
 .btn--add {
   display: inline-block;
   float: left;

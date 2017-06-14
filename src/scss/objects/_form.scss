@@ -174,18 +174,6 @@
 	}
 }
 
-.input-prefix {
-	position: absolute;
-	left: .5em;
-	line-height: 50px;
-	font-weight: bold;
-	color: gray;
-
-	@include bp(medium) {
-		width: auto;
-	}
-}
-
 //Buttons on Form
 .btn--add {
 	display: inline-block;
