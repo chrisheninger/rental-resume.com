@@ -386,7 +386,7 @@ button {
         margin-right: 0; } }
 
 .textarea {
-  overflow: hidden;
+  overflow: auto;
   line-height: 1.4;
   font-size: 1em;
   margin-bottom: 1em !important; }
@@ -394,8 +394,25 @@ button {
 .select {
   background: #edeff0 url("./images/arrows.svg") no-repeat 97% 0 !important; }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #a2a2a2;
+  opacity: 1; }
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #a2a2a2;
+  opacity: 1; }
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #a2a2a2;
+  opacity: 1; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #a2a2a2;
+  opacity: 1; }
+
 .select-disabled {
-  color: #a9a9a9; }
+  color: #a2a2a2;
+  opacity: 1; }
 
 .ol li {
   position: relative;

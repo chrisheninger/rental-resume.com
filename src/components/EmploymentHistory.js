@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import MaskedTextInput from 'react-text-mask';
+import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe';
 
 class EmploymentHistory extends Component {
   renderHistory = (history, index) => {
@@ -8,7 +10,9 @@ class EmploymentHistory extends Component {
     return (
       <li key={index}>
         <input
-          id={`organization-title${index > 0 ? `-employment-section-${index}` : ''}`}
+          id={`organization-title${index > 0
+            ? `-employment-section-${index}`
+            : ''}`}
           className="input input--title"
           name="organization-title"
           autoComplete="organization-title"
@@ -37,7 +41,11 @@ class EmploymentHistory extends Component {
               'company',
             ])}
         />
-        <input
+        <MaskedTextInput
+          mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+          pipe={createAutoCorrectedDatePipe('mm/dd/yyyy')}
+          placeholderChar={'\u2000'}
+          keepCharPositions={true}
           id={`start-date-employment-section-${index}`}
           className="input input--start-date"
           name="start-date"
@@ -51,7 +59,11 @@ class EmploymentHistory extends Component {
               'dateStart',
             ])}
         />
-        <input
+        <MaskedTextInput
+          mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+          pipe={createAutoCorrectedDatePipe('mm/dd/yyyy')}
+          placeholderChar={'\u2000'}
+          keepCharPositions={true}
           id={`end-date-employment-section-${index}`}
           className="input input--end-date"
           name="end-date"
@@ -87,7 +99,8 @@ class EmploymentHistory extends Component {
           <div className="page__header__container">
             <h1 className="page__title">Employment History</h1>
             <p className="page__subtitle">
-              Next your landlord will want to know a brief history of your employment.
+              Next your landlord will want to know a brief history of your
+              employment.
               Usually a record of the last 5 years or so will suffice.
             </p>
             <button className="btn--header" onClick={toggleHeader}>

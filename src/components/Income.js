@@ -26,6 +26,7 @@ function Income({ income, onInputChange, toggleHeader }) {
           <MaskedTextInput
             mask={createNumberMask({
               prefix: '$',
+              integerLimit: 7,
             })}
             guide={false}
             id="income"

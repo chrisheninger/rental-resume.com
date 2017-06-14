@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import InputMask from 'react-input-mask';
+import MaskedTextInput from 'react-text-mask';
+import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Select from './Select';
@@ -71,23 +72,27 @@ class RentalHistory extends Component {
               'state',
             ])}
         />
-        <InputMask
+        <MaskedTextInput
           id={`postal-code${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--zip"
           name="postal-code"
+          mask={[/\d/, /\d/, /\d/, /\d/, /\d/]}
+          placeholderChar={'\u2000'}
           autoComplete="shipping postal-code"
           placeholder="Zipcode*"
           type="text"
           value={history.zip}
-          mask="99999"
-          maskChar={null}
           onChange={event =>
             onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
         />
-        <input
+        <MaskedTextInput
           id={`start-date${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--start-date"
           name="start-date"
+          mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+          pipe={createAutoCorrectedDatePipe('mm/dd/yyyy')}
+          placeholderChar={'\u2000'}
+          keepCharPositions={true}
           placeholder="Move In Date*"
           type="text"
           value={history.dateStart}
@@ -98,10 +103,14 @@ class RentalHistory extends Component {
               'dateStart',
             ])}
         />
-        <input
+        <MaskedTextInput
           id={`end-date${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--end-date"
           name="end-date"
+          mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+          pipe={createAutoCorrectedDatePipe('mm/dd/yyyy')}
+          placeholderChar={'\u2000'}
+          keepCharPositions={true}
           placeholder="Move Out Date*"
           type="text"
           value={history.dateEnd}
@@ -148,7 +157,8 @@ class RentalHistory extends Component {
             <h1 className="page__title">Rental History</h1>
             <p className="page__subtitle">
               Now let's outline a history of your recent places of residence.
-              This doesn't have to be extensive but be sure to include at least two or three.
+              This doesn't have to be extensive but be sure to include at least
+              two or three.
             </p>
             <button className="btn--header" onClick={toggleHeader}>
               <span />

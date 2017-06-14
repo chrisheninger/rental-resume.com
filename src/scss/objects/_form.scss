@@ -1,15 +1,12 @@
 /* ------- *
 *   Form  *
 * ------- */
-
 .fieldset {
 	margin: 2em auto;
 	padding: 2em 1em;
 	max-width: 750px;
 	text-align: center;
-
 	@extend %clearfix;
-
 	@include bp(medium) {
 		padding: 2.5em 2em;
 	}
@@ -30,17 +27,15 @@
 
 .input,
 .select {
-	margin-bottom: 2.35765%;;
-
+	margin-bottom: 2.35765%;
 	@include span-columns(12);
-
 	@include bp(medium) {
 		@include span-columns(6);
 	}
 }
 
 .textarea {
-	overflow: hidden;
+	overflow: auto;
 	line-height: 1.4;
 	font-size: 1em;
 	margin-bottom: 1em !important;
@@ -50,16 +45,36 @@
 	background: $secondary url('./images/arrows.svg') no-repeat 97% 0 !important;
 }
 
-.select-disabled {
-	color: #a9a9a9;
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #a2a2a2;
+	opacity: 1;
 }
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+	color: #a2a2a2;
+	opacity: 1;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+	color: #a2a2a2;
+	opacity: 1;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+	color: #a2a2a2;
+	opacity: 1;
+}
+
+.select-disabled {
+	color: #a2a2a2;
+	opacity: 1;
+}
+
 
 .ol li {
 	position: relative;
 	margin-bottom: 2em;
-
 	@extend %clearfix;
-
 	&:hover .btn--remove {
 		opacity: 1;
 	}
@@ -67,9 +82,7 @@
 // Applicant Page
 .input--full-name {
 	@include span-columns(12);
-
 	padding-right: 3em;
-
 	@include bp(medium) {
 		padding-right: .5em;
 	}
@@ -103,7 +116,6 @@
 // Rental History
 .input--street {
 	padding-right: 3em;
-
 	@include bp(medium) {
 		padding-right: .5em;
 	}
@@ -128,9 +140,7 @@
 // Employment History
 .input--title {
 	@include span-columns(12);
-
 	padding-right: 3em;
-
 	@include bp(medium) {
 		padding-right: .5em;
 	}
@@ -166,9 +176,7 @@
 	margin: 0 auto;
 	display: inline-block;
 	width: 100%;
-
 	@extend %clearfix;
-
 	@include bp(medium) {
 		width: auto;
 	}
@@ -199,7 +207,6 @@
 	margin-left: -18px;
 	border-radius: 50%;
 	opacity: .4;
-
 	span {
 		display: block;
 		width: 16px;
@@ -207,7 +214,6 @@
 		background: $highlight;
 		position: relative;
 		left: 10px;
-
 		&:after {
 			content: '';
 			position: relative;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import InputMask from 'react-input-mask';
 import { Link } from 'react-router-dom';
 import MaskedTextInput from 'react-text-mask';
 import emailMask from 'text-mask-addons/dist/emailMask';
@@ -23,13 +22,12 @@ class Applicant extends Component {
         />
         <MaskedTextInput
           mask={emailMask}
-          guide={false}
           id={`email${index > 0 ? `-contact-section-${index}` : ''}`}
           className="input input--email"
           name="email"
           autoComplete="email"
           placeholder="Email*"
-          type="email"
+          type="text"
           value={person.email}
           onChange={event =>
             onInputChange(event.target.value, ['people', index, 'email'])}
@@ -51,13 +49,13 @@ class Applicant extends Component {
             /\d/,
             /\d/,
           ]}
-          guide={false}
+          placeholderChar={'\u2000'}
           id={`tel${index > 0 ? `-contact-section-${index}` : ''}`}
           className="input input--phone"
           name="tel"
           autoComplete="home tel"
           placeholder="Phone Number*"
-          type="text"
+          type="tel"
           value={person.phone}
           onChange={event =>
             onInputChange(event.target.value, ['people', index, 'phone'])}
