@@ -7,9 +7,7 @@
 	padding: 2em 1em;
 	max-width: 750px;
 	text-align: center;
-
 	@extend %clearfix;
-
 	@include bp(medium) {
 		padding: 2.5em 2em;
 	}
@@ -30,10 +28,8 @@
 
 .input,
 .select {
-	margin-bottom: 2.35765%;;
-
+	margin-bottom: 2.35765%;
 	@include span-columns(12);
-
 	@include bp(medium) {
 		@include span-columns(6);
 	}
@@ -57,9 +53,7 @@
 .ol li {
 	position: relative;
 	margin-bottom: 2em;
-
 	@extend %clearfix;
-
 	&:hover .btn--remove {
 		opacity: 1;
 	}
@@ -67,9 +61,7 @@
 // Applicant Page
 .input--full-name {
 	@include span-columns(12);
-
 	padding-right: 3em;
-
 	@include bp(medium) {
 		padding-right: .5em;
 	}
@@ -103,7 +95,6 @@
 // Rental History
 .input--street {
 	padding-right: 3em;
-
 	@include bp(medium) {
 		padding-right: .5em;
 	}
@@ -128,9 +119,7 @@
 // Employment History
 .input--title {
 	@include span-columns(12);
-
 	padding-right: 3em;
-
 	@include bp(medium) {
 		padding-right: .5em;
 	}
@@ -166,9 +155,7 @@
 	margin: 0 auto;
 	display: inline-block;
 	width: 100%;
-
 	@extend %clearfix;
-
 	@include bp(medium) {
 		width: auto;
 	}
@@ -180,7 +167,6 @@
 	line-height: 50px;
 	font-weight: bold;
 	color: gray;
-
 	@include bp(medium) {
 		width: auto;
 	}
