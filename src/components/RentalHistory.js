@@ -5,6 +5,8 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Select from './Select';
 import { stateOptions } from '../util/helpers';
+import moment from 'moment';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 
 class RentalHistory extends Component {
   renderHistory = (history, index) => {
@@ -84,29 +86,29 @@ class RentalHistory extends Component {
           onChange={event =>
             onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
         />
-        <input
+        <DayPickerInput
           id={`start-date${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--start-date"
           name="start-date"
           placeholder="Move In Date*"
           type="text"
           value={history.dateStart}
-          onChange={event =>
-            onInputChange(event.target.value, [
+          onDayChange={date =>
+            onInputChange(moment(date).format('MM/DD/YYYY'), [
               'rentalHistory',
               index,
               'dateStart',
             ])}
         />
-        <input
+        <DayPickerInput
           id={`end-date${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--end-date"
           name="end-date"
           placeholder="Move Out Date*"
           type="text"
           value={history.dateEnd}
-          onChange={event =>
-            onInputChange(event.target.value, [
+          onDayChange={date =>
+            onInputChange(moment(date).format('MM/DD/YYYY'), [
               'rentalHistory',
               index,
               'dateEnd',
@@ -148,7 +150,8 @@ class RentalHistory extends Component {
             <h1 className="page__title">Rental History</h1>
             <p className="page__subtitle">
               Now let's outline a history of your recent places of residence.
-              This doesn't have to be extensive but be sure to include at least two or three.
+              This doesn't have to be extensive but be sure to include at least
+              two or three.
             </p>
             <button className="btn--header" onClick={toggleHeader}>
               <span />

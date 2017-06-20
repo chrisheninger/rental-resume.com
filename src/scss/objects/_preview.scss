@@ -8,7 +8,6 @@
 	display: inline-block;
 	width: 100%;
 	max-width: 750px;
-
 	@extend %clearfix;
 }
 
@@ -17,9 +16,7 @@
 	margin: 5em 1em 2em;
 	padding: 2.5em 1em;
 	background: $secondary;
-
 	@extend %clearfix;
-
 	@include bp(medium) {
 		padding: 2.5em 4em;
 		margin: 2em;
@@ -41,7 +38,6 @@
 	padding: .25em 1em;
 	border-radius: 2em;
 	margin: 0 0 2em 0;
-
 	svg {
 		width: 16px;
 		height: 16px;
@@ -69,14 +65,12 @@
 
 .resume__section {
 	margin-bottom: 2em;
-
 	@extend %clearfix;
 }
 
 .resume__subtitle {
 	font-weight: bold;
 	margin-bottom: 1em;
-
 	@include bp(medium) {
 		@include span-columns(3);
 		margin-bottom: 0;
@@ -98,7 +92,6 @@
 // Applicants
 .applicant {
 	line-height: 1.4;
-
 	@include bp(medium) {
 		@include span-columns(6);
 		@include omega(2n);
@@ -107,11 +100,9 @@
 
 .applicant-list li {
 	margin-bottom: 1em;
-
 	&:last-child {
 		margin-bottom: 0;
 	}
-
 	@include bp(medium) {
 		margin-bottom: 0;
 	}
@@ -135,8 +126,10 @@
 // Employment History
 .employment-list {
 	line-height: 1.4;
-	list-style-position: inside;
 	list-style-type: disc;
+	li {
+		margin-left: 1em;
+	}
 }
 
 .job {
@@ -150,8 +143,10 @@
 // Rental History
 .rental-list {
 	line-height: 1.4;
-	list-style-position: inside;
 	list-style-type: disc;
+	li {
+		margin-left: 1em;
+	}
 }
 
 .rental-list li:last-child {

@@ -10,7 +10,9 @@ class EmploymentHistory extends Component {
     return (
       <li key={index}>
         <input
-          id={`organization-title${index > 0 ? `-employment-section-${index}` : ''}`}
+          id={`organization-title${index > 0
+            ? `-employment-section-${index}`
+            : ''}`}
           className="input input--title"
           name="organization-title"
           autoComplete="organization-title"
@@ -47,7 +49,7 @@ class EmploymentHistory extends Component {
           type="text"
           value={history.dateStart}
           onDayChange={date =>
-            onInputChange(moment(date).format('MM-DD-YYYY'), [
+            onInputChange(moment(date).format('MM/DD/YYYY'), [
               'employmentHistory',
               index,
               'dateStart',
@@ -61,7 +63,7 @@ class EmploymentHistory extends Component {
           type="text"
           value={history.dateEnd}
           onDayChange={date =>
-            onInputChange(moment(date).format('MM-DD-YYYY'), [
+            onInputChange(moment(date).format('MM/DD/YYYY'), [
               'employmentHistory',
               index,
               'dateEnd',

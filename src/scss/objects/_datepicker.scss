@@ -151,16 +151,28 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 /* DayPickerInput */
 .DayPickerInput {
-  margin-bottom: 2.35765%;
-  @include span-columns(12);
+  float: left;
+  display: inline-block;
+  width: 100%;
   @include bp(medium) {
-    @include span-columns(6);
+    width: 48.82117%;
   }
-  .input {
-    background: $secondary url('./images/calendar.svg') no-repeat 97% 0 !important;
-    width: 100%;
-    margin: 0 !important;
-    }
+}
+
+.DayPickerInput .input {
+  @include bp(medium) {
+    margin-bottom: 4.7153%;
+  }
+}
+
+.DayPickerInput:last-child  {
+
+}
+
+
+.DayPickerInput .input {
+  width: 100%;
+  background: $secondary url('./images/calendar.svg') no-repeat 97% 0 !important;
 }
 
 .DayPickerInput-OverlayWrapper {

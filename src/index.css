@@ -154,7 +154,7 @@ button {
   100% {
     transform: scale(1); } }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .home:before {
     animation-name: zoom;
     animation-duration: 25s; } }
@@ -171,7 +171,7 @@ button {
   right: 0;
   margin: 0;
   text-align: center; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .page {
       margin: 0 0 0 33%;
       width: 67%; } }
@@ -181,7 +181,7 @@ button {
   background: #edeff0;
   margin: 50px auto 0;
   text-align: center; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .page__header {
       margin-top: 0; } }
 
@@ -274,7 +274,7 @@ button {
   height: 100vh;
   max-width: 650px;
   background-color: #334050; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .home {
       padding: 0 2em;
       height: 600px;
@@ -315,7 +315,7 @@ button {
   line-height: 1.15;
   color: white;
   z-index: 3; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .home__text__title {
       font-size: 2.25em; } }
 
@@ -348,7 +348,7 @@ button {
   padding: 2em 1em;
   max-width: 750px;
   text-align: center; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .fieldset {
       padding: 2.5em 2em; } }
 
@@ -374,7 +374,7 @@ button {
   .input:last-child,
   .select:last-child {
     margin-right: 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .input,
     .select {
       float: left;
@@ -411,20 +411,20 @@ button {
   padding-right: 3em; }
   .input--full-name:last-child {
     margin-right: 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .input--full-name {
       padding-right: .5em; } }
 
 .touch .input--full-name {
   padding-right: 3em; }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .input--email {
     margin-bottom: 0 !important; } }
 
 .input--phone {
   margin-right: 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .input--phone {
       margin-bottom: 0 !important; } }
 
@@ -436,7 +436,7 @@ button {
 
 .input--street {
   padding-right: 3em; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .input--street {
       padding-right: .5em; } }
 
@@ -450,7 +450,7 @@ button {
   width: 100% !important; }
 
 .input--city, .input--zip, .input--end-date {
-  margin-right: 0; }
+  margin-right: 0 !important; }
 
 .input--title {
   float: left;
@@ -460,7 +460,7 @@ button {
   padding-right: 3em; }
   .input--title:last-child {
     margin-right: 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .input--title {
       padding-right: .5em; } }
 
@@ -478,6 +478,10 @@ button {
 .input--employer {
   margin-right: 0; }
 
+@media (min-width: 800px) {
+  .input--end-date {
+    margin-left: 4.7153% !important; } }
+
 .fieldset--income {
   text-align: center; }
 
@@ -493,7 +497,7 @@ button {
   margin: 0 auto;
   display: inline-block;
   width: 100%; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .input-group {
       width: auto; } }
 
@@ -503,7 +507,7 @@ button {
   line-height: 50px;
   font-weight: bold;
   color: gray; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .input-prefix {
       width: auto; } }
 
@@ -678,25 +682,20 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 /* DayPickerInput */
 .DayPickerInput {
-  margin-bottom: 2.35765%;
   float: left;
-  display: block;
-  margin-right: 2.35765%;
+  display: inline-block;
   width: 100%; }
-  .DayPickerInput:last-child {
-    margin-right: 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .DayPickerInput {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
-      .DayPickerInput:last-child {
-        margin-right: 0; } }
+      width: 48.82117%; } }
+
+@media (min-width: 800px) {
   .DayPickerInput .input {
-    background: #edeff0 url("./images/calendar.svg") no-repeat 97% 0 !important;
-    width: 100%;
-    margin: 0 !important; }
+    margin-bottom: 4.7153%; } }
+
+.DayPickerInput .input {
+  width: 100%;
+  background: #edeff0 url("./images/calendar.svg") no-repeat 97% 0 !important; }
 
 .DayPickerInput-OverlayWrapper {
   position: relative;
@@ -721,7 +720,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   top: 0;
   z-index: 999;
   border-bottom: 1px solid #edeff0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .header {
       border: 0; } }
 
@@ -736,7 +735,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   background: #334050;
   z-index: 99;
   padding: 4em 2em 0 3em; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .nav {
       width: 33%;
       transform: translate3d(0, 0, 0); } }
@@ -783,7 +782,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   color: #334050;
   margin-left: 1em;
   line-height: 50px; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .logo--mobile {
       display: none; } }
 
@@ -794,7 +793,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   top: 11px;
   width: 26px;
   height: 28px; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .toggle {
       display: none; } }
 
@@ -912,7 +911,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   margin: 5em 1em 2em;
   padding: 2.5em 1em;
   background: #edeff0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .resume__container {
       padding: 2.5em 4em;
       margin: 2em; } }
@@ -956,7 +955,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 .resume__subtitle {
   font-weight: bold;
   margin-bottom: 1em; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .resume__subtitle {
       float: left;
       display: block;
@@ -966,7 +965,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
       .resume__subtitle:last-child {
         margin-right: 0; } }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .applicant-summary,
   .employment-list,
   .rental-list,
@@ -987,7 +986,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 .applicant {
   line-height: 1.4; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .applicant {
       float: left;
       display: block;
@@ -1004,11 +1003,11 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   margin-bottom: 1em; }
   .applicant-list li:last-child {
     margin-bottom: 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .applicant-list li {
       margin-bottom: 0; } }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .applicant-list li:nth-child(n+3) {
     margin-top: 1em; } }
 
@@ -1020,8 +1019,9 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 .employment-list {
   line-height: 1.4;
-  list-style-position: inside;
   list-style-type: disc; }
+  .employment-list li {
+    margin-left: 1em; }
 
 .job {
   margin-bottom: 1em; }
@@ -1031,8 +1031,9 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 .rental-list {
   line-height: 1.4;
-  list-style-position: inside;
   list-style-type: disc; }
+  .rental-list li {
+    margin-left: 1em; }
 
 .rental-list li:last-child {
   margin-bottom: 0; }
@@ -1053,7 +1054,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   padding: 2.5em 1em;
   margin: -2em 1em 2em 1em;
   display: none; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .incomplete {
       padding: 2.5em 4em;
       margin: -2em 2em 2em 2em; } }
@@ -1096,7 +1097,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   display: inline-block;
   float: left;
   margin: 0 .5em .5em 0; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .incomplete a {
       text-align: center; } }
 
@@ -1118,7 +1119,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   padding: 2em 1em;
   max-width: 750px;
   text-align: left; }
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     .faq {
       padding: 2.5em 2em; } }
   .faq p {

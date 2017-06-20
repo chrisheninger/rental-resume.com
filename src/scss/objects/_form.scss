@@ -113,7 +113,7 @@
 }
 
 .input--city, .input--zip, .input--end-date {
-	margin-right: 0;
+	margin-right: 0 !important;
 }
 
 // Employment History
@@ -136,6 +136,13 @@
 .input--employer  {
 	margin-right: 0;
 }
+
+.input--end-date {
+	@include bp(medium) {
+		margin-left: 4.7153% !important;
+	}
+}
+
 
 // Income
 .fieldset--income {
