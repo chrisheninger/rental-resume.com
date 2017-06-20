@@ -392,7 +392,8 @@ button {
   margin-bottom: 1em !important; }
 
 .select {
-  background: #edeff0 url("./images/arrows.svg") no-repeat 97% 0 !important; }
+  background: #edeff0 url("./images/arrows.svg") no-repeat 97% 0 !important;
+  cursor: pointer; }
 
 .select-disabled {
   color: #a9a9a9; }
@@ -694,6 +695,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
     margin-bottom: 4.7153%; } }
 
 .DayPickerInput .input {
+  cursor: pointer;
   width: 100%;
   background: #edeff0 url("./images/calendar.svg") no-repeat 97% 0 !important; }
 

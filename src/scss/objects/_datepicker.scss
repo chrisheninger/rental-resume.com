@@ -173,6 +173,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 }
 
 .DayPickerInput .input {
+  cursor: pointer;
   width: 100%;
   background: $secondary url('./images/calendar.svg') no-repeat 97% 0 !important;
 }
