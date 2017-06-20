@@ -48,8 +48,8 @@ class EmploymentHistory extends Component {
           placeholder="Start Date*"
           type="text"
           value={history.dateStart}
-          onChange={event =>
-            onInputChange(event.target.value, [
+          onDayChange={date =>
+            onInputChange(moment(date).format('MM/DD/YYYY'), [
               'employmentHistory',
               index,
               'dateStart',
@@ -62,8 +62,8 @@ class EmploymentHistory extends Component {
           placeholder="End Date*"
           type="text"
           value={history.dateEnd}
-          onChange={event =>
-            onInputChange(event.target.value, [
+          onDayChange={date =>
+            onInputChange(moment(date).format('MM/DD/YYYY'), [
               'employmentHistory',
               index,
               'dateEnd',
