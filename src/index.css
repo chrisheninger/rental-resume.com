@@ -478,10 +478,6 @@ button {
 .input--employer {
   margin-right: 0; }
 
-@media (min-width: 800px) {
-  .input--end-date {
-    margin-left: 4.7153% !important; } }
-
 .fieldset--income {
   text-align: center; }
 
@@ -688,6 +684,10 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   @media (min-width: 800px) {
     .DayPickerInput {
       width: 48.82117%; } }
+
+@media (min-width: 800px) {
+  .DayPickerInput:last-of-type {
+    margin-left: 2.35765%; } }
 
 @media (min-width: 800px) {
   .DayPickerInput .input {

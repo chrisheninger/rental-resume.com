@@ -159,16 +159,18 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   }
 }
 
+.DayPickerInput:last-of-type {
+  @include bp(medium) {
+    margin-left: 2.35765%;
+  }
+}
+
+
 .DayPickerInput .input {
   @include bp(medium) {
     margin-bottom: 4.7153%;
   }
 }
-
-.DayPickerInput:last-child  {
-
-}
-
 
 .DayPickerInput .input {
   width: 100%;
