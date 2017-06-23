@@ -20,7 +20,6 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 }
 
 .DayPicker-Month {
-  font-weight: bold;
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
@@ -62,8 +61,28 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 .DayPicker-Caption {
   display: table-caption;
-  height: 1.5rem;
+  height: 2rem;
   text-align: center;
+}
+
+.DayPicker-Caption select {
+  height: 1.75rem;
+  color: $base;
+  border-color: darken($secondary, 25%);
+  border: none;
+  border-radius: 2px;
+  background: $secondary;
+  cursor: pointer;
+}
+
+.DayPicker-Caption select[name=month] {
+  float: left;
+  margin-left: 1.75rem;
+}
+
+.DayPicker-Caption select[name=year] {
+  float: right;
+  margin-right: 1.75rem;
 }
 
 .DayPicker-Weekdays {
@@ -134,8 +153,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 /* Default modifiers */
 .DayPicker-Day--today {
-  background: $secondary;
-  //color: $highlight;
+  color: $highlight;
 }
 
 .DayPicker-Day--disabled {
@@ -164,7 +182,6 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
     margin-left: 2.35765%;
   }
 }
-
 
 .DayPickerInput .input {
   @include bp(medium) {
