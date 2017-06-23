@@ -392,8 +392,11 @@ button {
   margin-bottom: 1em !important; }
 
 .select {
-  background: #edeff0 url("./images/arrows.svg") no-repeat 97% 0 !important;
+  background: #edeff0 url("./images/arrows.svg") no-repeat 98% 0 !important;
   cursor: pointer; }
+  @media (min-width: 800px) {
+    .select {
+      background-position: 97% 0 !important; } }
 
 .select-disabled {
   color: #a9a9a9; }
@@ -573,56 +576,72 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   border-collapse: collapse;
   border-spacing: 0;
   user-select: none;
-  margin: 0 1rem; }
+  margin: 0 1rem;
+  font-weight: bold; }
 
 .DayPicker-NavBar {
   position: absolute;
   left: 0;
   right: 0;
-  padding: 0 .5rem;
-  top: 1rem; }
+  top: .5rem;
+  padding: 0 .5rem; }
 
 .DayPicker-NavButton {
   position: absolute;
-  width: 1.5rem;
-  height: 1.5rem;
+  top: .65rem;
+  width: 1.65rem;
+  height: 1.65rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   cursor: pointer; }
 
 .DayPicker-NavButton--prev {
-  left: 1rem;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5wcmV2PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9InByZXYiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzLjM5MzE5MywgMjUuMDAwMDAwKSBzY2FsZSgtMSwgMSkgdHJhbnNsYXRlKC0xMy4zOTMxOTMsIC0yNS4wMDAwMDApIHRyYW5zbGF0ZSgwLjg5MzE5MywgMC4wMDAwMDApIiBmaWxsPSIjNTY1QTVDIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAsNDkuMTIzNzMzMSBMMCw0NS4zNjc0MzQ1IEwyMC4xMzE4NDU5LDI0LjcyMzA2MTIgTDAsNC4yMzEzODMxNCBMMCwwLjQ3NTA4NDQ1OSBMMjUsMjQuNzIzMDYxMiBMMCw0OS4xMjM3MzMxIEwwLDQ5LjEyMzczMzEgWiIgaWQ9InJpZ2h0IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"); }
+  left: .5rem;
+  background: url("./images/arrow-left.svg") no-repeat; }
 
 .DayPicker-NavButton--next {
-  right: 1rem;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5uZXh0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9Im5leHQiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuOTUxNDUxLCAwLjAwMDAwMCkiIGZpbGw9IiM1NjVBNUMiPgogICAgICAgICAgICA8cGF0aCBkPSJNMCw0OS4xMjM3MzMxIEwwLDQ1LjM2NzQzNDUgTDIwLjEzMTg0NTksMjQuNzIzMDYxMiBMMCw0LjIzMTM4MzE0IEwwLDAuNDc1MDg0NDU5IEwyNSwyNC43MjMwNjEyIEwwLDQ5LjEyMzczMzEgTDAsNDkuMTIzNzMzMSBaIiBpZD0icmlnaHQiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo="); }
+  right: .5rem;
+  background: url("./images/arrow-right.svg") no-repeat; }
 
 .DayPicker-NavButton--interactionDisabled {
   display: none; }
 
 .DayPicker-Caption {
   display: table-caption;
-  height: 2rem;
   text-align: center; }
 
 .DayPicker-Caption select {
-  height: 1.75rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: bold;
+  padding: .25rem 0;
   color: #334050;
-  border-color: #a7b1b6;
+  background: none;
   border: none;
-  border-radius: 2px;
-  background: #edeff0;
-  cursor: pointer; }
+  border-radius: 0;
+  cursor: pointer;
+  background: url("./images/arrow-down.svg") no-repeat 95% 0 !important; }
+  @media (min-width: 800px) {
+    .DayPicker-Caption select {
+      background: none !important; } }
+
+.DayPicker:hover select {
+  background: url("./images/arrow-down.svg") no-repeat 95% 0 !important; }
 
 .DayPicker-Caption select[name=month] {
   float: left;
-  margin-left: 1.75rem; }
+  margin-left: 4rem;
+  padding-right: 1rem;
+  width: auto;
+  display: inline-block;
+  text-align: right !important; }
 
 .DayPicker-Caption select[name=year] {
   float: right;
-  margin-right: 1.75rem; }
+  margin-right: 3.5rem;
+  padding-right: 1rem; }
 
 .DayPicker-Weekdays {
   display: table-header-group; }
@@ -632,7 +651,7 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 
 .DayPicker-Weekday {
   display: table-cell;
-  padding: .5rem;
+  padding: .25rem .5rem .5rem;
   font-size: .875em;
   text-align: center;
   color: #a7b1b6; }
@@ -653,18 +672,8 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
   cursor: pointer;
   vertical-align: middle; }
 
-.DayPicker-WeekNumber {
-  display: table-cell;
-  padding: .5rem;
-  text-align: right;
-  vertical-align: middle;
-  min-width: 1rem;
-  font-size: 0.75em;
-  cursor: pointer;
-  color: #8b9898; }
-
-.DayPicker--interactionDisabled .DayPicker-Day {
-  cursor: default; }
+.DayPicker-Day:hover {
+  background: #edeff0; }
 
 .DayPicker-Footer {
   display: table-caption;
@@ -684,14 +693,9 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 .DayPicker-Day--today {
   color: #de673d; }
 
-.DayPicker-Day--disabled {
-  color: #dce0e0;
-  cursor: default;
-  background-color: #eff1f1; }
-
 .DayPicker-Day--outside {
-  cursor: default;
-  color: #dce0e0; }
+  cursor: pointer;
+  color: #c3cacd; }
 
 /* DayPickerInput */
 .DayPickerInput {
@@ -713,7 +717,10 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 .DayPickerInput .input {
   cursor: pointer;
   width: 100%;
-  background: #edeff0 url("./images/calendar.svg") no-repeat 97% 0 !important; }
+  background: #edeff0 url("./images/calendar.svg") no-repeat 98% 0 !important; }
+  @media (min-width: 800px) {
+    .DayPickerInput .input {
+      background-position: 96% 0 !important; } }
 
 .DayPickerInput-OverlayWrapper {
   position: relative;
@@ -722,11 +729,15 @@ https://github.com/gpbl/react-day-picker/blob/master/src/style.css
 .DayPickerInput-Overlay {
   left: 0;
   position: absolute;
-  background: white; }
+  background: white;
+  border-radius: 2px; }
 
 .DayPicker-Day--selected {
   background: #334050;
   color: white; }
+
+.DayPicker-Day--selected:hover {
+  background: #47596f; }
 
 /* ----- *
  *  Nav  *

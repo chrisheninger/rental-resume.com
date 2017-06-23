@@ -10,7 +10,7 @@ const toMonth = new Date(currentYear + 10, 11);
 
 // Component will receive date, locale and localeUtils props
 function YearMonthForm({ date, localeUtils, onChange }) {
-  const months = localeUtils.getMonths();
+  const months = moment.monthsShort();
 
   const years = [];
   for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
