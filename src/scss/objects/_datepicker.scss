@@ -1,0 +1,221 @@
+/* ------------- *
+*  Date Picker  *
+https://github.com/gpbl/react-day-picker/blob/master/src/style.css
+* ------------- */
+
+.DayPicker {
+  display: inline-block;
+}
+
+.DayPicker-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+  flex-direction: row;
+  padding: 1rem 0;
+  border: 1px solid $secondary;
+  border-radius: 2px;
+}
+
+.DayPicker-Month {
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  user-select: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+.DayPicker-NavBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: .5rem;
+  padding: 0 .5rem;
+}
+
+.DayPicker-NavButton {
+  position: absolute;
+  top: .65rem;
+  width: 1.65rem;
+  height: 1.65rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.DayPicker-NavButton--prev {
+  left: .5rem;
+  background: url('./images/arrow-left.svg') no-repeat;
+}
+
+.DayPicker-NavButton--next {
+  right: .5rem;
+  background: url('./images/arrow-right.svg') no-repeat;
+}
+
+.DayPicker-NavButton--interactionDisabled {
+  display: none;
+}
+
+.DayPicker-Caption {
+  display: table-caption;
+  text-align: center;
+}
+
+.DayPicker-Caption select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: bold;
+  padding: .25rem 0;
+  color: $base;
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  background: url('./images/arrow-down.svg') no-repeat 95% 0 !important;
+  @include bp(medium) {
+    background: none !important;
+  }
+
+}
+
+.DayPicker:hover select {
+  background: url('./images/arrow-down.svg') no-repeat 95% 0 !important;
+}
+
+.DayPicker-Caption select[name=month] {
+  float: left;
+  margin-left: 4rem;
+  padding-right: 1rem;
+  width: auto;
+  display: inline-block;
+  text-align: right !important;
+}
+
+.DayPicker-Caption select[name=year] {
+  float: right;
+  margin-right: 3.5rem;
+  padding-right: 1rem;
+}
+
+.DayPicker-Weekdays {
+  display: table-header-group;
+}
+
+.DayPicker-WeekdaysRow {
+  display: table-row;
+}
+
+.DayPicker-Weekday {
+  display: table-cell;
+  padding: .25rem .5rem .5rem;
+  font-size: .875em;
+  text-align: center;
+  color: darken($secondary, 25%);
+}
+
+.DayPicker-Body {
+  display: table-row-group;
+}
+
+.DayPicker-Week {
+  display: table-row;
+}
+
+.DayPicker-Day {
+  font-weight: normal;
+  color: $base;
+  display: table-cell;
+  padding: .5rem;
+  border: 1px solid darken($secondary, 10%);
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.DayPicker-Day:hover {
+  background: $secondary;
+}
+
+.DayPicker-Footer {
+  display: table-caption;
+  caption-side: bottom;
+  padding-top: .5rem;
+}
+
+.DayPicker-TodayButton {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  color: $highlight;
+  font-size: 0.875em;
+}
+
+/* Default modifiers */
+.DayPicker-Day--today {
+  color: $highlight;
+}
+
+.DayPicker-Day--outside {
+  cursor: pointer;
+  color: darken($secondary, 15%);
+}
+
+/* DayPickerInput */
+.DayPickerInput {
+  float: left;
+  display: inline-block;
+  width: 100%;
+  @include bp(medium) {
+    width: 48.82117%;
+  }
+}
+
+.DayPickerInput:last-of-type {
+  @include bp(medium) {
+    margin-left: 2.35765%;
+  }
+}
+
+.DayPickerInput .input {
+  @include bp(medium) {
+    margin-bottom: 4.7153%;
+  }
+}
+
+.DayPickerInput .input {
+  cursor: pointer;
+  width: 100%;
+  background: $secondary url('./images/calendar.svg') no-repeat 98% 0 !important;
+  @include bp(medium) {
+    background-position: 96% 0 !important;
+  }
+}
+
+.DayPickerInput-OverlayWrapper {
+  position: relative;
+  z-index: 999;
+}
+
+.DayPickerInput-Overlay {
+  left: 0;
+  position: absolute;
+  background: white;
+  border-radius: 2px;
+}
+
+.DayPicker-Day--selected {
+  background: $base;
+  color: white;
+}
+
+.DayPicker-Day--selected:hover {
+  background: lighten($base, 10%);
+}
