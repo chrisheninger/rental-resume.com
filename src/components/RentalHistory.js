@@ -5,10 +5,25 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Select from './Select';
 import { stateOptions } from '../util/helpers';
+
+import momentPropTypes from 'react-moment-proptypes';
 import moment from 'moment';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
+import { SingleDatePicker } from 'react-dates';
 
 class RentalHistory extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      focused: false,
+      //date: null,
+    };
+    this.onFocusChange = this.onFocusChange.bind(this);
+  }
+
+  onFocusChange({ focused }) {
+    this.setState({ focused });
+  }
+
   renderHistory = (history, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     const selectClassNames = classNames({
@@ -86,33 +101,29 @@ class RentalHistory extends Component {
           onChange={event =>
             onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
         />
-        <DayPickerInput
+        <SingleDatePicker
           id={`start-date${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--start-date"
           name="start-date"
           placeholder="Move In Date*"
           type="text"
-          value={history.dateStart}
-          onDayChange={date =>
-            onInputChange(moment(date).format('MM/DD/YYYY'), [
-              'rentalHistory',
-              index,
-              'dateStart',
-            ])}
+          date={history.dateStart} // momentPropTypes.momentObj or null
+          focused={this.state.focused} // PropTypes.bool
+          onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
+          numberOfMonths={1}
+          isOutsideRange={() => false}
+          readOnly={true}
+          hideKeyboardShortcutsPanel={true}
+          onDateChange={date =>
+            onInputChange(date, ['rentalHistory', index, 'dateStart'])}
         />
-        <DayPickerInput
+        <input
           id={`end-date${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--end-date"
           name="end-date"
           placeholder="Move Out Date*"
           type="text"
           value={history.dateEnd}
-          onDayChange={date =>
-            onInputChange(moment(date).format('MM/DD/YYYY'), [
-              'rentalHistory',
-              index,
-              'dateEnd',
-            ])}
         />
         <textarea
           id={`leaving-reason${index > 0 ? `-rental-section-${index}` : ''}`}
@@ -143,6 +154,7 @@ class RentalHistory extends Component {
 
   render() {
     const { rentalHistory, onAddSection, toggleHeader } = this.props;
+
     return (
       <section className="page">
         <div className="page__header">

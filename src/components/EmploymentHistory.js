@@ -1,57 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-
-const currentYear = new Date().getFullYear();
-const fromMonth = new Date(currentYear, 0);
-const toMonth = new Date(currentYear + 10, 11);
-
-// Component will receive date, locale and localeUtils props
-function YearMonthForm({ date, localeUtils, onChange }) {
-  const months = moment.monthsShort();
-
-  const years = [];
-  for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
-    years.push(i);
-  }
-
-  const handleChange = function handleChange(e) {
-    const { year, month } = e.target.form;
-    onChange(new Date(year.value, month.value));
-  };
-
-  return (
-    <form className="DayPicker-Caption">
-      <select name="month" onChange={handleChange} value={date.getMonth()}>
-        {months.map((month, i) => <option key={i} value={i}>{month}</option>)}
-      </select>
-      <select name="year" onChange={handleChange} value={date.getFullYear()}>
-        {years.map((year, i) =>
-          <option key={i} value={year}>
-            {year}
-          </option>
-        )}
-      </select>
-    </form>
-  );
-}
-
-const dayPickerProps = {
-  todayButton: 'Go to Today',
-  fromMonth: fromMonth,
-  toMonth: toMonth,
-  captionElement: <YearMonthForm onChange={this.handleYearMonthChange} />,
-};
 
 class EmploymentHistory extends Component {
-  state = {
-    month: fromMonth,
-  };
-  handleYearMonthChange = month => {
-    this.setState({ month });
-  };
   renderHistory = (history, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     return (
@@ -88,35 +39,33 @@ class EmploymentHistory extends Component {
               'company',
             ])}
         />
-        <DayPickerInput
+        <input
           id={`start-date-employment-section-${index}`}
           className="input input--start-date"
           name="start-date"
           placeholder="Start Date*"
           type="text"
           value={history.dateStart}
-          onDayChange={date =>
-            onInputChange(moment(date).format('MM/DD/YYYY'), [
+          onChange={event =>
+            onInputChange(event.target.value, [
               'employmentHistory',
               index,
               'dateStart',
             ])}
-          dayPickerProps={dayPickerProps}
         />
-        <DayPickerInput
+        <input
           id={`end-date-employment-section-${index}`}
           className="input input--end-date"
           name="end-date"
           placeholder="End Date*"
           type="text"
           value={history.dateEnd}
-          onDayChange={date =>
-            onInputChange(moment(date).format('MM/DD/YYYY'), [
+          onChange={event =>
+            onInputChange(event.target.value, [
               'employmentHistory',
               index,
               'dateEnd',
             ])}
-          dayPickerProps={dayPickerProps}
         />
         {index > 0
           ? <button
