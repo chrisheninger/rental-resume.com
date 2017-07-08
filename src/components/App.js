@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import set from 'lodash/set';
+import cloneDeep from 'lodash/cloneDeep';
 import store from 'store2';
 import { tryParseJSON } from '../util/helpers';
 
@@ -64,7 +65,7 @@ class App extends Component {
   }
 
   onInputChange = (value, key) => {
-    const newState = { ...this.state };
+    const newState = cloneDeep(this.state);
     set(newState, key, value);
     this.setState(newState);
     store.set('data', newState);
@@ -118,7 +119,9 @@ class App extends Component {
   generateResumeLink = event => {
     event.preventDefault();
     console.log(
-      `${window.location.href}/?data=${encodeURIComponent(JSON.stringify(this.state))}`
+      `${window.location.href}/?data=${encodeURIComponent(
+        JSON.stringify(this.state)
+      )}`
     );
   };
 
