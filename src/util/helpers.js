@@ -229,7 +229,7 @@ module.exports = {
   ],
 
   missingSection(sectionName) {
-    const app = document.getElementById('app');
+    const app = document.getElementById('root');
     const missingClass = 'missing--';
     app.classList.toggle(missingClass + sectionName);
   },

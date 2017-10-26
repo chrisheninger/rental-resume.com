@@ -1,20 +1,20 @@
-/* globals window, document */
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
 import store from 'store2';
-import { tryParseJSON } from '../util/helpers';
+import { tryParseJSON } from './util/helpers';
 
-import Home from './Home';
-import Header from './Header';
-import About from './About';
-import Applicant from './Applicant';
-import Summary from './Summary';
-import RentalHistory from './RentalHistory';
-import EmploymentHistory from './EmploymentHistory';
-import Income from './Income';
-import Preview from './Preview';
+import Header from './components/Header';
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Applicant from './pages/Applicant';
+import Summary from './pages/Summary';
+import RentalHistory from './pages/RentalHistory';
+import EmploymentHistory from './pages/EmploymentHistory';
+import Income from './pages/Income';
+import Preview from './pages/Preview';
 
 const defaultState = {
   people: [
@@ -88,22 +88,17 @@ class App extends Component {
   };
 
   toggleMenu() {
-    const app = document.getElementById('app');
+    const app = document.getElementById('root');
     app.classList.toggle('toggle--active');
   }
 
-  toggleHeader() {
-    const app = document.getElementById('app');
-    app.classList.toggle('btn--header--active');
-  }
-
   closeMenu() {
-    const app = document.getElementById('app');
+    const app = document.getElementById('root');
     app.classList.remove('toggle--active');
   }
 
   printResume = () => {
-    const app = document.getElementById('app');
+    const app = document.getElementById('root');
     if (this.props.location.pathname !== '/preview') {
       this.context.router.push('/preview');
       setTimeout(() => {
@@ -128,23 +123,19 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.props.location.pathname !== '/'
-          ? <Header
-              {...this.props}
-              generateResumeLink={this.generateResumeLink}
-              printResume={this.printResume}
-              toggleMenu={this.toggleMenu}
-              closeMenu={this.closeMenu}
-            />
-          : null}
+        {this.props.location.pathname !== '/' ? (
+          <Header
+            {...this.props}
+            generateResumeLink={this.generateResumeLink}
+            printResume={this.printResume}
+            toggleMenu={this.toggleMenu}
+            closeMenu={this.closeMenu}
+          />
+        ) : null}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about">
-            <About
-              {...this.props}
-              toggleHeader={this.toggleHeader}
-              closeMenu={this.closeMenu}
-            />
+            <About {...this.props} closeMenu={this.closeMenu} />
           </Route>
           <Route path="/applicant">
             <Applicant
@@ -153,7 +144,6 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onAddSection={this.onAddSection}
               onRemoveSection={this.onRemoveSection}
-              toggleHeader={this.toggleHeader}
             />
           </Route>
           <Route path="/summary">
@@ -161,7 +151,6 @@ class App extends Component {
               {...this.props}
               summary={this.state.summary}
               onInputChange={this.onInputChange}
-              toggleHeader={this.toggleHeader}
             />
           </Route>
           <Route path="/rental-history">
@@ -171,7 +160,6 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onAddSection={this.onAddSection}
               onRemoveSection={this.onRemoveSection}
-              toggleHeader={this.toggleHeader}
             />
           </Route>
           <Route path="/employment-history">
@@ -181,7 +169,6 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onAddSection={this.onAddSection}
               onRemoveSection={this.onRemoveSection}
-              toggleHeader={this.toggleHeader}
             />
           </Route>
           <Route path="/income">
@@ -191,7 +178,6 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onAddSection={this.onAddSection}
               onRemoveSection={this.onRemoveSection}
-              toggleHeader={this.toggleHeader}
             />
           </Route>
           <Route path="/preview">
@@ -202,7 +188,6 @@ class App extends Component {
               rentalHistory={this.state.rentalHistory}
               employmentHistory={this.state.employmentHistory}
               income={this.state.income}
-              toggleHeader={this.toggleHeader}
               printResume={this.printResume}
             />
           </Route>

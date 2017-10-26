@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import InputMask from 'react-input-mask';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import Select from './Select';
 import { stateOptions } from '../util/helpers';
+
+import PageHeader from '../components/PageHeader';
+import Select from '../components/Select';
 
 class RentalHistory extends Component {
   renderHistory = (history, index) => {
@@ -71,7 +72,7 @@ class RentalHistory extends Component {
               'state',
             ])}
         />
-        <InputMask
+        <input
           id={`postal-code${index > 0 ? `-rental-section-${index}` : ''}`}
           className="input input--zip"
           name="postal-code"
@@ -79,8 +80,6 @@ class RentalHistory extends Component {
           placeholder="Zipcode*"
           type="text"
           value={history.zip}
-          mask="99999"
-          maskChar={null}
           onChange={event =>
             onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
         />
@@ -126,35 +125,27 @@ class RentalHistory extends Component {
               'reason',
             ])}
         />
-        {index !== 0
-          ? <button
-              id={`remove-rental-section-${index}`}
-              className="btn btn--remove"
-              onClick={event => onRemoveSection(event, 'rentalHistory', index)}
-            >
-              <span />
-            </button>
-          : null}
+        {index !== 0 ? (
+          <button
+            id={`remove-rental-section-${index}`}
+            className="btn btn--remove"
+            onClick={event => onRemoveSection(event, 'rentalHistory', index)}
+          >
+            <span />
+          </button>
+        ) : null}
       </li>
     );
   };
 
   render() {
-    const { rentalHistory, onAddSection, toggleHeader } = this.props;
+    const { rentalHistory, onAddSection } = this.props;
     return (
       <section className="page">
-        <div className="page__header">
-          <div className="page__header__container">
-            <h1 className="page__title">Rental History</h1>
-            <p className="page__subtitle">
-              Now let's outline a history of your recent places of residence.
-              This doesn't have to be extensive but be sure to include at least two or three.
-            </p>
-            <button className="btn--header" onClick={toggleHeader}>
-              <span />
-            </button>
-          </div>
-        </div>
+        <PageHeader
+          title="Rental History"
+          description="Now let's outline a history of your recent places of residence. This doesn't have to be extensive but be sure to include at least two or three."
+        />
         <fieldset id="rent" className="fieldset fieldset--rent">
           <ol className="ol ol--rent">
             {rentalHistory.map(this.renderHistory)}
@@ -180,7 +171,6 @@ RentalHistory.propTypes = {
   onInputChange: PropTypes.func,
   onAddSection: PropTypes.func,
   onRemoveSection: PropTypes.func,
-  toggleHeader: PropTypes.func,
 };
 
 export default RentalHistory;

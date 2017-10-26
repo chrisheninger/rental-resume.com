@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import InputMask from 'react-input-mask';
 import { Link } from 'react-router-dom';
+
+import PageHeader from '../components/PageHeader';
 
 class Applicant extends Component {
   renderPerson = (person, index) => {
@@ -30,48 +31,40 @@ class Applicant extends Component {
           onChange={event =>
             onInputChange(event.target.value, ['people', index, 'email'])}
         />
-        <InputMask
+        <input
           id={`tel${index > 0 ? `-contact-section-${index}` : ''}`}
           className="input input--phone"
           name="tel"
           autoComplete="home tel"
           placeholder="Phone Number*"
-          type="text"
+          type="tel"
           value={person.phone}
-          mask="(999) 999-9999"
-          maskChar=" "
           onChange={event =>
             onInputChange(event.target.value, ['people', index, 'phone'])}
         />
-        {index > 0
-          ? <button
-              id={`remove-contact-section-${index}`}
-              className="btn btn--remove"
-              onClick={event => onRemoveSection(event, 'people', index)}
-            >
-              <span />
-            </button>
-          : null}
+        {index > 0 ? (
+          <button
+            id={`remove-contact-section-${index}`}
+            className="btn btn--remove"
+            onClick={event => onRemoveSection(event, 'people', index)}
+          >
+            <span />
+          </button>
+        ) : null}
       </li>
     );
   };
 
   render() {
-    const { people, onAddSection, toggleHeader } = this.props;
+    const { people, onAddSection } = this.props;
     return (
       <section className="page">
-        <div className="page__header">
-          <div className="page__header__container">
-            <h1 className="page__title">Applicant</h1>
-            <p className="page__subtitle">
-              Let's start with the basics.
-              First fill out the relevant contact information for the people that would live in the apartment.
-            </p>
-            <button className="btn--header" onClick={toggleHeader}>
-              <span />
-            </button>
-          </div>
-        </div>
+        <PageHeader
+          title="Applicant"
+          description="
+            Let's start with the basics. First fill out the relevant contact
+            information for the people that would live in the apartment."
+        />
         <fieldset id="contact" className="fieldset fieldset--contact">
           <ol className="ol ol--applicant">
             {people.map(this.renderPerson)}
@@ -96,7 +89,6 @@ Applicant.propTypes = {
   onInputChange: PropTypes.func,
   onAddSection: PropTypes.func,
   onRemoveSection: PropTypes.func,
-  toggleHeader: PropTypes.func,
 };
 
 export default Applicant;
