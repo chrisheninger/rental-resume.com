@@ -1,19 +1,20 @@
-/* globals document, window */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { ThemeProvider } from 'react-jss';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import App from './components/App';
-import registerServiceWorker from './service-worker-registration';
-
+import App from './App';
+// import registerServiceWorker from './registerServiceWorker';
+import theme from './theme';
 import './index.css';
 
-const routes = (
-  <Router>
-    <Route component={App} />
-  </Router>
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <Route component={App} />
+    </BrowserRouter>
+  </ThemeProvider>,
+  document.getElementById('root')
 );
 
-ReactDOM.render(routes, document.getElementById('app'));
-
-registerServiceWorker();
+// registerServiceWorker();

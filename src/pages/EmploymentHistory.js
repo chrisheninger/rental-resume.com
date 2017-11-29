@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import PageHeader from '../components/PageHeader';
+
 class EmploymentHistory extends Component {
   renderHistory = (history, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     return (
       <li key={index}>
         <input
-          id={`organization-title${index > 0 ? `-employment-section-${index}` : ''}`}
+          id={`organization-title${index > 0
+            ? `-employment-section-${index}`
+            : ''}`}
           className="input input--title"
           name="organization-title"
           autoComplete="organization-title"
@@ -65,36 +69,28 @@ class EmploymentHistory extends Component {
               'dateEnd',
             ])}
         />
-        {index > 0
-          ? <button
-              id={`remove-employment-section-${index}`}
-              className="btn btn--remove"
-              onClick={event =>
-                onRemoveSection(event, 'employmentHistory', index)}
-            >
-              <span />
-            </button>
-          : null}
+        {index > 0 ? (
+          <button
+            id={`remove-employment-section-${index}`}
+            className="btn btn--remove"
+            onClick={event =>
+              onRemoveSection(event, 'employmentHistory', index)}
+          >
+            <span />
+          </button>
+        ) : null}
       </li>
     );
   };
 
   render() {
-    const { employmentHistory, onAddSection, toggleHeader } = this.props;
+    const { employmentHistory, onAddSection } = this.props;
     return (
       <section className="page">
-        <div className="page__header">
-          <div className="page__header__container">
-            <h1 className="page__title">Employment History</h1>
-            <p className="page__subtitle">
-              Next your landlord will want to know a brief history of your employment.
-              Usually a record of the last 5 years or so will suffice.
-            </p>
-            <button className="btn--header" onClick={toggleHeader}>
-              <span />
-            </button>
-          </div>
-        </div>
+        <PageHeader
+          title="Employment History"
+          description="Next your landlord will want to know a brief history of your employment. Usually a record of the last 5 years or so will suffice."
+        />
         <fieldset id="employment" className="fieldset fieldset--employment">
           <ol className="ol ol--employment">
             {employmentHistory.map(this.renderHistory)}
@@ -124,7 +120,6 @@ EmploymentHistory.propTypes = {
   onInputChange: PropTypes.func,
   onAddSection: PropTypes.func,
   onRemoveSection: PropTypes.func,
-  toggleHeader: PropTypes.func,
 };
 
 export default EmploymentHistory;

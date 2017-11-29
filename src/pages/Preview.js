@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { numberWithCommas } from '../util/helpers';
 import { missingSection } from '../util/helpers';
 
 class Preview extends Component {
@@ -38,9 +37,7 @@ class Preview extends Component {
     return (
       <section className="resume__section resume__section--income">
         <h2 className="resume__subtitle">Income</h2>
-        <p className="applicant-income">
-          ${numberWithCommas(income)}
-        </p>
+        <p className="applicant-income">{income}</p>
       </section>
     );
   }
@@ -54,9 +51,7 @@ class Preview extends Component {
     return (
       <section className="resume__section resume__section--summary">
         <h2 className="resume__subtitle">Summary</h2>
-        <p className="applicant-summary">
-          {summary}
-        </p>
+        <p className="applicant-summary">{summary}</p>
       </section>
     );
   }
@@ -158,7 +153,6 @@ class Preview extends Component {
             {this.renderEmploymentHistory(employmentHistory)}
 
             {this.renderRentalHistory(rentalHistory)}
-
           </div>
           <section className="resume__section incomplete">
             <h2 className="resume__subtitle incomplete__subtitle">
