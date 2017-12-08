@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
 import store from 'store2';
 import { tryParseJSON } from './util/helpers';
 
-import Header from './components/Header';
+import Navigation from './navigation';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -122,9 +122,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         {this.props.location.pathname !== '/' ? (
-          <Header
+          <Navigation
             {...this.props}
             generateResumeLink={this.generateResumeLink}
             printResume={this.printResume}
@@ -192,7 +192,7 @@ class App extends Component {
             />
           </Route>
         </Switch>
-      </div>
+      </Fragment>
     );
   }
 }
