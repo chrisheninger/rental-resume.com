@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class EmploymentHistory extends Component {
   renderHistory = (history, index) => {
@@ -8,7 +8,9 @@ class EmploymentHistory extends Component {
     return (
       <li key={index}>
         <input
-          id={`organization-title${index > 0 ? `-employment-section-${index}` : ''}`}
+          id={`organization-title${
+            index > 0 ? `-employment-section-${index}` : ""
+          }`}
           className="input input--title"
           name="organization-title"
           autoComplete="organization-title"
@@ -17,13 +19,14 @@ class EmploymentHistory extends Component {
           value={history.title}
           onChange={event =>
             onInputChange(event.target.value, [
-              'employmentHistory',
+              "employmentHistory",
               index,
-              'title',
-            ])}
+              "title"
+            ])
+          }
         />
         <input
-          id={`organization${index > 0 ? `-employment-section-${index}` : ''}`}
+          id={`organization${index > 0 ? `-employment-section-${index}` : ""}`}
           className="input input--employer"
           name="organization"
           autoComplete="organization"
@@ -32,10 +35,11 @@ class EmploymentHistory extends Component {
           value={history.company}
           onChange={event =>
             onInputChange(event.target.value, [
-              'employmentHistory',
+              "employmentHistory",
               index,
-              'company',
-            ])}
+              "company"
+            ])
+          }
         />
         <input
           id={`start-date-employment-section-${index}`}
@@ -46,10 +50,11 @@ class EmploymentHistory extends Component {
           value={history.dateStart}
           onChange={event =>
             onInputChange(event.target.value, [
-              'employmentHistory',
+              "employmentHistory",
               index,
-              'dateStart',
-            ])}
+              "dateStart"
+            ])
+          }
         />
         <input
           id={`end-date-employment-section-${index}`}
@@ -60,21 +65,23 @@ class EmploymentHistory extends Component {
           value={history.dateEnd}
           onChange={event =>
             onInputChange(event.target.value, [
-              'employmentHistory',
+              "employmentHistory",
               index,
-              'dateEnd',
-            ])}
+              "dateEnd"
+            ])
+          }
         />
-        {index > 0
-          ? <button
-              id={`remove-employment-section-${index}`}
-              className="btn btn--remove"
-              onClick={event =>
-                onRemoveSection(event, 'employmentHistory', index)}
-            >
-              <span />
-            </button>
-          : null}
+        {index > 0 ? (
+          <button
+            id={`remove-employment-section-${index}`}
+            className="btn btn--remove"
+            onClick={event =>
+              onRemoveSection(event, "employmentHistory", index)
+            }
+          >
+            <span />
+          </button>
+        ) : null}
       </li>
     );
   };
@@ -87,8 +94,9 @@ class EmploymentHistory extends Component {
           <div className="page__header__container">
             <h1 className="page__title">Employment History</h1>
             <p className="page__subtitle">
-              Next your landlord will want to know a brief history of your employment.
-              Usually a record of the last 5 years or so will suffice.
+              Next your landlord will want to know a brief history of your
+              employment. Usually a record of the last 5 years or so will
+              suffice.
             </p>
             <button className="btn--header" onClick={toggleHeader}>
               <span />
@@ -101,7 +109,7 @@ class EmploymentHistory extends Component {
             <button
               id="add-employment-section"
               className="btn btn--add"
-              onClick={event => onAddSection(event, 'employmentHistory')}
+              onClick={event => onAddSection(event, "employmentHistory")}
             >
               Add Another Job
             </button>
@@ -124,7 +132,7 @@ EmploymentHistory.propTypes = {
   onInputChange: PropTypes.func,
   onAddSection: PropTypes.func,
   onRemoveSection: PropTypes.func,
-  toggleHeader: PropTypes.func,
+  toggleHeader: PropTypes.func
 };
 
 export default EmploymentHistory;

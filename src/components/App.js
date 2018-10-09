@@ -1,51 +1,51 @@
 /* globals window, document */
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import set from 'lodash/set';
-import cloneDeep from 'lodash/cloneDeep';
-import store from 'store2';
-import { tryParseJSON } from '../util/helpers';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import set from "lodash/set";
+import cloneDeep from "lodash/cloneDeep";
+import store from "store2";
+import { tryParseJSON } from "../util/helpers";
 
-import Home from './Home';
-import Header from './Header';
-import About from './About';
-import Applicant from './Applicant';
-import Summary from './Summary';
-import RentalHistory from './RentalHistory';
-import EmploymentHistory from './EmploymentHistory';
-import Income from './Income';
-import Preview from './Preview';
+import Home from "./Home";
+import Header from "./Header";
+import About from "./About";
+import Applicant from "./Applicant";
+import Summary from "./Summary";
+import RentalHistory from "./RentalHistory";
+import EmploymentHistory from "./EmploymentHistory";
+import Income from "./Income";
+import Preview from "./Preview";
 
 const defaultState = {
   people: [
     {
-      name: '',
-      email: '',
-      phone: '',
-    },
+      name: "",
+      email: "",
+      phone: ""
+    }
   ],
-  summary: '',
+  summary: "",
   rentalHistory: [
     {
-      address1: '',
-      address2: '',
-      city: '',
-      state: '',
-      zip: '',
-      dateStart: '',
-      dateEnd: '',
-      reason: '',
-    },
+      address1: "",
+      address2: "",
+      city: "",
+      state: "",
+      zip: "",
+      dateStart: "",
+      dateEnd: "",
+      reason: ""
+    }
   ],
   employmentHistory: [
     {
-      company: '',
-      title: '',
-      dateStart: '',
-      dateEnd: '',
-    },
+      company: "",
+      title: "",
+      dateStart: "",
+      dateEnd: ""
+    }
   ],
-  income: '',
+  income: ""
 };
 
 class App extends Component {
@@ -56,19 +56,19 @@ class App extends Component {
     if (fromSaveLink) {
       this.state = fromSaveLink;
     } else {
-      this.state = store.get('data') || defaultState;
+      this.state = store.get("data") || defaultState;
     }
   }
 
   componentDidMount() {
-    store.set('data', this.state);
+    store.set("data", this.state);
   }
 
   onInputChange = (value, key) => {
     const newState = cloneDeep(this.state);
     set(newState, key, value);
     this.setState(newState);
-    store.set('data', newState);
+    store.set("data", newState);
   };
 
   onAddSection = (event, section) => {
@@ -76,7 +76,7 @@ class App extends Component {
     const newState = { ...this.state };
     newState[section].push(defaultState[section][0]);
     this.setState(newState);
-    store.set('data', newState);
+    store.set("data", newState);
   };
 
   onRemoveSection = (event, section, index) => {
@@ -84,34 +84,34 @@ class App extends Component {
     const newState = { ...this.state };
     newState[section].splice(index, 1);
     this.setState(newState);
-    store.set('data', newState);
+    store.set("data", newState);
   };
 
   toggleMenu() {
-    const app = document.getElementById('app');
-    app.classList.toggle('toggle--active');
+    const app = document.getElementById("app");
+    app.classList.toggle("toggle--active");
   }
 
   toggleHeader() {
-    const app = document.getElementById('app');
-    app.classList.toggle('btn--header--active');
+    const app = document.getElementById("app");
+    app.classList.toggle("btn--header--active");
   }
 
   closeMenu() {
-    const app = document.getElementById('app');
-    app.classList.remove('toggle--active');
+    const app = document.getElementById("app");
+    app.classList.remove("toggle--active");
   }
 
   printResume = () => {
-    const app = document.getElementById('app');
-    if (this.props.location.pathname !== '/preview') {
-      this.context.router.push('/preview');
+    const app = document.getElementById("app");
+    if (this.props.location.pathname !== "/preview") {
+      this.context.router.push("/preview");
       setTimeout(() => {
-        app.classList.remove('toggle--active');
+        app.classList.remove("toggle--active");
         window.print();
       }, 500);
     } else {
-      app.classList.remove('toggle--active');
+      app.classList.remove("toggle--active");
       window.print();
     }
   };
@@ -128,15 +128,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.props.location.pathname !== '/'
-          ? <Header
-              {...this.props}
-              generateResumeLink={this.generateResumeLink}
-              printResume={this.printResume}
-              toggleMenu={this.toggleMenu}
-              closeMenu={this.closeMenu}
-            />
-          : null}
+        {this.props.location.pathname !== "/" ? (
+          <Header
+            {...this.props}
+            generateResumeLink={this.generateResumeLink}
+            printResume={this.printResume}
+            toggleMenu={this.toggleMenu}
+            closeMenu={this.closeMenu}
+          />
+        ) : null}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about">

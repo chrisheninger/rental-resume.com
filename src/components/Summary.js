@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function Summary({ summary, onInputChange, toggleHeader }) {
   return (
@@ -9,7 +9,9 @@ function Summary({ summary, onInputChange, toggleHeader }) {
         <div className="page__header__container">
           <h1 className="page__title">Summary</h1>
           <p className="page__subtitle">
-            Next add a brief summary paragraph about yourself highlighting your positive characteristics or other information you want your landlord to know.
+            Next add a brief summary paragraph about yourself highlighting your
+            positive characteristics or other information you want your landlord
+            to know.
           </p>
         </div>
         <button className="btn--header" onClick={toggleHeader}>
@@ -23,7 +25,7 @@ function Summary({ summary, onInputChange, toggleHeader }) {
           name="summary"
           placeholder="Your summary..."
           value={summary}
-          onChange={event => onInputChange(event.target.value, ['summary'])}
+          onChange={event => onInputChange(event.target.value, ["summary"])}
         />
         <Link
           to="/employment-history"
@@ -40,7 +42,7 @@ function Summary({ summary, onInputChange, toggleHeader }) {
 Summary.propTypes = {
   summary: PropTypes.string,
   onInputChange: PropTypes.func,
-  toggleHeader: PropTypes.func,
+  toggleHeader: PropTypes.func
 };
 
 export default Summary;

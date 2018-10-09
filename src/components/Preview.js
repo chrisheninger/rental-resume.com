@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { numberWithCommas } from '../util/helpers';
-import { missingSection } from '../util/helpers';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { numberWithCommas } from "../util/helpers";
+import { missingSection } from "../util/helpers";
 
 class Preview extends Component {
   renderHeader = people => {
@@ -12,7 +12,7 @@ class Preview extends Component {
         <ul className="applicant-list">
           {people.map((applicant, i) => {
             if (!applicant.name || !applicant.email || !applicant.phone) {
-              missingSection('applicant');
+              missingSection("applicant");
               return null;
             }
 
@@ -31,32 +31,28 @@ class Preview extends Component {
 
   renderIncomeSection(income) {
     if (!income) {
-      missingSection('income');
+      missingSection("income");
       return null;
     }
 
     return (
       <section className="resume__section resume__section--income">
         <h2 className="resume__subtitle">Income</h2>
-        <p className="applicant-income">
-          ${numberWithCommas(income)}
-        </p>
+        <p className="applicant-income">${numberWithCommas(income)}</p>
       </section>
     );
   }
 
   renderSummarySection(summary) {
     if (!summary) {
-      missingSection('summary');
+      missingSection("summary");
       return null;
     }
 
     return (
       <section className="resume__section resume__section--summary">
         <h2 className="resume__subtitle">Summary</h2>
-        <p className="applicant-summary">
-          {summary}
-        </p>
+        <p className="applicant-summary">{summary}</p>
       </section>
     );
   }
@@ -73,7 +69,7 @@ class Preview extends Component {
               !employment.dateStart ||
               !employment.dateEnd
             ) {
-              missingSection('employment-history');
+              missingSection("employment-history");
               return null;
             }
 
@@ -104,13 +100,15 @@ class Preview extends Component {
               !rental.dateEnd ||
               !rental.reason
             ) {
-              missingSection('rental-history');
+              missingSection("rental-history");
               return null;
             }
 
             return (
               <li className="apartment" key={i}>
-                {`${rental.address1} ${rental.address2} ${rental.city}, ${rental.state} ${rental.zip}`}
+                {`${rental.address1} ${rental.address2} ${rental.city}, ${
+                  rental.state
+                } ${rental.zip}`}
                 <br />
                 {` (${rental.dateStart} - ${rental.dateEnd})`}
                 <br />
@@ -129,7 +127,7 @@ class Preview extends Component {
       income,
       summary,
       employmentHistory,
-      rentalHistory,
+      rentalHistory
     } = this.props;
     return (
       <section className="page">
@@ -158,7 +156,6 @@ class Preview extends Component {
             {this.renderEmploymentHistory(employmentHistory)}
 
             {this.renderRentalHistory(rentalHistory)}
-
           </div>
           <section className="resume__section incomplete">
             <h2 className="resume__subtitle incomplete__subtitle">
@@ -194,7 +191,7 @@ Preview.propTypes = {
   rentalHistory: PropTypes.array,
   employmentHistory: PropTypes.array,
   income: PropTypes.string,
-  printResume: PropTypes.func,
+  printResume: PropTypes.func
 };
 
 export default Preview;

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import cloneDeep from 'lodash/cloneDeep';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import cloneDeep from "lodash/cloneDeep";
 
 class Select extends Component {
   renderOption(option) {
@@ -27,11 +27,7 @@ class Select extends Component {
     const selectProps = cloneDeep(this.props);
     delete selectProps.options;
 
-    return (
-      <select {...selectProps}>
-        {this.renderOptions()}
-      </select>
-    );
+    return <select {...selectProps}>{this.renderOptions()}</select>;
   }
 }
 
@@ -43,7 +39,7 @@ Select.propTypes = {
     PropTypes.shape({
       text: PropTypes.string,
       value: PropTypes.any,
-      disabled: PropTypes.any,
+      disabled: PropTypes.any
     })
   ).isRequired,
   value: PropTypes.any,
@@ -53,7 +49,7 @@ Select.propTypes = {
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
   onKeyPress: PropTypes.func,
-  tabIndex: PropTypes.string,
+  tabIndex: PropTypes.string
 };
 
 export default Select;

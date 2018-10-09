@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import InputMask from 'react-input-mask';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import InputMask from "react-input-mask";
+import { Link } from "react-router-dom";
 
 class Applicant extends Component {
   renderPerson = (person, index) => {
@@ -9,7 +9,7 @@ class Applicant extends Component {
     return (
       <li key={index}>
         <input
-          id={`name${index > 0 ? `-contact-section-${index}` : ''}`}
+          id={`name${index > 0 ? `-contact-section-${index}` : ""}`}
           className="input input--full-name"
           name="name"
           autoComplete="name"
@@ -17,10 +17,11 @@ class Applicant extends Component {
           type="text"
           value={person.name}
           onChange={event =>
-            onInputChange(event.target.value, ['people', index, 'name'])}
+            onInputChange(event.target.value, ["people", index, "name"])
+          }
         />
         <input
-          id={`email${index > 0 ? `-contact-section-${index}` : ''}`}
+          id={`email${index > 0 ? `-contact-section-${index}` : ""}`}
           className="input input--email"
           name="email"
           autoComplete="email"
@@ -28,10 +29,11 @@ class Applicant extends Component {
           type="email"
           value={person.email}
           onChange={event =>
-            onInputChange(event.target.value, ['people', index, 'email'])}
+            onInputChange(event.target.value, ["people", index, "email"])
+          }
         />
         <InputMask
-          id={`tel${index > 0 ? `-contact-section-${index}` : ''}`}
+          id={`tel${index > 0 ? `-contact-section-${index}` : ""}`}
           className="input input--phone"
           name="tel"
           autoComplete="home tel"
@@ -41,17 +43,18 @@ class Applicant extends Component {
           mask="(999) 999-9999"
           maskChar=" "
           onChange={event =>
-            onInputChange(event.target.value, ['people', index, 'phone'])}
+            onInputChange(event.target.value, ["people", index, "phone"])
+          }
         />
-        {index > 0
-          ? <button
-              id={`remove-contact-section-${index}`}
-              className="btn btn--remove"
-              onClick={event => onRemoveSection(event, 'people', index)}
-            >
-              <span />
-            </button>
-          : null}
+        {index > 0 ? (
+          <button
+            id={`remove-contact-section-${index}`}
+            className="btn btn--remove"
+            onClick={event => onRemoveSection(event, "people", index)}
+          >
+            <span />
+          </button>
+        ) : null}
       </li>
     );
   };
@@ -64,8 +67,8 @@ class Applicant extends Component {
           <div className="page__header__container">
             <h1 className="page__title">Applicant</h1>
             <p className="page__subtitle">
-              Let's start with the basics.
-              First fill out the relevant contact information for the people that would live in the apartment.
+              Let's start with the basics. First fill out the relevant contact
+              information for the people that would live in the apartment.
             </p>
             <button className="btn--header" onClick={toggleHeader}>
               <span />
@@ -77,7 +80,7 @@ class Applicant extends Component {
             {people.map(this.renderPerson)}
             <button
               className="btn btn--add"
-              onClick={event => onAddSection(event, 'people')}
+              onClick={event => onAddSection(event, "people")}
             >
               Add Another Person
             </button>
@@ -96,7 +99,7 @@ Applicant.propTypes = {
   onInputChange: PropTypes.func,
   onAddSection: PropTypes.func,
   onRemoveSection: PropTypes.func,
-  toggleHeader: PropTypes.func,
+  toggleHeader: PropTypes.func
 };
 
 export default Applicant;

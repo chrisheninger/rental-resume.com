@@ -1,12 +1,12 @@
 /* globals document, window */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import App from './components/App';
-import registerServiceWorker from './service-worker-registration';
+import App from "./components/App";
+import registerServiceWorker from "./service-worker-registration";
 
-import './index.css';
+import "./index.css";
 
 const routes = (
   <Router>
@@ -14,6 +14,6 @@ const routes = (
   </Router>
 );
 
-ReactDOM.render(routes, document.getElementById('app'));
+ReactDOM.render(routes, document.getElementById("app"));
 
 registerServiceWorker();

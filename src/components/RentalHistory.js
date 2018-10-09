@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import InputMask from 'react-input-mask';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import Select from './Select';
-import { stateOptions } from '../util/helpers';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import InputMask from "react-input-mask";
+import classNames from "classnames";
+import { Link } from "react-router-dom";
+import Select from "./Select";
+import { stateOptions } from "../util/helpers";
 
 class RentalHistory extends Component {
   renderHistory = (history, index) => {
     const { onInputChange, onRemoveSection } = this.props;
     const selectClassNames = classNames({
       select: true,
-      'select--state': true,
-      'select-disabled': !history.state,
+      "select--state": true,
+      "select-disabled": !history.state
     });
     return (
       <li key={index}>
         <input
-          id={`address-line1${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`address-line1${index > 0 ? `-rental-section-${index}` : ""}`}
           className="input input--street"
           name="address-line1"
           autoComplete="shipping address-line1"
@@ -26,13 +26,14 @@ class RentalHistory extends Component {
           value={history.address1}
           onChange={event =>
             onInputChange(event.target.value, [
-              'rentalHistory',
+              "rentalHistory",
               index,
-              'address1',
-            ])}
+              "address1"
+            ])
+          }
         />
         <input
-          id={`address-line2${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`address-line2${index > 0 ? `-rental-section-${index}` : ""}`}
           className="input input--apartment"
           name="address-line2"
           autoComplete="shipping address-line2"
@@ -41,13 +42,14 @@ class RentalHistory extends Component {
           value={history.address2}
           onChange={event =>
             onInputChange(event.target.value, [
-              'rentalHistory',
+              "rentalHistory",
               index,
-              'address2',
-            ])}
+              "address2"
+            ])
+          }
         />
         <input
-          id={`address-level2${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`address-level2${index > 0 ? `-rental-section-${index}` : ""}`}
           className="input input--city"
           name="address-level2"
           autoComplete="shipping address-level2"
@@ -55,24 +57,22 @@ class RentalHistory extends Component {
           type="text"
           value={history.city}
           onChange={event =>
-            onInputChange(event.target.value, ['rentalHistory', index, 'city'])}
+            onInputChange(event.target.value, ["rentalHistory", index, "city"])
+          }
         />
         <Select
-          id={`address-level1${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`address-level1${index > 0 ? `-rental-section-${index}` : ""}`}
           className={selectClassNames}
           name="address-level1"
           autoComplete="shipping address-level1"
           options={stateOptions}
           value={history.state || stateOptions[0].value}
           onChange={event =>
-            onInputChange(event.target.value, [
-              'rentalHistory',
-              index,
-              'state',
-            ])}
+            onInputChange(event.target.value, ["rentalHistory", index, "state"])
+          }
         />
         <InputMask
-          id={`postal-code${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`postal-code${index > 0 ? `-rental-section-${index}` : ""}`}
           className="input input--zip"
           name="postal-code"
           autoComplete="shipping postal-code"
@@ -82,10 +82,11 @@ class RentalHistory extends Component {
           mask="99999"
           maskChar={null}
           onChange={event =>
-            onInputChange(event.target.value, ['rentalHistory', index, 'zip'])}
+            onInputChange(event.target.value, ["rentalHistory", index, "zip"])
+          }
         />
         <input
-          id={`start-date${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`start-date${index > 0 ? `-rental-section-${index}` : ""}`}
           className="input input--start-date"
           name="start-date"
           placeholder="Move In Date*"
@@ -93,13 +94,14 @@ class RentalHistory extends Component {
           value={history.dateStart}
           onChange={event =>
             onInputChange(event.target.value, [
-              'rentalHistory',
+              "rentalHistory",
               index,
-              'dateStart',
-            ])}
+              "dateStart"
+            ])
+          }
         />
         <input
-          id={`end-date${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`end-date${index > 0 ? `-rental-section-${index}` : ""}`}
           className="input input--end-date"
           name="end-date"
           placeholder="Move Out Date*"
@@ -107,13 +109,14 @@ class RentalHistory extends Component {
           value={history.dateEnd}
           onChange={event =>
             onInputChange(event.target.value, [
-              'rentalHistory',
+              "rentalHistory",
               index,
-              'dateEnd',
-            ])}
+              "dateEnd"
+            ])
+          }
         />
         <textarea
-          id={`leaving-reason${index > 0 ? `-rental-section-${index}` : ''}`}
+          id={`leaving-reason${index > 0 ? `-rental-section-${index}` : ""}`}
           className="textarea textarea--reason"
           name="leaving-reason"
           placeholder="Reason For Leaving"
@@ -121,20 +124,21 @@ class RentalHistory extends Component {
           value={history.reason}
           onChange={event =>
             onInputChange(event.target.value, [
-              'rentalHistory',
+              "rentalHistory",
               index,
-              'reason',
-            ])}
+              "reason"
+            ])
+          }
         />
-        {index !== 0
-          ? <button
-              id={`remove-rental-section-${index}`}
-              className="btn btn--remove"
-              onClick={event => onRemoveSection(event, 'rentalHistory', index)}
-            >
-              <span />
-            </button>
-          : null}
+        {index !== 0 ? (
+          <button
+            id={`remove-rental-section-${index}`}
+            className="btn btn--remove"
+            onClick={event => onRemoveSection(event, "rentalHistory", index)}
+          >
+            <span />
+          </button>
+        ) : null}
       </li>
     );
   };
@@ -148,7 +152,8 @@ class RentalHistory extends Component {
             <h1 className="page__title">Rental History</h1>
             <p className="page__subtitle">
               Now let's outline a history of your recent places of residence.
-              This doesn't have to be extensive but be sure to include at least two or three.
+              This doesn't have to be extensive but be sure to include at least
+              two or three.
             </p>
             <button className="btn--header" onClick={toggleHeader}>
               <span />
@@ -161,7 +166,7 @@ class RentalHistory extends Component {
             <button
               id="add-rental-section"
               className="btn btn--add"
-              onClick={event => onAddSection(event, 'rentalHistory')}
+              onClick={event => onAddSection(event, "rentalHistory")}
             >
               Add Another Residence
             </button>
@@ -180,7 +185,7 @@ RentalHistory.propTypes = {
   onInputChange: PropTypes.func,
   onAddSection: PropTypes.func,
   onRemoveSection: PropTypes.func,
-  toggleHeader: PropTypes.func,
+  toggleHeader: PropTypes.func
 };
 
 export default RentalHistory;
