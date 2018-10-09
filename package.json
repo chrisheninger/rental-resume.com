@@ -17,7 +17,6 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/scss -o src/  --include-path node_modules/bourbon/app/assets/stylesheets/ --include-path node_modules/bourbon-neat/app/assets/stylesheets/ --watch --recursive",
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "react-scripts start",
-    "precommit": "lint-staged",
     "prettier": "prettier --write '**/*.{js,json,css,md}'",
     "build": "npm run build-css && react-scripts build",
     "deploy": "npm run build && gh-pages -d build",
@@ -60,5 +59,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
